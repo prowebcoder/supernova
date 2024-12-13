@@ -1,0 +1,87 @@
+ <link rel="stylesheet" href="{{ 'polaroid.css' | asset_url  }}">
+<div class="collection__title title-wrapper page-width wrapper page-width {{section.settings.polaroid-visibility}}">
+      {% if section.settings.title != blank %}
+        <h2 class="title inline-richtext h2">{{ section.settings.title | escape }}</h2>           
+      {% endif %}
+          {% for block in section.blocks %}
+{% if block.settings.button_link != blank %}
+          <a class="polaroid_link" href="{{ block.settings.button_link }}" title="{{ block.settings.title | escape }}">
+    {% endif %}
+  <div class="polaroid-item item">
+    <div class="polaroid">
+      {% if block.settings.image != blank %}
+      <img  
+           src="{{block.settings.image | img_url: ''}}" 
+           alt="{{block.settings.image.alt | escape}}">
+            {% else %}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif %}
+      <div class="caption">{{block.settings.title}}</div>
+    </div>
+  </div>
+    {% if block.settings.button_link != blank %}
+  </a>
+  {% endif %}
+    {% endfor %}
+</div>
+{% schema %}
+{
+  "name": "Polaroid images",
+  "class": "section",
+  "settings": [
+{
+   "type": "radio",
+   "id": "polaroid-visibility",
+   "options": [
+      { "value": "medium-up--hide", 
+        "label": "Mobile only"
+        },
+      { "value": "small--hide", 
+        "label": "Desktop only"
+      },
+      { "value": "showboth",
+                "label": "Both"
+      }
+   ],
+          "label": "Visibility",
+"default":   "showboth"
+},
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Image with text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Add a title or tagline"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Polaroid images",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}

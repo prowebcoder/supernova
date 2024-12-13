@@ -1,0 +1,302 @@
+{{ 'section-rich-text.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
+  <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
+    <div class="rich-text__wrapper rich-text__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %}">
+      <div class="rich-text__blocks {{ section.settings.content_alignment }}">
+       <div class="product_max_wrap_cw2">
+   <div class="clm_six">
+      <div class="min_bx_title">
+         <div class="rating_inline_max">{{ section.settings.review-image | img_url: 'master' | img_tag }} {{ section.settings.review-text }}</div>
+         <div class="popular_max">{{ section.settings.sub-head }}</div>
+         <div class="mx_title">{{ section.settings.product-title }}</div>
+         <div class="mx_pricing"><span class="sale_ing_price">{{ section.settings.sale-price }}</span> <del>{{ section.settings.price }}</del> <span class="savings">{{ section.settings.save-text }}</span></div>
+         <div class="features_usp">{{ section.settings.icon-image | img_url: 'master' | img_tag }}</div>
+      </div>
+      <div class="product_img_bx">{{ section.settings.product-image | img_url: 'master' | img_tag }}</div>
+   </div>
+   <div class="content_aligned">
+      <div class="container_bx_list">
+         <div class="content_hd_r"><img src="https://cdn.shopify.com/s/files/1/0864/1498/3484/files/tick.png?v=1712319452">{{ section.settings.desc-heading1 }}</div>
+         <div class="content_mdr">{{ section.settings.desc1 }}</div>
+      </div>
+      <div class="container_bx_list">
+         <div class="content_hd_r"><img src="https://cdn.shopify.com/s/files/1/0864/1498/3484/files/tick.png?v=1712319452"> {{ section.settings.desc-heading2 }}</div>
+         <div class="content_mdr">{{ section.settings.desc2 }}</div>
+      </div>
+   </div>
+   <div class="claim_offer_cta">
+      <div class="jv_offers">{{ section.settings.offer-text }}</strong></div>
+      <a class="button button--primary href="{{ section.settings.btn-link }}">{{ section.settings.btn-label }}</a>
+      <div class="cl_copy">{{ section.settings.guarentee }}</div>
+   </div>
+</div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Block",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "desktop_content_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.rich-text.settings.desktop_content_position.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.rich-text.settings.desktop_content_position.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.rich-text.settings.desktop_content_position.options__3.label"
+        }
+      ],
+      "default": "center",
+      "label": "t:sections.rich-text.settings.desktop_content_position.label",
+      "info": "t:sections.rich-text.settings.desktop_content_position.info"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.rich-text.settings.content_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.rich-text.settings.content_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.rich-text.settings.content_alignment.options__3.label"
+        }
+      ],
+      "default": "center",
+      "label": "t:sections.rich-text.settings.content_alignment.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "default": true,
+      "label": "t:sections.rich-text.settings.full_width.label"
+    },
+        {
+          "type": "image_picker",
+          "id": "review-image",
+          "label": "Review stars"
+        },
+	  {
+          "type": "inline_richtext",
+          "id": "review-text",
+          "default": "Column",
+          "label": "Review Text"
+        },
+	  {
+          "type": "inline_richtext",
+          "id": "sub-head",
+          "default": "Column",
+          "label": "Subheading"
+        },
+		{
+          "type": "inline_richtext",
+          "id": "product-title",
+          "default": "Column",
+          "label": "Product title"
+        },
+		{
+          "type": "inline_richtext",
+          "id": "sale-price",
+          "default": "Column",
+          "label": "Sale Price"
+        },
+		{
+          "type": "inline_richtext",
+          "id": "price",
+          "default": "Column",
+          "label": "Price"
+        },
+    {
+          "type": "inline_richtext",
+          "id": "save-text",
+          "default": "You save $17 (18%)",
+          "label": "Save Text"
+        },
+		{
+          "type": "image_picker",
+          "id": "icon-image",
+          "label": "Icon Image"
+        },
+    {
+          "type": "image_picker",
+          "id": "product-image",
+          "label": "Product Image"
+        },
+		{
+          "type": "inline_richtext",
+          "id": "desc-heading1",
+          "default": "Column",
+          "label": "Description heading"
+        },
+		{
+          "type": "richtext",
+          "id": "desc1",
+          "default": "<p>Column</p>",
+          "label": "Description"
+        },
+		{
+          "type": "inline_richtext",
+          "id": "desc-heading2",
+          "default": "Column",
+          "label": "Description heading"
+        },
+		{
+          "type": "richtext",
+          "id": "desc2",
+          "default": "<p>Column</p>",
+          "label": "Description"
+        },
+    {
+          "type": "richtext",
+          "id": "offer-text",
+          "default": "<p>Column</p>",
+          "label": "Description"
+        },
+		 {
+      "type": "text",
+      "id": "btn-label",
+      "default": "Button label",
+      "label": "t:sections.multicolumn.settings.button_label.label"
+    },
+    {
+      "type": "url",
+      "id": "btn-link",
+      "label": "t:sections.multicolumn.settings.button_link.label"
+    },
+	{
+          "type": "inline_richtext",
+          "id": "guarentee",
+          "default": "Column",
+          "label": "Guarentee text"
+        },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    }
+  ],
+   "presets": [
+    {
+      "name": "Product Block"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .product_max_wrap_cw2 {
+    margin: 0px auto;
+    border: 4px solid #000000;
+    background: #fff;
+    padding: 50px;
+}
+  .product_max_wrap_cw2 .clm_six {
+    display: flex;
+    align-items: center;
+}
+  .product_max_wrap_cw2 .min_bx_title {
+    min-width: 60%;
+    width: 60%;
+    max-width: 60%;
+    padding-right: 50px;
+}
+  .product_max_wrap_cw2 .product_img_bx {
+    min-width: 40%;
+}
+  .popular_max {
+    margin: 10px 0px;
+    font-size: 20px;
+    font-weight: 600;
+}
+  .mx_title {
+    font-size: 30px;
+    font-weight: 600;
+}
+  .mx_pricing {
+    font-weight: 600;
+    color: #000;
+    font-size: 18px;
+}
+  span.savings {
+    background: #6b8f1b;
+    color: #fff;
+    margin-left: 10px;
+    font-size: 12px;
+    position: relative;
+    padding: 2px 4px;
+    top: -2px;
+}
+  .product_max_wrap_cw2 .features_usp img {
+    max-width: 420px;
+}
+  .product_max_wrap_cw2 .content_aligned {
+    display: flex;
+    justify-content: space-between;
+}
+  .product_max_wrap_cw2 .container_bx_list {
+    min-width: 47%;
+    width: 47%;
+    max-width: 47%;
+}
+</style>

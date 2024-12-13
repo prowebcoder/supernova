@@ -1,0 +1,257 @@
+{%- style -%}
+  body {
+  font-family: "Roboto", sans-serif;
+
+  margin: 2vw;
+}
+
+p:hover {
+  cursor: default;
+}
+h2 {
+  color: orange;
+}
+
+.grid-container {
+  border: solid 1px #eeeeee; /*for debugging display */
+  padding: 0.5vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 24.5vw;
+  grid-gap: 0.5vw; /* optional gutter , use "vw" instead of "px" to keep proportions responsive */
+}
+
+.griditem {
+  background-size: cover;
+  background-position: center;
+  /*filter: grayscale(100%);*/
+  padding: 2vw;
+  font-size: 1.5vw; /* text overlay*/
+  color: darkorange;
+  box-sizing: border-box;
+}
+.griditem:hover {
+  cursor: pointer;
+  filter: brightness(70%) grayscale(100%);
+}
+/* set background images*/
+.image1 {
+  background-position: left center;
+  background-image: url('{{ block.settings.background_image | img_url: 'medium' }}'); 
+  /*grid-area: image1;*/
+}
+
+
+/*full image modal */
+.modal {
+  z-index: 3;
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  /* below covers window area*/
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #fff; /* set window back ground color */
+}
+.modal-content {
+  display: block;
+}
+.modal-btn {
+  color: red;
+  padding: 4px 8px;
+  position: absolute;
+  right: 10vw;
+  top: 1vh;
+}
+.modal-btn:hover {
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
+.animate-zoom {
+  animation: animatezoom 0.8s;
+}
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.topright {
+  position: relative;
+  right: 0;
+  top: 0;
+}
+.mod-img {
+  /* rsponsive display full image within in view area */
+  object-fit: scale-down;
+  display: block;
+  max-height: 99vh;
+  max-width: 99vw;
+  margin: 0.5vh auto;
+}
+mod-img:hover {
+}
+
+   {%- endstyle -%}
+<body>
+  <div id="grid" class="grid-container">
+     {% for block in section.blocks %}
+    <div id="image1" class="griditem image1" style="background-image: url('{{ block.settings.background_image | img_url: 'medium' }}');>
+      <p>{{ block.settings.subtitle12 }} </p>
+    </div>
+        {% endfor %}
+    
+
+  </div>
+  <p>{{ block.settings.subtitle22 }} </p>
+  <h3>{{ block.settings.title33 }}</h3>
+  <h2> {{ block.settings.title44 }}</h2>
+  <h2><a href="https://codepen.io/jcb01/pen/rNoJjOW" target="_blank"> Updated Version 2 here </a></h2>
+
+  <div id="modal01" class="modal">
+
+    <img id="img01" class="mod-img animate-zoom">
+
+    <div id="btn1" class="modal-btn ">Close</div>
+    <!--  <div class="modal-content  " >  
+    </div>-->
+  </div>
+</body>
+<script>
+  document.getElementById("grid").addEventListener("click", onImage);
+
+function onImage(event) {
+  var x = event.target;
+  const image = getComputedStyle(x);
+  x.src = image.backgroundImage.slice(5, -2);
+  if (x.src == "") {
+    return;
+  } else {
+    var modal = document.getElementById("modal01");
+    modal.style.display = "block"; //new overlay div
+    var img01 = document.getElementById("img01");
+    img01.src = x.src;
+    document.getElementById("btn1").addEventListener("click", function () {
+      modal01.style.display = "none";
+    });
+    console.log(x.src, img01.clientWidth, img01.clientHeight);
+  }
+}
+
+</script>
+{% schema %}
+{
+  "name": "image thumnails",
+  "settings": [
+      {
+          "type": "text",
+          "id": "title",
+          "default": "Top Title",
+          "label": "Title"
+        },
+      {
+          "type": "text",
+          "id": "subtitle",
+          "default": "Subtitle",
+          "label": "Subtitle"
+        },
+      {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "number",
+      "id": "slider_height",
+      "label": "Slider Height",
+      "default": 80
+    
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "image11",
+      "limit": 5,
+        "settings": [
+          
+              {
+  "type": "image_picker",
+  "id": "image81",
+  "label": " background image"
+},
+   
+
+          
+        {
+          "type": "text",
+          "id": "subtitle12",
+          "default": "Subtitle",
+          "label": "Subtitle"
+        },
+             {
+          "type": "text",
+          "id": "subtitle22",
+          "default": "Subtitle",
+          "label": "paragraph"
+        },
+          {
+          "type": "text",
+          "id": "title33",
+          "default": "Top Title",
+          "label": "Text1"
+        },
+          {
+          "type": "text",
+          "id": "title44",
+          "default": "Top Title",
+          "label": "Text2"
+        },
+        
+          {
+          "type": "text",
+          "id": "button13",
+          "default": "Button Title",
+          "label": "Button Title"
+        },
+           {
+          "type": "url",
+          "id": "button_link13",
+          "label": "t:sections.image-with-text.blocks.button.settings.button_link.label"
+        },
+
+           
+  
+        
+       
+         {
+  "type": "range",
+  "id": "custom_font_size",
+  "label": "Custom Font Size",
+  "min":16,
+    "max":30,
+  "default": 16
+},
+
+          {
+            "type":"color",
+            "id":"bgcolor",
+            "default": "#FFFFFF",
+            "label":"Background Color"
+          }
+        ]
+    }
+  ],
+  "presets": [
+   {
+     "name":"image thumnails"
+   }
+  ]
+}
+{% endschema %}
