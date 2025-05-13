@@ -65,6 +65,37 @@
       "max": 100,
       "step": 5,
       "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "select",
+      "id": "background_size",
+      "label": "Background Image Size",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        },
+        {
+          "value": "repeat",
+          "label": "Repeat"
+        }
+      ],
+      "default": "cover"
     }
   ],
   "blocks": [
@@ -94,4 +125,5 @@
   ]
 }
 {% endschema %}
+
 
