@@ -1098,9 +1098,11 @@
         "scrolling_text_8zhWzN"
       ],
       "settings": {
-        "padding_top": 10,
-        "padding_bottom": 10,
-        "background_color": "#eb7b7b"
+        "background_color": "#eb7b7b",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top": 0,
+        "margin_bottom": 0
       }
     },
     "testimonials_section_XR78Jc": {
