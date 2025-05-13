@@ -1082,6 +1082,7 @@
           "type": "ScrollingText",
           "settings": {
             "text": "Title",
+            "text_size": 40,
             "color": "#6b8f1b"
           }
         },
@@ -1089,6 +1090,7 @@
           "type": "ScrollingText",
           "settings": {
             "text": "Title",
+            "text_size": 40,
             "color": "#000000"
           }
         }
