@@ -1004,7 +1004,6 @@
     },
     "tabbed_collections_UhmkKW": {
       "type": "tabbed-collections",
-      "disabled": true,
       "settings": {
         "title": "Featured collection",
         "heading_size": "h1",
