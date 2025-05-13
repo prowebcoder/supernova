@@ -30,19 +30,27 @@
     }
 {% endstyle %}
 
-<div class="marquee">
-  <div class="track">
-    <div class="marquee-content" 
-      style="
-    background-color: {{ section.settings.background_color }};
-    padding-top: {{ section.settings.padding_top }}px; 
-    padding-bottom: {{ section.settings.padding_bottom }}px;
+<div 
+  class="marquee" 
+  style="
     margin-top: {{ section.settings.margin_top }}px; 
     margin-bottom: {{ section.settings.margin_bottom }}px;
   "
+>
+  <div class="track">
+    <div 
+      class="marquee-content" 
+      style="
+        background-color: {{ section.settings.background_color }};
+        padding-top: {{ section.settings.padding_top }}px; 
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      "
+    >
       {% for i in (1..5) %}
         {% for block in section.blocks %}
-          <span class="marquee-gap" style="color:{{ block.settings.color }}">{{ block.settings.text }}</span>
+          <span class="marquee-gap" style="color:{{ block.settings.color }}">
+            {{ block.settings.text }}
+          </span>
         {% endfor %}
       {% endfor %}
     </div>
