@@ -1083,7 +1083,11 @@
         "scrolling_text_797i8P",
         "scrolling_text_8zhWzN"
       ],
-      "settings": {}
+      "settings": {
+        "padding_top": 10,
+        "padding_bottom": 10,
+        "background_color": "#eb7b7b"
+      }
     },
     "testimonials_section_XR78Jc": {
       "type": "testimonials-section",
