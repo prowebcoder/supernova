@@ -17,13 +17,41 @@
     white-space: nowrap;
     font-size:6rem;
     will-change: transform;
-    animation: marquee 38s linear infinite;
+    animation: marquee 8s linear infinite;
   }
 
-  @keyframes marquee {
+  /* @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
+  } */
+
+  .marquee {
+  overflow: hidden;
+  width: 100%;
+  display: block;
+}
+
+.track {
+  white-space: nowrap;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.marquee-gap {
+  margin-right: 20px;
+  display: inline-block;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
   }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 
     {{id}} .marquee .track:hover {
       animation-play-state: paused;
@@ -37,7 +65,12 @@
     margin-bottom: {{ section.settings.margin_bottom }}px;
   "
 >
-  <div class="track">
+  <div 
+    class="track" 
+    style="
+      animation-duration: {{ section.settings.scroll_speed }}s;
+    "
+  >
     <div 
       class="marquee-content" 
       style="
@@ -48,9 +81,13 @@
     >
       {% for i in (1..5) %}
         {% for block in section.blocks %}
-        <span 
+          <span 
             class="marquee-gap" 
-            style=" color: {{ block.settings.color }};font-size: {{ block.settings.text_size }}px;">
+            style="
+              color: {{ block.settings.color }};
+              font-size: {{ block.settings.text_size }}px;
+            "
+          >
             {{ block.settings.text }}
           </span>
         {% endfor %}
@@ -58,6 +95,7 @@
     </div>
   </div>
 </div>
+
 
 {% schema %}
 {
@@ -68,6 +106,16 @@
       "id": "background_color",
       "label": "Background Color",
       "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "label": "Scroll Speed (Lower is Faster)",
+      "default": 15,
+      "min": 5,
+      "max": 60,
+      "step": 1,
+      "unit": "s"
     },
     {
       "type": "range",
