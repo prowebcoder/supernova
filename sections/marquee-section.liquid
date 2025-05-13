@@ -1,199 +1,98 @@
-{%- assign id = '#shopify-section-' | append: section.id -%}
 
-{% style %}
- {{id}} .marquee {
-    position: relative;
-    width: 100vw;
-    max-width: 100%;
-    height: 200px;
-    overflow-x: hidden;
-  }
- {{id}} .marquee-content {
-      display: flex;
-      gap: 8rem;
-  }
-  {{id}} .track {
-    position: absolute;
-    white-space: nowrap;
-    font-size:6rem;
-    will-change: transform;
-    animation: marquee 8s linear infinite;
-  }
+.marquee-sections {
+  padding: 3em 3% 0;
+}
 
-  /* @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  } */
-
-  .marquee {
+.marquee-box {
+  height: 180px;
+  display: flex;
+  align-items: center;
   overflow: hidden;
-  width: 100%;
-  display: block;
+  border: 1px solid #181818;
 }
 
-.track {
+.marquee-text {
   white-space: nowrap;
-  animation-name: marquee;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  text-transform: uppercase;
+  font-size: 7em;
+  font-weight: 100;
+  flex-shrink: 0;
+  padding: 0 10px;
+  width: max-content;
+  display: flex;
+  align-items: center;
 }
 
-.marquee-gap {
-  margin-right: 20px;
-  display: inline-block;
+/* Left to Right Animation */
+.a-section .marquee-text {
+  animation: a-text-scroll 35s linear infinite;
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+@keyframes a-text-scroll {
+  0% { transform: translate3d(-100%, 0, 0); }
+  100% { transform: translate3d(0%, 0, 0); }
 }
 
+/* Right to Left Animation */
+.b-section .marquee-text {
+  color: #475747;
+  animation: b-text-scroll 35s linear infinite;
+}
 
-    {{id}} .marquee .track:hover {
-      animation-play-state: paused;
-    }
-{% endstyle %}
+@keyframes b-text-scroll {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-100%, 0, 0); }
+}
 
-<div 
-  class="marquee" 
-  style="
-    margin-top: {{ section.settings.margin_top }}px; 
-    margin-bottom: {{ section.settings.margin_bottom }}px;
-  "
->
-  <div 
-    class="track" 
-    style="
-      animation-duration: {{ section.settings.scroll_speed }}s;
-    "
-  >
-    <div 
-      class="marquee-content" 
-      style="
-        background-color: {{ section.settings.background_color }};
-        padding-top: {{ section.settings.padding_top }}px; 
-        padding-bottom: {{ section.settings.padding_bottom }}px;
-      "
-    >
-      {% for i in (1..5) %}
-        {% for block in section.blocks %}
-          <span 
-            class="marquee-gap" 
-            style="
-              color: {{ block.settings.color }};
-              font-size: {{ block.settings.text_size }}px;
-            "
-          >
-            {{ block.settings.text }}
-          </span>
-        {% endfor %}
-      {% endfor %}
+<section class="marquee-sections">
+  {% for block in section.blocks %}
+    <div class="marquee-box {{ block.settings.marquee_style }}">
+      <h2 class="marquee-text">{{ block.settings.marquee_text }}</h2>
+      <h2 class="marquee-text">{{ block.settings.marquee_text }}</h2>
     </div>
-  </div>
-</div>
-
+  {% endfor %}
+</section>
 
 {% schema %}
 {
-  "name": "Custom Section",
-  "settings": [
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "range",
-      "id": "scroll_speed",
-      "label": "Scroll Speed (Lower is Faster)",
-      "default": 15,
-      "min": 5,
-      "max": 60,
-      "step": 1,
-      "unit": "s"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "label": "Padding Top",
-      "default": 20,
-      "min": 0,
-      "max": 100,
-      "step": 5,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "label": "Padding Bottom",
-      "default": 20,
-      "min": 0,
-      "max": 100,
-      "step": 5,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "margin_top",
-      "label": "Margin Top",
-      "default": 10,
-      "min": 0,
-      "max": 100,
-      "step": 5,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "margin_bottom",
-      "label": "Margin Bottom",
-      "default": 10,
-      "min": 0,
-      "max": 100,
-      "step": 5,
-      "unit": "px"
-    }
-  ],
+  "name": "Marquee Component",
+  "settings": [],
   "blocks": [
     {
-      "type": "ScrollingText",
-      "name": "Scrolling Text",
+      "type": "marquee_block",
+      "name": "Marquee Block",
       "settings": [
         {
           "type": "text",
-          "id": "text",
-          "label": "Scrolling Text",
-          "default": "Title"
-        },
-         {
-          "type": "range",
-          "id": "text_size",
-          "label": "Text Size",
-          "default": 16,
-          "min": 12,
-          "max": 100,
-          "step": 2,
-          "unit": "px"
+          "id": "marquee_text",
+          "label": "Marquee Text",
+          "default": "Scrolling text using CSS only •"
         },
         {
-          "type": "color",
-          "id": "color",
-          "label": "Text Color",
-          "default": "#000000"
+          "type": "select",
+          "id": "marquee_style",
+          "label": "Marquee Style",
+          "options": [
+            {
+              "value": "a-section",
+              "label": "Left to Right"
+            },
+            {
+              "value": "b-section",
+              "label": "Right to Left"
+            }
+          ],
+          "default": "a-section"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Marquee Full Width"
+      "name": "Default",
+      "category": "Custom"
     }
   ]
 }
 {% endschema %}
-
 
