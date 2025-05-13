@@ -73,15 +73,7 @@
             {% endif %}
           {% endfor %}
         </div>
-
-        <!-- Second Column: All Image Blocks -->
-        <div class="marquee-column">
-          {% for block in section.blocks %}
-            {% if block.settings.image != blank %}
-              <img src="{{ block.settings.image | img_url: '100x100' }}" alt="Marquee Image" style="height: 50px; margin-right: 10px;" />
-            {% endif %}
-          {% endfor %}
-        </div>
+       
 
         <!-- Third Column: All Text Blocks again -->
         <div class="marquee-column">
