@@ -127,11 +127,11 @@
                 class="pc-image"
                 src="{{ block.settings.image | img_url: 'master' }}"
                 alt="{{ block.settings.image.alt | escape }}"
-                width="{{ section.settings.image_width }}"
-                height="{{ section.settings.image_height }}"
+                width="{{ block.settings.image_width }}"
+                height="{{ block.settings.image_height }}"
                 style="
-                  object-fit: {{ section.settings.image_object_fit }};
-                  object-position: {{ section.settings.image_position }};
+                  object-fit: {{ block.settings.image_object_fit }};
+                  object-position: {{ block.settings.image_position }};
                 "
                 loading="lazy"
               >
