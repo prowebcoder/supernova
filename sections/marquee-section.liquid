@@ -661,9 +661,41 @@
           "type": "image_picker",
           "id": "image",
           "label": "Image"
-        }
+        },
+         {
+          "type": "range",
+          "id": "image_width",
+          "label": "Image Width (px)",
+          "default": 150,
+          "min": 50,
+          "max": 1000,
+          "step": 10
+        },
+        {
+          "type": "range",
+          "id": "image_height",
+          "label": "Image Height (px)",
+          "default": 150,
+          "min": 50,
+          "max": 1000,
+          "step": 10
+        },
+        {
+          "type": "select",
+          "id": "image_object_fit",
+          "label": "Image Object Fit",
+          "options": [
+            { "value": "cover", "label": "Cover" },
+            { "value": "contain", "label": "Contain" },
+            { "value": "fill", "label": "Fill" },
+            { "value": "scale-down", "label": "Scale Down" },
+            { "value": "none", "label": "None" }
+          ],
+          "default": "cover"
+        },
       ]
-    }
+    },
+    
   ],
   "presets": [
     {
