@@ -81,38 +81,6 @@
     }
   }
 
-  /* Mobile styles */
-  @media screen and (max-width: 749px) {
-    {{ sid }} .pc-marquee.section-{{ section.id }} {
-      height: {{ section.settings.marquee_height_mobile }}px;
-      background: {{ section.settings.colorBackground_mobile | default: section.settings.colorBackground }};
-      color: {{ section.settings.colorText_mobile | default: section.settings.colorText }};
-      padding: 0 {{ padding_horizontal_mobile }}px;
-    }
-
-    {{ sid }} .pc-marquee.section-{{ section.id }} a {
-      color: {{ section.settings.colorText_mobile | default: section.settings.colorText }};
-    }
-
-    {{ sid }} .pc-marquee.section-{{ section.id }} .pc-content {
-      font-size: {{ section.settings.font_size_mobile }}px;
-    }
-
-    {{ sid }} .pc-marquee.section-{{ section.id }} .pc-image {
-      width: {{ image_width_mobile }}px;
-      height: {{ image_height_mobile }}px;
-    }
-
-    {{ sid }} .pc-marquee.section-{{ section.id }} .pc-icon {
-      width: {{ image_width_mobile }}px;
-      height: {{ image_height_mobile }}px;
-    }
-
-    {{ sid }} .pc-marquee.section-{{ section.id }} .pc-icon svg {
-      width: {{ section.settings.icon_size_mobile }}px;
-      height: {{ section.settings.icon_size_mobile }}px;
-    }
-  }
 
   /* Block-specific styles */
   {%- for block in section.blocks -%}
