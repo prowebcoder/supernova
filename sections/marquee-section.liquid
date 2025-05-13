@@ -1,11 +1,8 @@
 {%- liquid
   assign sid = '#shopify-section-' | append: section.id
   assign padding_horizontal = section.settings.padding_horizontal
-  assign padding_horizontal_mobile = section.settings.padding_horizontal_mobile
   assign image_width = section.settings.image_width
   assign image_height = section.settings.image_height
-  assign image_width_mobile = section.settings.image_width_mobile
-  assign image_height_mobile = section.settings.image_height_mobile
   assign direction = section.settings.direction
 -%}
 
@@ -107,20 +104,6 @@
           {%- endif -%}
         }
 
-      {%- when 'icon' -%}
-        {%- if block.settings.icon_color != blank -%}
-          {{ sid }} .pc-marquee.section-{{ section.id }} .pc-icon-{{ block.id }} {
-            color: {{ block.settings.icon_color }};
-          }
-        {%- endif -%}
-
-        {%- if block.settings.icon_color_mobile != blank -%}
-          @media screen and (max-width: 749px) {
-            {{ sid }} .pc-marquee.section-{{ section.id }} .pc-icon-{{ block.id }} {
-              color: {{ block.settings.icon_color_mobile }} !important;
-            }
-          }
-        {%- endif -%}
     {%- endcase -%}
   {%- endfor -%}
 </style>
