@@ -1095,10 +1095,19 @@
             "font_style_mobile": "default",
             "letter_spacing_mobile": 0
           }
+        },
+        "image_fyFYpd": {
+          "type": "image",
+          "settings": {
+            "image_width": 150,
+            "image_height": 150,
+            "image_object_fit": "cover"
+          }
         }
       },
       "block_order": [
-        "text_8C9heV"
+        "text_8C9heV",
+        "image_fyFYpd"
       ],
       "settings": {
         "colorBackground": "#d57777",
