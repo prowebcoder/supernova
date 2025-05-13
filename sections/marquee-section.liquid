@@ -34,28 +34,37 @@
   <div class="track">
     <div class="marquee-content">
       {% for i in (1..5) %}
-        {% assign index = 0 %}
-        {% for block in section.blocks %}
-          {% assign is_even = index | modulo: 2 %}
-          
-          {% if is_even == 0 %}
-            <!-- Render Text -->
-            <span class="marquee-gap" style="color:{{ block.settings.color }}">{{ block.settings.text }}</span>
-          {% else %}
-            <!-- Render Image if available -->
-            {% if block.settings.image != blank %}
-              <span class="marquee-gap">
-                <img src="{{ block.settings.image | img_url: '100x100' }}" alt="Marquee Image" style="height: 50px; margin-right: 10px;" />
-              </span>
+        <!-- First Column: All Text Blocks -->
+        <div class="marquee-column">
+          {% for block in section.blocks %}
+            {% if block.settings.text != blank %}
+              <span class="marquee-gap" style="color:{{ block.settings.color }}">{{ block.settings.text }}</span>
             {% endif %}
-          {% endif %}
-          
-          {% assign index = index | plus: 1 %}
-        {% endfor %}
+          {% endfor %}
+        </div>
+
+        <!-- Second Column: All Image Blocks -->
+        <div class="marquee-column">
+          {% for block in section.blocks %}
+            {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | img_url: '100x100' }}" alt="Marquee Image" style="height: 50px; margin-right: 10px;" />
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <!-- Third Column: All Text Blocks again -->
+        <div class="marquee-column">
+          {% for block in section.blocks %}
+            {% if block.settings.text != blank %}
+              <span class="marquee-gap" style="color:{{ block.settings.color }}">{{ block.settings.text }}</span>
+            {% endif %}
+          {% endfor %}
+        </div>
       {% endfor %}
     </div>
   </div>
 </div>
+
 
 {% schema %}
 {
