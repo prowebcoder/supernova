@@ -35,12 +35,18 @@
     <div class="marquee-content">
       {% for i in (1..5) %}
         {% for block in section.blocks %}
-          <span class="marquee-gap" style="color:{{ block.settings.color }}">{{ block.settings.text }}</span>
+          <span class="marquee-gap">
+            {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | img_url: '100x100' }}" alt="Marquee Image" style="height: 50px; margin-right: 10px;" />
+            {% endif %}
+            <span style="color:{{ block.settings.color }}">{{ block.settings.text }}</span>
+          </span>
         {% endfor %}
       {% endfor %}
     </div>
   </div>
 </div>
+
 
 {% schema %}
   {
