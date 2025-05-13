@@ -60,6 +60,7 @@
 }
 
 {% endstyle %}
+
 <div class="marquee">
   <div class="track">
     <div class="marquee-content">
@@ -94,16 +95,12 @@
     </div>
   </div>
 </div>
+
+
 {% schema %}
 {
   "name": "Marquee Full Width",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Marquee Image"
-    }
-  ],
+  "settings": [],
   "blocks": [
     {
       "type": "ScrollingText",
@@ -123,7 +120,8 @@
           "label": "Text Color"
         }
       ]
-    }
+    },
+   
   ],
   "presets": [
     {
@@ -132,8 +130,5 @@
   ]
 }
 {% endschema %}
-
-
-
 
 
