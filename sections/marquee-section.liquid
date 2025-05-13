@@ -48,7 +48,7 @@
     >
       {% for i in (1..5) %}
         {% for block in section.blocks %}
-          <span class="marquee-gap" style="color:{{ block.settings.color }}">
+          <span class="marquee-gap" style="color:{{ block.settings.color }} {{ block.settings.text_size }}">
             {{ block.settings.text }}
           </span>
         {% endfor %}
