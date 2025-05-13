@@ -1,1 +1,1259 @@
-{"sections":{"slideshow_dJm83b":{"type":"slideshow","blocks":{"slide_9izrnP":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/Slider_3.png","heading":"Discover Your Glow","heading_size":"h1","subheading":"<p>Dive into Luxurious Beauty<\/p>","button_label":"Shop Now","link":"shopify:\/\/collections","button_style_secondary":false,"box_align":"middle-center","show_text_box":false,"text_alignment":"center","image_overlay_opacity":0,"color_scheme":"","text_alignment_mobile":"center"}},"slide_wrqViY":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/minimalistic-science-banner-with-sample.jpg","heading":"We Always Strive For Healthy Skin","heading_size":"h1","subheading":"<p>Healthy And Glowing Skin<\/p>","button_label":"Shop Now","link":"shopify:\/\/collections\/makeup","button_style_secondary":false,"box_align":"middle-left","show_text_box":false,"text_alignment":"center","image_overlay_opacity":0,"color_scheme":"scheme-1","text_alignment_mobile":"center"}},"slide_F8JHfY":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/assortment-spa-sand-copy-space.jpg","heading":"Organic Anti-Aging Cosmetic Cream","heading_size":"h1","subheading":"<p>Unlock Your Radiance Beauty & Skincare Essentials Await<\/p>","button_label":"About Us","link":"shopify:\/\/pages\/about-us","button_style_secondary":false,"box_align":"middle-right","show_text_box":false,"text_alignment":"center","image_overlay_opacity":0,"color_scheme":"","text_alignment_mobile":"center"}}},"block_order":["slide_9izrnP","slide_wrqViY","slide_F8JHfY"],"settings":{"layout":"full_bleed","slide_height":"large","slider_visual":"dots","auto_rotate":false,"change_slides_speed":5,"image_behavior":"none","show_text_below":true,"accessibility_info":"Slideshow about our brand"}},"multicolumn_hXTzjc":{"type":"multicolumn","blocks":{"column_NwaqCd":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/04.01_03_CatBanner_Card1_Desktop.jpg","title":"","text":"","link_label":"","link":"shopify:\/\/collections"}},"column_hUPHJz":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/04.01_03_CatBanner_Card3_Desktop.jpg","title":"","text":"","link_label":"","link":"shopify:\/\/collections\/gels"}},"column_KqiM3f":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/04.01_03_CatBanner_Card2_Desktop.jpg","title":"","text":"","link_label":"","link":"shopify:\/\/collections\/makeup"}},"column_w7QzLn":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/04.01_03_CatBanner_Card4_Desktop.jpg","title":"","text":"","link_label":"","link":"shopify:\/\/collections\/masks"}},"column_8pTtD4":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/04.01_03_CatBanner_Card5_Desktop.jpg","title":"","text":"","link_label":"","link":"shopify:\/\/collections\/packs"}},"column_wCKA8T":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/04.01_03_CatBanner_Card6_Desktop.jpg","title":"","text":"","link_label":"","link":"shopify:\/\/products\/make-up-for-ever"}}},"block_order":["column_NwaqCd","column_hUPHJz","column_KqiM3f","column_w7QzLn","column_8pTtD4","column_wCKA8T"],"settings":{"title":"","swipe_on_desktop":true,"heading_size":"h2","image_width":"full","image_ratio":"adapt","columns_desktop":6,"column_alignment":"center","background_style":"primary","button_label":"","button_link":"","color_scheme":"scheme-1","columns_mobile":"2","swipe_on_mobile":true,"padding_top":36,"padding_bottom":36}},"steps_WRf33t":{"type":"steps","blocks":{"column_EiJqU4":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/herbal-treatment.png","title":"Natural Ingredients","text":"<p>Natural ingredients are derived from plants, minerals, or animals and are minimally processed. <\/p>","link_label":"READ MORE","link":""}},"column_iqwzYR":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/nuts.png","title":"Fragrance Free","text":"<p>\"Fragrance-free\" refers to products that do not contain added fragrances or perfumes. <\/p>","link_label":"READ MORE","link":""}},"column_R8RD4d":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/diabetes-test.png","title":"Allergy Tested","text":"<p>\"Allergy tested\" typically refers to products that testing to assess to cause allergic reactions in individuals. <\/p>","link_label":"READ MORE","link":""}},"column_7j8NNV":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/paraben-free.png","title":"<a href=\"https:\/\/wdtlilac.wpengine.com\/#\" target=\"_blank\">Paraben Free<\/a>","text":"<p>oncerns have been raised about the potential health risks associated with parabens, hormone functions.<\/p>","link_label":"READ MORE","link":""}}},"block_order":["column_EiJqU4","column_iqwzYR","column_R8RD4d","column_7j8NNV"],"settings":{"title":"The Transformation","subtitle":"Discover our curated collection of luxurious skincare products designed to elevate your skincare routine to new heights.","column_alignment_title":"center","heading_size":"h1","image_width":"full","image_ratio":"adapt","columns_desktop":4,"column_alignment":"center","background_style":"none","button_label":"","button_link":"","color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":true,"padding_top":40,"padding_bottom":40}},"image_with_text_reviews_KCwyz7":{"type":"image-with-text-reviews","blocks":{"heading_Y93L6j":{"type":"heading","settings":{"heading":"Our Beauty Products","heading_size":"h1"}},"text_fAxEWK":{"type":"text","settings":{"text":"<p>Can be formulated with various ingredients, including botanical extracts, vitamins, minerals, and synthetic compounds, to achieve specific effects such as moisturizing, anti-aging, or color enhancement. <\/p>","text_style":"body"}},"button_RNP6dA":{"type":"button","settings":{"button_label":"Learn More","button_link":"shopify:\/\/collections\/frontpage","button_style_secondary":false,"reviews":4.4,"text":"\/5 based on 6,347 reviews"}}},"block_order":["heading_Y93L6j","text_fAxEWK","button_RNP6dA"],"settings":{"background_image":"shopify:\/\/shop_images\/view-frame-with-cosmetics.jpg","image":"shopify:\/\/shop_images\/download_2.png","height":"adapt","desktop_image_width":"small","layout":"image_first","desktop_content_position":"middle","desktop_content_alignment":"right","content_layout":"no-overlap","section_color_scheme":"","color_scheme":"","image_behavior":"none","mobile_content_alignment":"left","padding_top":36,"padding_bottom":36}},"featured_collection":{"type":"featured-collection","disabled":true,"custom_css":[".quick-add__submit {padding: 0.8rem; max-width: 50px; box-sizing: border-box; margin: 0 auto;}",".card--card.card--media > .card__content {margin-top: calc(0rem - var(--image-padding)); position: absolute; bottom: 0; text-align: center;}"],"settings":{"title":"Our Best Sellers","column_alignment_title":"center","heading_size":"h1","description":"","show_description":false,"description_style":"body","collection":"all","products_to_show":5,"columns_desktop":4,"full_width":false,"show_view_all":false,"view_all_style":"solid","enable_desktop_slider":true,"color_scheme":"scheme-1","image_ratio":"square","image_shape":"round","show_secondary_image":false,"show_vendor":false,"show_rating":false,"enable_quick_add":true,"columns_mobile":"2","swipe_on_mobile":true,"padding_top":84,"padding_bottom":40}},"carousel_slider_UWitHz":{"type":"carousel-slider","blocks":{"carousel_nrhD6h":{"type":"carousel","settings":{"title":"Full Name","text":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"}},"carousel_VNjBNy":{"type":"carousel","settings":{"title":"Full Name","text":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"}},"carousel_hqKCyR":{"type":"carousel","settings":{"title":"Full Name","text":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"}},"carousel_JCaKxj":{"type":"carousel","settings":{"title":"Full Name","text":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"}},"carousel_MgMGLr":{"type":"carousel","settings":{"title":"Full Name","text":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"}},"carousel_H9KKMg":{"type":"carousel","settings":{"title":"Full Name","text":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"}},"carousel_zDcdx7":{"type":"carousel","settings":{"title":"Full Name","text":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"}}},"block_order":["carousel_nrhD6h","carousel_VNjBNy","carousel_hqKCyR","carousel_JCaKxj","carousel_MgMGLr","carousel_H9KKMg","carousel_zDcdx7"],"settings":{"bg":"","product":"make-up-for-ever","title":"","image_ratio":"square","cell_align":"right","title_mb":48,"cell_width":"33.33%","wrap_around":"true","mr":16}},"richtext_with_reviews_djK7Jz":{"type":"richtext-with-reviews","blocks":{"star_MWJMem":{"type":"star","settings":{"reviews":4.7,"text":"\/5 based on 6,347 reviews"}},"heading_nG7r97":{"type":"heading","settings":{"heading":"Talk about SuperNova","heading_size":"h1"}},"text_F3dxTz":{"type":"text","settings":{"text":"<p>Encompass a wide range of items designed to enhance or maintain personal appearance and hygiene. From skincare to makeup, haircare to fragrance, beauty products cater to diverse preferences, needs, and lifestyles.<\/p>"}},"button_rDi3ew":{"type":"button","settings":{"button_label":"Learn More","button_link":"shopify:\/\/pages\/about-us","button_style_secondary":false,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["star_MWJMem","heading_nG7r97","text_F3dxTz","button_rDi3ew"],"custom_css":[],"settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"","full_width":true,"padding_top":40,"padding_bottom":52}},"image_with_text_ewqVGc":{"type":"image-with-text","blocks":{"heading_mnNtUK":{"type":"heading","settings":{"heading":"Thank you for choosing and trusting our brand","heading_size":"h1"}},"text_jzdK8G":{"type":"text","settings":{"text":"<p>Lokss is proud and committed to offering art supplies of the highest quality, fair pricing and value to our customers.<br\/><br\/>Our products are designed and manufactured by a professional team. As a top priority we work hard to ensure that each customer has a satisfied shopping experience.<br\/>We continually will develop high quality products and will improve our service to meet and exceed your expectations. <\/p>","text_style":"body"}}},"block_order":["heading_mnNtUK","text_jzdK8G"],"settings":{"image":"shopify:\/\/shop_images\/pngwing.com_2.png","height":"adapt","desktop_image_width":"medium","layout":"text_first","desktop_content_position":"middle","desktop_content_alignment":"left","content_layout":"no-overlap","section_color_scheme":"scheme-2","color_scheme":"scheme-2","image_behavior":"none","mobile_content_alignment":"left","padding_top":12,"padding_bottom":0}},"testimonials_section_crrTGw":{"type":"testimonials-section","blocks":{"column_jYby69":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/Testimonials-circle-photos_Ivan.png","toggle_image":true,"title":"Jack","text":"<p>'ve been using [product name] for a few weeks now, and I'm amazed at the results! My skin feels incredibly smooth and hydrated.<\/p>","stars_count":"5","toggle_review_stars":true}},"column_EL9KJF":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/rorykelleher-1-300x294-1.png","toggle_image":true,"title":"Mark","text":"<p><em>As a guy who's always been skeptical about skincare, I have to say, [brand name]'s [product name] has completely changed my mind.<\/em><\/p>","stars_count":"5","toggle_review_stars":true}},"column_MrGUFk":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/Testimonials-circle-photos_Vladimir.png","toggle_image":true,"title":"Tony","text":"<p><em>I'm always on the lookout for anti-aging products that actually deliver results, and does not disappoint.<\/em><\/p>","stars_count":"5","toggle_review_stars":true}}},"block_order":["column_jYby69","column_EL9KJF","column_MrGUFk"],"settings":{"title":"Testimonials","subtitle":"Get inspired by other customers","heading_alignment":"center","image_width":"third","image_ratio":"adapt","column_alignment":"center","background_style":"primary","swipe_on_mobile":true,"star_color":"#ffcc33","testimonial_background":"#ffffff","testimonial_section_background":"#ffffff","reviews":4.5,"text":"\/5 based on 6,347 reviews"}},"parallax_37fqkJ":{"type":"parallax","blocks":{"text_mytHQE":{"type":"text","settings":{"image":"shopify:\/\/shop_images\/horizontal-banner-cosmetic-product-with-jade-roller-gua-sha.jpg","txt1-hd1":"Deals Of The Day","parallax-h":"h2","txt1-hd2":"SEASON OFFERS","parallax-subh":"h3","par1_showbutton":true,"par1_button_label":"","par1_button_link":""}}},"block_order":["text_mytHQE"],"disabled":true,"settings":{"paral-full":true,"par_img_sz":"350","par_hd_sz":"35","par_subhd_sz":"20","par_button_sz":"25","par_letter_sp":"1","par_txt_align":"center","par_txt_top_pos":"50","par-en-over":true,"color_over":"#000000","par_opacity":1,"color_par1_hd_clr":"#000000","color_par1_subhd_clr":"#000000","color_par1_but_txt":"#ffffff"}},"collection_list_Thfc46":{"type":"collection-list","blocks":{"featured_collection_THNYyJ":{"type":"featured_collection","settings":{"collection":"packs"}},"featured_collection_tHTNVL":{"type":"featured_collection","settings":{"collection":"gels"}},"featured_collection_fweB8E":{"type":"featured_collection","settings":{"collection":"masks"}},"featured_collection_WhD6GY":{"type":"featured_collection","settings":{"collection":"makeup"}},"featured_collection_k8Hk37":{"type":"featured_collection","settings":{"collection":"sticks"}},"featured_collection_43AVmH":{"type":"featured_collection","settings":{"collection":"new-arrivals"}}},"block_order":["featured_collection_THNYyJ","featured_collection_tHTNVL","featured_collection_fweB8E","featured_collection_WhD6GY","featured_collection_k8Hk37","featured_collection_43AVmH"],"settings":{"title":"Our Best Collections","column_alignment_title":"center","heading_size":"h2","image_ratio":"square","columns_desktop":3,"color_scheme":"","show_view_all":false,"columns_mobile":"1","swipe_on_mobile":true,"padding_top":36,"padding_bottom":36}},"faq_geRmBT":{"type":"faq","blocks":{"faq_NHyeme":{"type":"faq","settings":{"checkbox_expanded":false,"title":"<strong>What are the benefits of using skincare products?<\/strong>","content":"<p>environmental damage, anti-aging effects, and improvement in overall skin health. They can also target specific skin concerns such as acne, hyperpigmentation, and fine lines.<\/p>"}},"faq_4Tz4GY":{"type":"faq","settings":{"checkbox_expanded":false,"title":"<strong> How do I choose the right skincare products for my skin type?<\/strong>","content":"<p>Choosing the right skincare products depends on your skin type and concerns. It's essential to understand your skin type (normal, dry, oily, combination, or sensitive) and choose products formulated to address your specific needs. Consulting with a dermatologist or skincare professional can also provide personalized recommendations.<\/p>"}},"faq_mCPJLd":{"type":"faq","settings":{"checkbox_expanded":false,"title":"<strong>What ingredients should I look for in skincare products?<\/strong>","content":"<p>Look for skincare products with ingredients known for their efficacy and safety. Common beneficial ingredients include hyaluronic acid for hydration, vitamin C for brightening and antioxidant protection, retinol for anti-aging, and niacinamide for soothing and improving skin texture. Avoid harsh ingredients such as parabens, sulfates, and artificial fragrances if you have sensitive skin.<\/p>"}}},"block_order":["faq_NHyeme","faq_4Tz4GY","faq_mCPJLd"],"settings":{"enable_rich_schema":true,"section_heading":"Are natural skincare products better than synthetic ones","section_subheading":"<p>he effectiveness of skincare products depends more on the formulation and specific ingredients rather than whether they are natural or synthetic. Some natural ingredients can be beneficial, but not all are suitable for every skin type.<\/p>","max_width":"64rem","desk_margin_top":20,"desk_margin_bottom":20,"desk_padding_top":20,"desk_padding_bottom":20,"mob_margin_top":20,"mob_margin_bottom":20,"mob_padding_top":20,"mob_padding_bottom":20,"background_color":"#ffffff","border_color":"#eeeeee","panel_color":"#fdfdfd","q_size_small":1,"q_size_large":1.4,"q_color":"","a_color":""}},"instagram_images_cdbPjr":{"type":"instagram-images","blocks":{"logo_image_ipCet9":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/brand-logo-6_1.webp","link":""}},"logo_image_6Wt7MK":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/brand-logo-4.webp","link":""}},"logo_image_gaLpVp":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/brand-logo-3.webp","link":""}},"logo_image_iMrEd7":{"type":"logo_image","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/brand-logo-1.webp","link":""}},"logo_image_WhaNHf":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/brand-logo-5.webp","link":""}},"logo_image_EncECw":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/history-logo-1.webp","link":""}},"logo_image_mgxrxy":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/brand-logo-5.webp","link":""}},"logo_image_PVTdKj":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/brand-logo-2.webp","link":""}}},"block_order":["logo_image_ipCet9","logo_image_6Wt7MK","logo_image_gaLpVp","logo_image_iMrEd7","logo_image_WhaNHf","logo_image_EncECw","logo_image_mgxrxy","logo_image_PVTdKj"],"settings":{"title":"","logo_width":"200px","padding_top":20,"padding_bottom":20}},"product_slider_NPJ3Uh":{"type":"product-slider","blocks":{"card_YyNpBF":{"type":"card","settings":{"product_item":"","title-one":"Makeup Kits","featured_image":"shopify:\/\/shop_images\/kits.png","link_1":"shopify:\/\/collections\/makeup"}},"card_wPdJKp":{"type":"card","settings":{"product_item":"","title-one":"Foundation","featured_image":"shopify:\/\/shop_images\/founation1.png","link_1":"shopify:\/\/collections\/makeup"}},"card_9Dgm4P":{"type":"card","settings":{"product_item":"","title-one":"Makeup Brushs","featured_image":"shopify:\/\/shop_images\/brush.png","link_1":"shopify:\/\/collections\/masks"}},"card_9QLLk7":{"type":"card","settings":{"product_item":"","title-one":"Lipsticks","featured_image":"shopify:\/\/shop_images\/lipst.png","link_1":"shopify:\/\/collections\/sticks"}},"card_PENdtT":{"type":"card","settings":{"product_item":"","title-one":"Settings Sprays","featured_image":"shopify:\/\/shop_images\/setting-spray.png","link_1":"shopify:\/\/collections\/new-arrivals"}},"card_qTFcwc":{"type":"card","settings":{"product_item":"","title-one":"Skin Care","featured_image":"shopify:\/\/shop_images\/facecare.png","link_1":"shopify:\/\/collections\/makeup"}},"card_bxWePc":{"type":"card","settings":{"product_item":"","title-one":"Concealers","featured_image":"shopify:\/\/shop_images\/concealers.png","link_1":"shopify:\/\/collections\/makeup"}},"card_fGHVik":{"type":"card","settings":{"product_item":"","title-one":"perfumes","featured_image":"shopify:\/\/shop_images\/perfume.png","link_1":"shopify:\/\/collections\/packs"}}},"block_order":["card_YyNpBF","card_wPdJKp","card_9Dgm4P","card_9QLLk7","card_PENdtT","card_qTFcwc","card_bxWePc","card_fGHVik"],"disabled":true,"settings":{"navigation_amount":5,"navigation_color":"","title":"Choses From Our Best Categories"}},"flickity_slider_RLbQKH":{"type":"flickity-slider","blocks":{"content_nmxTHD":{"type":"Content","settings":{"image":"shopify:\/\/shop_images\/9900262-removebg-preview.png","label":"I am Empty","description":"description"}},"content_jeF3EJ":{"type":"Content","settings":{"image":"shopify:\/\/shop_images\/9900262-removebg-preview.png","label":"I am Empty","description":"description"}},"content_h8tHrF":{"type":"Content","settings":{"image":"shopify:\/\/shop_images\/9900262-removebg-preview.png","label":"I am Empty","description":"description"}},"content_qRbAPY":{"type":"Content","settings":{"image":"shopify:\/\/shop_images\/9900262-removebg-preview.png","label":"I am Empty","description":"description"}},"content_U7qmBL":{"type":"Content","settings":{"image":"shopify:\/\/shop_images\/9900262-removebg-preview.png","label":"I am Empty","description":"description"}},"content_6MUamV":{"type":"Content","settings":{"image":"shopify:\/\/shop_images\/9900262-removebg-preview.png","label":"I am Empty","description":"description"}}},"block_order":["content_nmxTHD","content_jeF3EJ","content_h8tHrF","content_qRbAPY","content_U7qmBL","content_6MUamV"],"disabled":true,"settings":{}},"product_slider_carousel_nN7gP7":{"type":"product-slider-carousel","settings":{"collection":"new-arrivals"}},"featured_collection_ikK66Q":{"type":"featured-collection","settings":{"title":"Featured collection","column_alignment_title":"left","heading_size":"h1","description":"","show_description":false,"description_style":"body","collection":"new-arrivals","products_to_show":4,"columns_desktop":4,"full_width":false,"show_view_all":true,"view_all_style":"solid","enable_desktop_slider":false,"color_scheme":"","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"enable_quick_add":false,"columns_mobile":"2","swipe_on_mobile":false,"padding_top":36,"padding_bottom":36}},"tabbed_collections_UhmkKW":{"type":"tabbed-collections","settings":{"title":"Featured collection","heading_size":"h1","description":"","show_description":false,"description_style":"body","collection":"new-arrivals","collection1":"makeup","collection2":"masks","products_to_show":12,"columns_desktop":4,"full_width":false,"show_view_all":false,"view_all_style":"solid","enable_desktop_slider":false,"image_ratio":"adapt","show_secondary_image":false,"show_vendor":false,"show_rating":false,"enable_quick_add":false,"columns_mobile":"2","swipe_on_mobile":false,"padding_top":36,"padding_bottom":36}},"flickity_slider_fEAFkH":{"type":"flickity-slider","blocks":{"content_8tUBkA":{"type":"Content","settings":{"image":"shopify:\/\/shop_images\/assortment-spa-sand-copy-space.jpg","label":"I am Empty","description":"description"}},"content_TYjM6P":{"type":"Content","settings":{"image":"shopify:\/\/shop_images\/view-frame-with-cosmetics.jpg","label":"I am Empty","description":"description"}},"content_6PPzhm":{"type":"Content","settings":{"image":"shopify:\/\/shop_images\/view-frame-with-cosmetics.jpg","label":"I am Empty","description":"description"}},"content_jCx9rT":{"type":"Content","settings":{"image":"shopify:\/\/shop_images\/view-frame-with-cosmetics.jpg","label":"I am Empty","description":"description"}}},"block_order":["content_8tUBkA","content_TYjM6P","content_6PPzhm","content_jCx9rT"],"settings":{}},"marquee_section_xUqJDh":{"type":"marquee-section","blocks":{"scrolling_text_797i8P":{"type":"ScrollingText","settings":{"text":"Title","color":"#6b8f1b"}},"scrolling_text_mwU9gY":{"type":"ScrollingText","settings":{"text":"Title","color":"#ff0000"}}},"block_order":["scrolling_text_797i8P","scrolling_text_mwU9gY"],"settings":{}},"testimonials_section_XR78Jc":{"type":"testimonials-section","blocks":{"column_jgmGYb":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/pngwing.com.png","toggle_image":false,"title":"Full Name","text":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>","stars_count":"4.5","toggle_review_stars":true}},"column_zrpLd9":{"type":"column","settings":{"toggle_image":true,"title":"Full Name","text":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>","stars_count":"5","toggle_review_stars":true}},"column_yRDJWC":{"type":"column","settings":{"toggle_image":true,"title":"Full Name","text":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>","stars_count":"5","toggle_review_stars":true}}},"block_order":["column_jgmGYb","column_zrpLd9","column_yRDJWC"],"settings":{"title":"Testimonials","subtitle":"Get inspired by other customers","heading_alignment":"center","image_width":"full","image_ratio":"adapt","column_alignment":"center","background_style":"primary","swipe_on_mobile":false,"star_color":"#ffcc33","testimonial_background":"#ffc1c1","testimonial_section_background":"#ffffff","reviews":5,"text":"Give customers details about the banner image(s) or content on the template."}},"scroll_up_counter_Rxn97x":{"type":"scroll-up-counter","blocks":{"content_UirAD9":{"type":"Content","settings":{"number":100,"label":"K","description":"description"}},"content_FKjTeL":{"type":"Content","settings":{"number":155,"label":"K","description":"description"}},"content_FAnKgf":{"type":"Content","settings":{"number":1,"label":"K","description":"description"}}},"block_order":["content_UirAD9","content_FKjTeL","content_FAnKgf"],"settings":{"title":"Top Title","subtitle":"Subtitle","section_color_scheme":"","cell_align":"center"}},"collections_blocks_tabs_xmXtyc":{"type":"collections-blocks-tabs","blocks":{"collection_d3kyCY":{"type":"collection","settings":{"collection":"gels"}},"collection_R6rADL":{"type":"collection","settings":{"collection":"masks"}},"collection_Jchyck":{"type":"collection","settings":{"collection":"packs"}},"collection_KP4Qpd":{"type":"collection","settings":{"collection":"new-arrivals"}}},"block_order":["collection_d3kyCY","collection_R6rADL","collection_Jchyck","collection_KP4Qpd"],"settings":{"products_per_page":8,"columns_desktop":4,"color_scheme":"","image_ratio":"portrait","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"enable_quick_add":false,"enable_filtering":true,"filter_type":"horizontal","enable_sorting":true,"columns_mobile":"2","padding_top":36,"padding_bottom":36}},"custom_video_section_ge7LfD":{"type":"custom-video-section","settings":{"heading":"ffff","heading_size":"h1","page_width":"page-width","enable_video_looping":false,"video":"shopify:\/\/files\/videos\/337941961-5ad6099c-3388-442f-967d-0a38966e44db.mp4","video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","cover_image":"shopify:\/\/shop_images\/top-view-spa-element-collection.jpg","heading1":"ffffff","subheading":"yyyyyy","button_text_1":"","button_link_1":"","button_text_2":"","button_link_2":"","full_width":false,"color_scheme":"","padding_top":36,"padding_bottom":36}}},"order":["slideshow_dJm83b","multicolumn_hXTzjc","steps_WRf33t","image_with_text_reviews_KCwyz7","featured_collection","carousel_slider_UWitHz","richtext_with_reviews_djK7Jz","image_with_text_ewqVGc","testimonials_section_crrTGw","parallax_37fqkJ","collection_list_Thfc46","faq_geRmBT","instagram_images_cdbPjr","product_slider_NPJ3Uh","flickity_slider_RLbQKH","product_slider_carousel_nN7gP7","featured_collection_ikK66Q","tabbed_collections_UhmkKW","flickity_slider_fEAFkH","marquee_section_xUqJDh","testimonials_section_XR78Jc","scroll_up_counter_Rxn97x","collections_blocks_tabs_xmXtyc","custom_video_section_ge7LfD"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow_dJm83b": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_9izrnP": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Slider_3.png",
+            "heading": "Discover Your Glow",
+            "heading_size": "h1",
+            "subheading": "<p>Dive into Luxurious Beauty</p>",
+            "button_label": "Shop Now",
+            "link": "shopify://collections",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_wrqViY": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/minimalistic-science-banner-with-sample.jpg",
+            "heading": "We Always Strive For Healthy Skin",
+            "heading_size": "h1",
+            "subheading": "<p>Healthy And Glowing Skin</p>",
+            "button_label": "Shop Now",
+            "link": "shopify://collections/makeup",
+            "button_style_secondary": false,
+            "box_align": "middle-left",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_F8JHfY": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/assortment-spa-sand-copy-space.jpg",
+            "heading": "Organic Anti-Aging Cosmetic Cream",
+            "heading_size": "h1",
+            "subheading": "<p>Unlock Your Radiance Beauty & Skincare Essentials Await</p>",
+            "button_label": "About Us",
+            "link": "shopify://pages/about-us",
+            "button_style_secondary": false,
+            "box_align": "middle-right",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_9izrnP",
+        "slide_wrqViY",
+        "slide_F8JHfY"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "multicolumn_hXTzjc": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_NwaqCd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/04.01_03_CatBanner_Card1_Desktop.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "shopify://collections"
+          }
+        },
+        "column_hUPHJz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/04.01_03_CatBanner_Card3_Desktop.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "shopify://collections/gels"
+          }
+        },
+        "column_KqiM3f": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/04.01_03_CatBanner_Card2_Desktop.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "shopify://collections/makeup"
+          }
+        },
+        "column_w7QzLn": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/04.01_03_CatBanner_Card4_Desktop.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "shopify://collections/masks"
+          }
+        },
+        "column_8pTtD4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/04.01_03_CatBanner_Card5_Desktop.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "shopify://collections/packs"
+          }
+        },
+        "column_wCKA8T": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/04.01_03_CatBanner_Card6_Desktop.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "shopify://products/make-up-for-ever"
+          }
+        }
+      },
+      "block_order": [
+        "column_NwaqCd",
+        "column_hUPHJz",
+        "column_KqiM3f",
+        "column_w7QzLn",
+        "column_8pTtD4",
+        "column_wCKA8T"
+      ],
+      "settings": {
+        "title": "",
+        "swipe_on_desktop": true,
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "steps_WRf33t": {
+      "type": "steps",
+      "blocks": {
+        "column_EiJqU4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/herbal-treatment.png",
+            "title": "Natural Ingredients",
+            "text": "<p>Natural ingredients are derived from plants, minerals, or animals and are minimally processed. </p>",
+            "link_label": "READ MORE",
+            "link": ""
+          }
+        },
+        "column_iqwzYR": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/nuts.png",
+            "title": "Fragrance Free",
+            "text": "<p>\"Fragrance-free\" refers to products that do not contain added fragrances or perfumes. </p>",
+            "link_label": "READ MORE",
+            "link": ""
+          }
+        },
+        "column_R8RD4d": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/diabetes-test.png",
+            "title": "Allergy Tested",
+            "text": "<p>\"Allergy tested\" typically refers to products that testing to assess to cause allergic reactions in individuals. </p>",
+            "link_label": "READ MORE",
+            "link": ""
+          }
+        },
+        "column_7j8NNV": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/paraben-free.png",
+            "title": "<a href=\"https://wdtlilac.wpengine.com/#\" target=\"_blank\">Paraben Free</a>",
+            "text": "<p>oncerns have been raised about the potential health risks associated with parabens, hormone functions.</p>",
+            "link_label": "READ MORE",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_EiJqU4",
+        "column_iqwzYR",
+        "column_R8RD4d",
+        "column_7j8NNV"
+      ],
+      "settings": {
+        "title": "The Transformation",
+        "subtitle": "Discover our curated collection of luxurious skincare products designed to elevate your skincare routine to new heights.",
+        "column_alignment_title": "center",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "image_with_text_reviews_KCwyz7": {
+      "type": "image-with-text-reviews",
+      "blocks": {
+        "heading_Y93L6j": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Beauty Products",
+            "heading_size": "h1"
+          }
+        },
+        "text_fAxEWK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Can be formulated with various ingredients, including botanical extracts, vitamins, minerals, and synthetic compounds, to achieve specific effects such as moisturizing, anti-aging, or color enhancement. </p>",
+            "text_style": "body"
+          }
+        },
+        "button_RNP6dA": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": "shopify://collections/frontpage",
+            "button_style_secondary": false,
+            "reviews": 4.4,
+            "text": "/5 based on 6,347 reviews"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Y93L6j",
+        "text_fAxEWK",
+        "button_RNP6dA"
+      ],
+      "settings": {
+        "background_image": "shopify://shop_images/view-frame-with-cosmetics.jpg",
+        "image": "shopify://shop_images/download_2.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "right",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "custom_css": [
+        ".quick-add__submit {padding: 0.8rem; max-width: 50px; box-sizing: border-box; margin: 0 auto;}",
+        ".card--card.card--media > .card__content {margin-top: calc(0rem - var(--image-padding)); position: absolute; bottom: 0; text-align: center;}"
+      ],
+      "settings": {
+        "title": "Our Best Sellers",
+        "column_alignment_title": "center",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 5,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "round",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 84,
+        "padding_bottom": 40
+      }
+    },
+    "carousel_slider_UWitHz": {
+      "type": "carousel-slider",
+      "blocks": {
+        "carousel_nrhD6h": {
+          "type": "carousel",
+          "settings": {
+            "title": "Full Name",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          }
+        },
+        "carousel_VNjBNy": {
+          "type": "carousel",
+          "settings": {
+            "title": "Full Name",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          }
+        },
+        "carousel_hqKCyR": {
+          "type": "carousel",
+          "settings": {
+            "title": "Full Name",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          }
+        },
+        "carousel_JCaKxj": {
+          "type": "carousel",
+          "settings": {
+            "title": "Full Name",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          }
+        },
+        "carousel_MgMGLr": {
+          "type": "carousel",
+          "settings": {
+            "title": "Full Name",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          }
+        },
+        "carousel_H9KKMg": {
+          "type": "carousel",
+          "settings": {
+            "title": "Full Name",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          }
+        },
+        "carousel_zDcdx7": {
+          "type": "carousel",
+          "settings": {
+            "title": "Full Name",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "carousel_nrhD6h",
+        "carousel_VNjBNy",
+        "carousel_hqKCyR",
+        "carousel_JCaKxj",
+        "carousel_MgMGLr",
+        "carousel_H9KKMg",
+        "carousel_zDcdx7"
+      ],
+      "settings": {
+        "bg": "",
+        "product": "make-up-for-ever",
+        "title": "",
+        "image_ratio": "square",
+        "cell_align": "right",
+        "title_mb": 48,
+        "cell_width": "33.33%",
+        "wrap_around": "true",
+        "mr": 16
+      }
+    },
+    "richtext_with_reviews_djK7Jz": {
+      "type": "richtext-with-reviews",
+      "blocks": {
+        "star_MWJMem": {
+          "type": "star",
+          "settings": {
+            "reviews": 4.7,
+            "text": "/5 based on 6,347 reviews"
+          }
+        },
+        "heading_nG7r97": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about SuperNova",
+            "heading_size": "h1"
+          }
+        },
+        "text_F3dxTz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Encompass a wide range of items designed to enhance or maintain personal appearance and hygiene. From skincare to makeup, haircare to fragrance, beauty products cater to diverse preferences, needs, and lifestyles.</p>"
+          }
+        },
+        "button_rDi3ew": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": "shopify://pages/about-us",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "star_MWJMem",
+        "heading_nG7r97",
+        "text_F3dxTz",
+        "button_rDi3ew"
+      ],
+      "custom_css": [],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_ewqVGc": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_mnNtUK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Thank you for choosing and trusting our brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_jzdK8G": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lokss is proud and committed to offering art supplies of the highest quality, fair pricing and value to our customers.<br/><br/>Our products are designed and manufactured by a professional team. As a top priority we work hard to ensure that each customer has a satisfied shopping experience.<br/>We continually will develop high quality products and will improve our service to meet and exceed your expectations. </p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mnNtUK",
+        "text_jzdK8G"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/pngwing.com_2.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-2",
+        "color_scheme": "scheme-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 12,
+        "padding_bottom": 0
+      }
+    },
+    "testimonials_section_crrTGw": {
+      "type": "testimonials-section",
+      "blocks": {
+        "column_jYby69": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Testimonials-circle-photos_Ivan.png",
+            "toggle_image": true,
+            "title": "Jack",
+            "text": "<p>'ve been using [product name] for a few weeks now, and I'm amazed at the results! My skin feels incredibly smooth and hydrated.</p>",
+            "stars_count": "5",
+            "toggle_review_stars": true
+          }
+        },
+        "column_EL9KJF": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/rorykelleher-1-300x294-1.png",
+            "toggle_image": true,
+            "title": "Mark",
+            "text": "<p><em>As a guy who's always been skeptical about skincare, I have to say, [brand name]'s [product name] has completely changed my mind.</em></p>",
+            "stars_count": "5",
+            "toggle_review_stars": true
+          }
+        },
+        "column_MrGUFk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Testimonials-circle-photos_Vladimir.png",
+            "toggle_image": true,
+            "title": "Tony",
+            "text": "<p><em>I'm always on the lookout for anti-aging products that actually deliver results, and does not disappoint.</em></p>",
+            "stars_count": "5",
+            "toggle_review_stars": true
+          }
+        }
+      },
+      "block_order": [
+        "column_jYby69",
+        "column_EL9KJF",
+        "column_MrGUFk"
+      ],
+      "settings": {
+        "title": "Testimonials",
+        "subtitle": "Get inspired by other customers",
+        "heading_alignment": "center",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "column_alignment": "center",
+        "background_style": "primary",
+        "swipe_on_mobile": true,
+        "star_color": "#ffcc33",
+        "testimonial_background": "#ffffff",
+        "testimonial_section_background": "#ffffff",
+        "reviews": 4.5,
+        "text": "/5 based on 6,347 reviews"
+      }
+    },
+    "parallax_37fqkJ": {
+      "type": "parallax",
+      "blocks": {
+        "text_mytHQE": {
+          "type": "text",
+          "settings": {
+            "image": "shopify://shop_images/horizontal-banner-cosmetic-product-with-jade-roller-gua-sha.jpg",
+            "txt1-hd1": "Deals Of The Day",
+            "parallax-h": "h2",
+            "txt1-hd2": "SEASON OFFERS",
+            "parallax-subh": "h3",
+            "par1_showbutton": true,
+            "par1_button_label": "",
+            "par1_button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_mytHQE"
+      ],
+      "disabled": true,
+      "settings": {
+        "paral-full": true,
+        "par_img_sz": "350",
+        "par_hd_sz": "35",
+        "par_subhd_sz": "20",
+        "par_button_sz": "25",
+        "par_letter_sp": "1",
+        "par_txt_align": "center",
+        "par_txt_top_pos": "50",
+        "par-en-over": true,
+        "color_over": "#000000",
+        "par_opacity": 1,
+        "color_par1_hd_clr": "#000000",
+        "color_par1_subhd_clr": "#000000",
+        "color_par1_but_txt": "#ffffff"
+      }
+    },
+    "collection_list_Thfc46": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_THNYyJ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "packs"
+          }
+        },
+        "featured_collection_tHTNVL": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "gels"
+          }
+        },
+        "featured_collection_fweB8E": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "masks"
+          }
+        },
+        "featured_collection_WhD6GY": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "makeup"
+          }
+        },
+        "featured_collection_k8Hk37": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sticks"
+          }
+        },
+        "featured_collection_43AVmH": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "new-arrivals"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_THNYyJ",
+        "featured_collection_tHTNVL",
+        "featured_collection_fweB8E",
+        "featured_collection_WhD6GY",
+        "featured_collection_k8Hk37",
+        "featured_collection_43AVmH"
+      ],
+      "settings": {
+        "title": "Our Best Collections",
+        "column_alignment_title": "center",
+        "heading_size": "h2",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "faq_geRmBT": {
+      "type": "faq",
+      "blocks": {
+        "faq_NHyeme": {
+          "type": "faq",
+          "settings": {
+            "checkbox_expanded": false,
+            "title": "<strong>What are the benefits of using skincare products?</strong>",
+            "content": "<p>environmental damage, anti-aging effects, and improvement in overall skin health. They can also target specific skin concerns such as acne, hyperpigmentation, and fine lines.</p>"
+          }
+        },
+        "faq_4Tz4GY": {
+          "type": "faq",
+          "settings": {
+            "checkbox_expanded": false,
+            "title": "<strong> How do I choose the right skincare products for my skin type?</strong>",
+            "content": "<p>Choosing the right skincare products depends on your skin type and concerns. It's essential to understand your skin type (normal, dry, oily, combination, or sensitive) and choose products formulated to address your specific needs. Consulting with a dermatologist or skincare professional can also provide personalized recommendations.</p>"
+          }
+        },
+        "faq_mCPJLd": {
+          "type": "faq",
+          "settings": {
+            "checkbox_expanded": false,
+            "title": "<strong>What ingredients should I look for in skincare products?</strong>",
+            "content": "<p>Look for skincare products with ingredients known for their efficacy and safety. Common beneficial ingredients include hyaluronic acid for hydration, vitamin C for brightening and antioxidant protection, retinol for anti-aging, and niacinamide for soothing and improving skin texture. Avoid harsh ingredients such as parabens, sulfates, and artificial fragrances if you have sensitive skin.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_NHyeme",
+        "faq_4Tz4GY",
+        "faq_mCPJLd"
+      ],
+      "settings": {
+        "enable_rich_schema": true,
+        "section_heading": "Are natural skincare products better than synthetic ones",
+        "section_subheading": "<p>he effectiveness of skincare products depends more on the formulation and specific ingredients rather than whether they are natural or synthetic. Some natural ingredients can be beneficial, but not all are suitable for every skin type.</p>",
+        "max_width": "64rem",
+        "desk_margin_top": 20,
+        "desk_margin_bottom": 20,
+        "desk_padding_top": 20,
+        "desk_padding_bottom": 20,
+        "mob_margin_top": 20,
+        "mob_margin_bottom": 20,
+        "mob_padding_top": 20,
+        "mob_padding_bottom": 20,
+        "background_color": "#ffffff",
+        "border_color": "#eeeeee",
+        "panel_color": "#fdfdfd",
+        "q_size_small": 1,
+        "q_size_large": 1.4,
+        "q_color": "",
+        "a_color": ""
+      }
+    },
+    "instagram_images_cdbPjr": {
+      "type": "instagram-images",
+      "blocks": {
+        "logo_image_ipCet9": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/brand-logo-6_1.webp",
+            "link": ""
+          }
+        },
+        "logo_image_6Wt7MK": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/brand-logo-4.webp",
+            "link": ""
+          }
+        },
+        "logo_image_gaLpVp": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/brand-logo-3.webp",
+            "link": ""
+          }
+        },
+        "logo_image_iMrEd7": {
+          "type": "logo_image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/brand-logo-1.webp",
+            "link": ""
+          }
+        },
+        "logo_image_WhaNHf": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/brand-logo-5.webp",
+            "link": ""
+          }
+        },
+        "logo_image_EncECw": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/history-logo-1.webp",
+            "link": ""
+          }
+        },
+        "logo_image_mgxrxy": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/brand-logo-5.webp",
+            "link": ""
+          }
+        },
+        "logo_image_PVTdKj": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/brand-logo-2.webp",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_image_ipCet9",
+        "logo_image_6Wt7MK",
+        "logo_image_gaLpVp",
+        "logo_image_iMrEd7",
+        "logo_image_WhaNHf",
+        "logo_image_EncECw",
+        "logo_image_mgxrxy",
+        "logo_image_PVTdKj"
+      ],
+      "settings": {
+        "title": "",
+        "logo_width": "200px",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "product_slider_NPJ3Uh": {
+      "type": "product-slider",
+      "blocks": {
+        "card_YyNpBF": {
+          "type": "card",
+          "settings": {
+            "product_item": "",
+            "title-one": "Makeup Kits",
+            "featured_image": "shopify://shop_images/kits.png",
+            "link_1": "shopify://collections/makeup"
+          }
+        },
+        "card_wPdJKp": {
+          "type": "card",
+          "settings": {
+            "product_item": "",
+            "title-one": "Foundation",
+            "featured_image": "shopify://shop_images/founation1.png",
+            "link_1": "shopify://collections/makeup"
+          }
+        },
+        "card_9Dgm4P": {
+          "type": "card",
+          "settings": {
+            "product_item": "",
+            "title-one": "Makeup Brushs",
+            "featured_image": "shopify://shop_images/brush.png",
+            "link_1": "shopify://collections/masks"
+          }
+        },
+        "card_9QLLk7": {
+          "type": "card",
+          "settings": {
+            "product_item": "",
+            "title-one": "Lipsticks",
+            "featured_image": "shopify://shop_images/lipst.png",
+            "link_1": "shopify://collections/sticks"
+          }
+        },
+        "card_PENdtT": {
+          "type": "card",
+          "settings": {
+            "product_item": "",
+            "title-one": "Settings Sprays",
+            "featured_image": "shopify://shop_images/setting-spray.png",
+            "link_1": "shopify://collections/new-arrivals"
+          }
+        },
+        "card_qTFcwc": {
+          "type": "card",
+          "settings": {
+            "product_item": "",
+            "title-one": "Skin Care",
+            "featured_image": "shopify://shop_images/facecare.png",
+            "link_1": "shopify://collections/makeup"
+          }
+        },
+        "card_bxWePc": {
+          "type": "card",
+          "settings": {
+            "product_item": "",
+            "title-one": "Concealers",
+            "featured_image": "shopify://shop_images/concealers.png",
+            "link_1": "shopify://collections/makeup"
+          }
+        },
+        "card_fGHVik": {
+          "type": "card",
+          "settings": {
+            "product_item": "",
+            "title-one": "perfumes",
+            "featured_image": "shopify://shop_images/perfume.png",
+            "link_1": "shopify://collections/packs"
+          }
+        }
+      },
+      "block_order": [
+        "card_YyNpBF",
+        "card_wPdJKp",
+        "card_9Dgm4P",
+        "card_9QLLk7",
+        "card_PENdtT",
+        "card_qTFcwc",
+        "card_bxWePc",
+        "card_fGHVik"
+      ],
+      "disabled": true,
+      "settings": {
+        "navigation_amount": 5,
+        "navigation_color": "",
+        "title": "Choses From Our Best Categories"
+      }
+    },
+    "flickity_slider_RLbQKH": {
+      "type": "flickity-slider",
+      "blocks": {
+        "content_nmxTHD": {
+          "type": "Content",
+          "settings": {
+            "image": "shopify://shop_images/9900262-removebg-preview.png",
+            "label": "I am Empty",
+            "description": "description"
+          }
+        },
+        "content_jeF3EJ": {
+          "type": "Content",
+          "settings": {
+            "image": "shopify://shop_images/9900262-removebg-preview.png",
+            "label": "I am Empty",
+            "description": "description"
+          }
+        },
+        "content_h8tHrF": {
+          "type": "Content",
+          "settings": {
+            "image": "shopify://shop_images/9900262-removebg-preview.png",
+            "label": "I am Empty",
+            "description": "description"
+          }
+        },
+        "content_qRbAPY": {
+          "type": "Content",
+          "settings": {
+            "image": "shopify://shop_images/9900262-removebg-preview.png",
+            "label": "I am Empty",
+            "description": "description"
+          }
+        },
+        "content_U7qmBL": {
+          "type": "Content",
+          "settings": {
+            "image": "shopify://shop_images/9900262-removebg-preview.png",
+            "label": "I am Empty",
+            "description": "description"
+          }
+        },
+        "content_6MUamV": {
+          "type": "Content",
+          "settings": {
+            "image": "shopify://shop_images/9900262-removebg-preview.png",
+            "label": "I am Empty",
+            "description": "description"
+          }
+        }
+      },
+      "block_order": [
+        "content_nmxTHD",
+        "content_jeF3EJ",
+        "content_h8tHrF",
+        "content_qRbAPY",
+        "content_U7qmBL",
+        "content_6MUamV"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "product_slider_carousel_nN7gP7": {
+      "type": "product-slider-carousel",
+      "settings": {
+        "collection": "new-arrivals"
+      }
+    },
+    "featured_collection_ikK66Q": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured collection",
+        "column_alignment_title": "left",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "new-arrivals",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "tabbed_collections_UhmkKW": {
+      "type": "tabbed-collections",
+      "settings": {
+        "title": "Featured collection",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "new-arrivals",
+        "collection1": "makeup",
+        "collection2": "masks",
+        "products_to_show": 12,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "flickity_slider_fEAFkH": {
+      "type": "flickity-slider",
+      "blocks": {
+        "content_8tUBkA": {
+          "type": "Content",
+          "settings": {
+            "image": "shopify://shop_images/assortment-spa-sand-copy-space.jpg",
+            "label": "I am Empty",
+            "description": "description"
+          }
+        },
+        "content_TYjM6P": {
+          "type": "Content",
+          "settings": {
+            "image": "shopify://shop_images/view-frame-with-cosmetics.jpg",
+            "label": "I am Empty",
+            "description": "description"
+          }
+        },
+        "content_6PPzhm": {
+          "type": "Content",
+          "settings": {
+            "image": "shopify://shop_images/view-frame-with-cosmetics.jpg",
+            "label": "I am Empty",
+            "description": "description"
+          }
+        },
+        "content_jCx9rT": {
+          "type": "Content",
+          "settings": {
+            "image": "shopify://shop_images/view-frame-with-cosmetics.jpg",
+            "label": "I am Empty",
+            "description": "description"
+          }
+        }
+      },
+      "block_order": [
+        "content_8tUBkA",
+        "content_TYjM6P",
+        "content_6PPzhm",
+        "content_jCx9rT"
+      ],
+      "settings": {}
+    },
+    "marquee_section_xUqJDh": {
+      "type": "marquee-section",
+      "blocks": {
+        "scrolling_text_797i8P": {
+          "type": "ScrollingText",
+          "settings": {
+            "text": "Title",
+            "color": "#6b8f1b"
+          }
+        }
+      },
+      "block_order": [
+        "scrolling_text_797i8P"
+      ],
+      "settings": {}
+    },
+    "testimonials_section_XR78Jc": {
+      "type": "testimonials-section",
+      "blocks": {
+        "column_jgmGYb": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/pngwing.com.png",
+            "toggle_image": false,
+            "title": "Full Name",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "stars_count": "4.5",
+            "toggle_review_stars": true
+          }
+        },
+        "column_zrpLd9": {
+          "type": "column",
+          "settings": {
+            "toggle_image": true,
+            "title": "Full Name",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "stars_count": "5",
+            "toggle_review_stars": true
+          }
+        },
+        "column_yRDJWC": {
+          "type": "column",
+          "settings": {
+            "toggle_image": true,
+            "title": "Full Name",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "stars_count": "5",
+            "toggle_review_stars": true
+          }
+        }
+      },
+      "block_order": [
+        "column_jgmGYb",
+        "column_zrpLd9",
+        "column_yRDJWC"
+      ],
+      "settings": {
+        "title": "Testimonials",
+        "subtitle": "Get inspired by other customers",
+        "heading_alignment": "center",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "column_alignment": "center",
+        "background_style": "primary",
+        "swipe_on_mobile": false,
+        "star_color": "#ffcc33",
+        "testimonial_background": "#ffc1c1",
+        "testimonial_section_background": "#ffffff",
+        "reviews": 5,
+        "text": "Give customers details about the banner image(s) or content on the template."
+      }
+    },
+    "scroll_up_counter_Rxn97x": {
+      "type": "scroll-up-counter",
+      "blocks": {
+        "content_UirAD9": {
+          "type": "Content",
+          "settings": {
+            "number": 100,
+            "label": "K",
+            "description": "description"
+          }
+        },
+        "content_FKjTeL": {
+          "type": "Content",
+          "settings": {
+            "number": 155,
+            "label": "K",
+            "description": "description"
+          }
+        },
+        "content_FAnKgf": {
+          "type": "Content",
+          "settings": {
+            "number": 1,
+            "label": "K",
+            "description": "description"
+          }
+        }
+      },
+      "block_order": [
+        "content_UirAD9",
+        "content_FKjTeL",
+        "content_FAnKgf"
+      ],
+      "settings": {
+        "title": "Top Title",
+        "subtitle": "Subtitle",
+        "section_color_scheme": "",
+        "cell_align": "center"
+      }
+    },
+    "collections_blocks_tabs_xmXtyc": {
+      "type": "collections-blocks-tabs",
+      "blocks": {
+        "collection_d3kyCY": {
+          "type": "collection",
+          "settings": {
+            "collection": "gels"
+          }
+        },
+        "collection_R6rADL": {
+          "type": "collection",
+          "settings": {
+            "collection": "masks"
+          }
+        },
+        "collection_Jchyck": {
+          "type": "collection",
+          "settings": {
+            "collection": "packs"
+          }
+        },
+        "collection_KP4Qpd": {
+          "type": "collection",
+          "settings": {
+            "collection": "new-arrivals"
+          }
+        }
+      },
+      "block_order": [
+        "collection_d3kyCY",
+        "collection_R6rADL",
+        "collection_Jchyck",
+        "collection_KP4Qpd"
+      ],
+      "settings": {
+        "products_per_page": 8,
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_video_section_ge7LfD": {
+      "type": "custom-video-section",
+      "settings": {
+        "heading": "ffff",
+        "heading_size": "h1",
+        "page_width": "page-width",
+        "enable_video_looping": false,
+        "video": "shopify://files/videos/337941961-5ad6099c-3388-442f-967d-0a38966e44db.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "cover_image": "shopify://shop_images/top-view-spa-element-collection.jpg",
+        "heading1": "ffffff",
+        "subheading": "yyyyyy",
+        "button_text_1": "",
+        "button_link_1": "",
+        "button_text_2": "",
+        "button_link_2": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "slideshow_dJm83b",
+    "multicolumn_hXTzjc",
+    "steps_WRf33t",
+    "image_with_text_reviews_KCwyz7",
+    "featured_collection",
+    "carousel_slider_UWitHz",
+    "richtext_with_reviews_djK7Jz",
+    "image_with_text_ewqVGc",
+    "testimonials_section_crrTGw",
+    "parallax_37fqkJ",
+    "collection_list_Thfc46",
+    "faq_geRmBT",
+    "instagram_images_cdbPjr",
+    "product_slider_NPJ3Uh",
+    "flickity_slider_RLbQKH",
+    "product_slider_carousel_nN7gP7",
+    "featured_collection_ikK66Q",
+    "tabbed_collections_UhmkKW",
+    "flickity_slider_fEAFkH",
+    "marquee_section_xUqJDh",
+    "testimonials_section_XR78Jc",
+    "scroll_up_counter_Rxn97x",
+    "collections_blocks_tabs_xmXtyc",
+    "custom_video_section_ge7LfD"
+  ]
+}
