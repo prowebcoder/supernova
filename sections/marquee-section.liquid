@@ -78,6 +78,21 @@
     }
   }
 
+    @keyframes imageGrow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.{{ block.settings.image_increase_percentage }});
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pc-image {
+  animation: imageGrow 5s linear infinite;
+}
 
   /* Block-specific styles */
   {%- for block in section.blocks -%}
