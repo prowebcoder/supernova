@@ -1121,10 +1121,9 @@
         "direction": "right",
         "marquee_height": 56,
         "font_size": 36,
-        "padding_top": 45,
-        "padding_bottom": 10,
-        "image_width": 60,
-        "image_height": 75,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "image_width": 50,
         "speed": 10
       }
     },
