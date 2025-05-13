@@ -73,16 +73,7 @@
             {% endif %}
           {% endfor %}
         </div>
-       
-
-        <!-- Third Column: All Text Blocks again -->
-        <div class="marquee-column">
-          {% for block in section.blocks %}
-            {% if block.settings.text != blank %}
-              <span class="marquee-gap" style="color:{{ block.settings.color }}">{{ block.settings.text }}</span>
-            {% endif %}
-          {% endfor %}
-        </div>
+      
       {% endfor %}
     </div>
   </div>
