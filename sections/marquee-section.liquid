@@ -17,13 +17,13 @@
   {{id}} .track {
     display: flex;
     gap: 20px;
-    animation: marquee 2s linear infinite;
+    animation: marquee 38s linear infinite;
   }
 
   /* Marquee Animation */
   @keyframes marquee {
     0% {
-      transform: translateX(-100%);
+      transform: translateX(100%);
     }
     100% {
       transform: translateX(-100%);
@@ -41,6 +41,7 @@
     gap: 10px;
   }
 {% endstyle %}
+
 
 <div class="marquee">
   <div class="track">
