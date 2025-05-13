@@ -1,5 +1,5 @@
 {%- liquid
-  assign sid = '#shopify-section-' | append: section.id
+  assign sec_id = '#shopify-section-' | append: section.id
   assign padding_horizontal = section.settings.padding_horizontal
   assign image_width = section.settings.image_width
   assign image_height = section.settings.image_height
@@ -8,7 +8,7 @@
 
 <style>
   /* Desktop styles */
-  {{ sid }} .pc-marquee.section-{{ section.id }} {
+  {{ sec_id  }} .pc-marquee.section-{{ section.id }} {
     display: flex;
     align-items: center;
     height: {{ section.settings.marquee_height }}px;
@@ -20,12 +20,12 @@
     padding: 0 {{ padding_horizontal }}px;
   }
 
-  {{ sid }} .pc-marquee.section-{{ section.id }} a {
+  {{ sec_id  }} .pc-marquee.section-{{ section.id }} a {
     color: {{ section.settings.colorText }};
     text-decoration: none;
   }
 
-  {{ sid }} .pc-marquee.section-{{ section.id }} .pc-track {
+  {{ sec_id  }} .pc-marquee.section-{{ section.id }} .pc-track {
     display: flex;
     align-items: center;
     white-space: nowrap;
@@ -33,12 +33,12 @@
     animation: marquee-{{ direction }} {{ section.settings.speed }}s linear infinite;
   }
 
-  {{ sid }} .pc-marquee.section-{{ section.id }} .pc-content {
+  {{ sec_id  }} .pc-marquee.section-{{ section.id }} .pc-content {
     margin-left: 40px;
     font-size: {{ section.settings.font_size }}px;
   }
 
-  {{ sid }} .pc-marquee.section-{{ section.id }} .pc-image {
+  {{ sec_id  }} .pc-marquee.section-{{ section.id }} .pc-image {
     margin-left: 40px;
     width: {{ image_width }}px;
     height: {{ image_height }}px;
@@ -46,7 +46,7 @@
     flex-shrink: 0;
   }
 
-  {{ sid }} .pc-marquee.section-{{ section.id }} .pc-icon {
+  {{ sec_id  }} .pc-marquee.section-{{ section.id }} .pc-icon {
     margin-left: 40px;
     display: flex;
     align-items: center;
@@ -55,7 +55,7 @@
     height: {{ image_height }}px;
   }
 
-  {{ sid }} .pc-marquee.section-{{ section.id }} .pc-icon svg {
+  {{ sec_id  }} .pc-marquee.section-{{ section.id }} .pc-icon svg {
     width: {{ section.settings.icon_size }}px;
     height: {{ section.settings.icon_size }}px;
   }
@@ -82,7 +82,7 @@
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when 'text' -%}
-        {{ sid }} .pc-marquee.section-{{ section.id }} .pc-content-{{ block.id }} {
+        {{ sec_id  }} .pc-marquee.section-{{ section.id }} .pc-content-{{ block.id }} {
           {%- if block.settings.text_color != blank -%}
             color: {{ block.settings.text_color }};
           {%- endif -%}
