@@ -149,24 +149,632 @@
 
 {% schema %}
 {
-  "name": "Custom Image Size",
+  "name": "Pwc Marquee",
   "settings": [
     {
       "type": "header",
-      "content": "Image Settings"
+      "content": "Desktop Settings"
     },
     {
-      "type": "image_picker",
-      "id": "custom_image",
-      "label": "Select Image"
+      "type": "color",
+      "id": "colorBackground",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "colorText",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Marquee direction",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left to right"
+        },
+        {
+          "value": "right",
+          "label": "Right to left"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "marquee_height",
+      "min": 24,
+      "max": 200,
+      "step": 2,
+      "default": 46,
+      "label": "Marquee height (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 8,
+      "max": 100,
+      "step": 2,
+      "default": 24,
+      "label": "Font size (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 8,
+      "max": 100,
+      "step": 2,
+      "default": 24,
+      "label": "Icon size (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 20,
+      "label": "Horizontal padding (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "min": 10,
+      "max": 200,
+      "step": 5,
+      "default": 40,
+      "label": "Image width (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "min": 10,
+      "max": 200,
+      "step": 5,
+      "default": 40,
+      "label": "Image height (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "default": 12,
+      "label": "Animation speed (seconds)"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "color",
+      "id": "colorBackground_mobile",
+      "label": "Background color (mobile)",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "colorText_mobile",
+      "label": "Text color (mobile)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "marquee_height_mobile",
+      "min": 24,
+      "max": 200,
+      "step": 2,
+      "default": 36,
+      "label": "Marquee height (mobile) (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "min": 8,
+      "max": 60,
+      "step": 2,
+      "default": 16,
+      "label": "Font size (mobile) (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "min": 8,
+      "max": 60,
+      "step": 2,
+      "default": 16,
+      "label": "Icon size (mobile) (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "default": 10,
+      "label": "Horizontal padding (mobile) (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "image_width_mobile",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "default": 30,
+      "label": "Image width (mobile) (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "image_height_mobile",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "default": 30,
+      "label": "Image height (mobile) (px)",
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text",
+      "limit": 20,
+      "settings": [
+        {
+          "type": "text",
+          "id": "new_text",
+          "default": "Welcome to store",
+          "label": "Text"
+        },
+        {
+          "type": "header",
+          "content": "Desktop Text Style"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "select",
+          "id": "text_transform",
+          "label": "Text transform",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "uppercase",
+              "label": "Uppercase"
+            },
+            {
+              "value": "lowercase",
+              "label": "Lowercase"
+            },
+            {
+              "value": "capitalize",
+              "label": "Capitalize"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "select",
+          "id": "font_weight",
+          "label": "Font weight",
+          "options": [
+            {
+              "value": "normal",
+              "label": "Normal"
+            },
+            {
+              "value": "bold",
+              "label": "Bold"
+            },
+            {
+              "value": "bolder",
+              "label": "Bolder"
+            },
+            {
+              "value": "lighter",
+              "label": "Lighter"
+            },
+            {
+              "value": "100",
+              "label": "100"
+            },
+            {
+              "value": "200",
+              "label": "200"
+            },
+            {
+              "value": "300",
+              "label": "300"
+            },
+            {
+              "value": "400",
+              "label": "400"
+            },
+            {
+              "value": "500",
+              "label": "500"
+            },
+            {
+              "value": "600",
+              "label": "600"
+            },
+            {
+              "value": "700",
+              "label": "700"
+            },
+            {
+              "value": "800",
+              "label": "800"
+            },
+            {
+              "value": "900",
+              "label": "900"
+            }
+          ],
+          "default": "normal"
+        },
+        {
+          "type": "select",
+          "id": "text_decoration",
+          "label": "Text decoration",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "underline",
+              "label": "Underline"
+            },
+            {
+              "value": "overline",
+              "label": "Overline"
+            },
+            {
+              "value": "line-through",
+              "label": "Line through"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "select",
+          "id": "font_style",
+          "label": "Font style",
+          "options": [
+            {
+              "value": "normal",
+              "label": "Normal"
+            },
+            {
+              "value": "italic",
+              "label": "Italic"
+            },
+            {
+              "value": "oblique",
+              "label": "Oblique"
+            }
+          ],
+          "default": "normal"
+        },
+        {
+          "type": "range",
+          "id": "letter_spacing",
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "unit": "px",
+          "label": "Letter spacing",
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "Mobile Text Style"
+        },
+        {
+          "type": "color",
+          "id": "text_color_mobile",
+          "label": "Text color (mobile)",
+          "default": "#ffffff"
+        },
+        {
+          "type": "select",
+          "id": "text_transform_mobile",
+          "label": "Text transform (mobile)",
+          "options": [
+            {
+              "value": "none",
+              "label": "None (inherit from desktop)"
+            },
+            {
+              "value": "uppercase",
+              "label": "Uppercase"
+            },
+            {
+              "value": "lowercase",
+              "label": "Lowercase"
+            },
+            {
+              "value": "capitalize",
+              "label": "Capitalize"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "select",
+          "id": "font_weight_mobile",
+          "label": "Font weight (mobile)",
+          "options": [
+            {
+              "value": "default",
+              "label": "Default (inherit from desktop)"
+            },
+            {
+              "value": "normal",
+              "label": "Normal"
+            },
+            {
+              "value": "bold",
+              "label": "Bold"
+            },
+            {
+              "value": "bolder",
+              "label": "Bolder"
+            },
+            {
+              "value": "lighter",
+              "label": "Lighter"
+            },
+            {
+              "value": "100",
+              "label": "100"
+            },
+            {
+              "value": "200",
+              "label": "200"
+            },
+            {
+              "value": "300",
+              "label": "300"
+            },
+            {
+              "value": "400",
+              "label": "400"
+            },
+            {
+              "value": "500",
+              "label": "500"
+            },
+            {
+              "value": "600",
+              "label": "600"
+            },
+            {
+              "value": "700",
+              "label": "700"
+            },
+            {
+              "value": "800",
+              "label": "800"
+            },
+            {
+              "value": "900",
+              "label": "900"
+            }
+          ],
+          "default": "default"
+        },
+        {
+          "type": "select",
+          "id": "text_decoration_mobile",
+          "label": "Text decoration (mobile)",
+          "options": [
+            {
+              "value": "none",
+              "label": "None (inherit from desktop)"
+            },
+            {
+              "value": "underline",
+              "label": "Underline"
+            },
+            {
+              "value": "overline",
+              "label": "Overline"
+            },
+            {
+              "value": "line-through",
+              "label": "Line through"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "select",
+          "id": "font_style_mobile",
+          "label": "Font style (mobile)",
+          "options": [
+            {
+              "value": "default",
+              "label": "Default (inherit from desktop)"
+            },
+            {
+              "value": "normal",
+              "label": "Normal"
+            },
+            {
+              "value": "italic",
+              "label": "Italic"
+            },
+            {
+              "value": "oblique",
+              "label": "Oblique"
+            }
+          ],
+          "default": "default"
+        },
+        {
+          "type": "range",
+          "id": "letter_spacing_mobile",
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "unit": "px",
+          "label": "Letter spacing (mobile)",
+          "default": 0
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "limit": 20,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "name": "Icon",
+      "limit": 20,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon_name",
+          "label": "Icon",
+          "default": "shopping-cart",
+          "options": [
+            {
+              "value": "shopping-cart",
+              "label": "Shopping Cart"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "tag",
+              "label": "Tag"
+            },
+            {
+              "value": "gift",
+              "label": "Gift"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "award",
+              "label": "Award"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "icon_color",
+          "label": "Icon color (desktop)",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "icon_color_mobile",
+          "label": "Icon color (mobile)",
+          "default": "#ffffff"
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "Custom Image Size"
+      "name": "Pwc Marquee",
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+            "new_text": "Welcome to our store",
+            "text_color": "#ffffff",
+            "text_transform": "uppercase",
+            "font_weight": "bold",
+            "text_color_mobile": "#ffffff",
+            "text_transform_mobile": "uppercase",
+            "font_weight_mobile": "bold"
+          }
+        },
+        {
+          "type": "icon",
+          "settings": {
+            "icon_name": "shopping-cart",
+            "icon_color": "#ff0000",
+            "icon_color_mobile": "#ff0000"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "new_text": "Free shipping on all orders",
+            "text_color": "#00ff00",
+            "text_decoration": "underline",
+            "text_color_mobile": "#00cc00",
+            "font_style": "italic"
+          }
+        },
+        {
+          "type": "icon",
+          "settings": {
+            "icon_name": "star",
+            "icon_color": "#ffff00",
+            "icon_color_mobile": "#ffff00"
+          }
+        }
+      ]
     }
   ]
 }
 {% endschema %}
+
 
 
