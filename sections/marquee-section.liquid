@@ -50,11 +50,7 @@
         {% for block in section.blocks %}
         <span 
             class="marquee-gap" 
-            style="
-              color: {{ block.settings.color }};
-              font-size: {{ block.settings.text_size }}px;
-            "
-          >
+            style=" color: {{ block.settings.color }};font-size: {{ block.settings.text_size }}px;">
             {{ block.settings.text }}
           </span>
         {% endfor %}
