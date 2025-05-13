@@ -107,28 +107,7 @@
           {%- endif -%}
         }
 
-        @media screen and (max-width: 749px) {
-          {{ sid }} .pc-marquee.section-{{ section.id }} .pc-content-{{ block.id }} {
-            {%- if block.settings.text_color_mobile != blank -%}
-              color: {{ block.settings.text_color_mobile }} !important;
-            {%- endif -%}
-            {%- if block.settings.text_transform_mobile != 'none' -%}
-              text-transform: {{ block.settings.text_transform_mobile }};
-            {%- endif -%}
-            {%- if block.settings.font_weight_mobile != 'default' -%}
-              font-weight: {{ block.settings.font_weight_mobile }};
-            {%- endif -%}
-            {%- if block.settings.text_decoration_mobile != 'none' -%}
-              text-decoration: {{ block.settings.text_decoration_mobile }};
-            {%- endif -%}
-            {%- if block.settings.font_style_mobile != 'default' -%}
-              font-style: {{ block.settings.font_style_mobile }};
-            {%- endif -%}
-            {%- if block.settings.letter_spacing_mobile != 0 -%}
-              letter-spacing: {{ block.settings.letter_spacing_mobile }}px;
-            {%- endif -%}
-          }
-        }
+     
 
       {%- when 'icon' -%}
         {%- if block.settings.icon_color != blank -%}
