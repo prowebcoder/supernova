@@ -108,7 +108,8 @@
 </style>
 
 <div class="pc-marquee section-{{ section.id }}" 
-    
+     role="region" 
+     {{ block.shopify_attributes }}
      style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
   {%- if section.settings.link != blank -%}
     <a href="{{ section.settings.link }}" class="pc-link">
@@ -235,16 +236,6 @@
       "step": 5,
       "default": 40,
       "label": "Image width (px)",
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "image_height",
-      "min": 10,
-      "max": 200,
-      "step": 5,
-      "default": 40,
-      "label": "Image height (px)",
       "unit": "px"
     },
     {
