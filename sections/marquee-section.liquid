@@ -127,230 +127,118 @@
                 class="pc-image"
                 src="{{ block.settings.image | img_url: 'master' }}"
                 alt="{{ block.settings.image.alt | escape }}"
-                width="{{ image_width }}"
-                height="{{ image_height }}"
+                width="{{ section.settings.image_width }}"
+                height="{{ section.settings.image_height }}"
+                style="
+                  object-fit: {{ section.settings.image_object_fit }};
+                  object-position: {{ section.settings.image_position }};
+                "
                 loading="lazy"
               >
             {%- endif -%}
-           
         {%- endcase -%}
       {%- endfor -%}
     {%- endfor -%}
   </div>
 
+  {%- if section.settings.link != blank -%}
+    </a>
+  {%- endif -%}
 </div>
+
 
 {% schema %}
 {
-  "name": "Pwc Marquee",
+  "name": "Custom Image Size",
   "settings": [
     {
       "type": "header",
-      "content": "Desktop Settings"
+      "content": "Image Settings"
     },
     {
-      "type": "color",
-      "id": "colorBackground",
-      "label": "Background color",
-      "default": "#000000"
+      "type": "image_picker",
+      "id": "custom_image",
+      "label": "Select Image"
     },
+   {
+  "type": "range",
+  "id": "image_width",
+  "label": "Image Width (px)",
+  "default": 300,
+  "min": 50,
+  "max": 1050,
+  "step": 10,
+  "unit": "px"
+},
+{
+  "type": "range",
+  "id": "image_height",
+  "label": "Image Height (px)",
+  "default": 300,
+  "min": 50,
+  "max": 1050,
+  "step": 10,
+  "unit": "px"
+},
     {
-      "type": "color",
-      "id": "colorText",
-      "label": "Text color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "url",
-      "id": "link",
-      "label": "Link"
+      "type": "select",
+      "id": "image_object_fit",
+      "label": "Image Fit",
+      "options": [
+        {
+          "value": "contain",
+          "label": "Contain"
+        },
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "fill",
+          "label": "Fill"
+        },
+        {
+          "value": "scale-down",
+          "label": "Scale Down"
+        }
+      ],
+      "default": "cover"
     },
     {
       "type": "select",
-      "id": "direction",
-      "label": "Marquee direction",
+      "id": "image_position",
+      "label": "Image Position",
       "options": [
         {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
           "value": "left",
-          "label": "Left to right"
+          "label": "Left"
         },
         {
           "value": "right",
-          "label": "Right to left"
+          "label": "Right"
         }
       ],
-      "default": "left"
-    },
-    {
-      "type": "range",
-      "id": "marquee_height",
-      "min": 24,
-      "max": 200,
-      "step": 2,
-      "default": 46,
-      "label": "Marquee height (px)",
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "font_size",
-      "min": 8,
-      "max": 100,
-      "step": 2,
-      "default": 24,
-      "label": "Font size (px)",
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "speed",
-      "min": 5,
-      "max": 30,
-      "step": 1,
-      "default": 12,
-      "label": "Animation speed (seconds)"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "text",
-      "name": "Text",
-      "settings": [
-        {
-          "type": "text",
-          "id": "new_text",
-          "default": "Welcome to store",
-          "label": "Text"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text color",
-          "default": "#ffffff"
-        },
-        {
-          "type": "select",
-          "id": "text_transform",
-          "label": "Text transform",
-          "options": [
-            {
-              "value": "none",
-              "label": "None"
-            },
-            {
-              "value": "uppercase",
-              "label": "Uppercase"
-            },
-            {
-              "value": "lowercase",
-              "label": "Lowercase"
-            },
-            {
-              "value": "capitalize",
-              "label": "Capitalize"
-            }
-          ],
-          "default": "none"
-        },
-        {
-          "type": "select",
-          "id": "font_weight",
-          "label": "Font weight",
-          "options": [
-            {
-              "value": "normal",
-              "label": "Normal"
-            },
-            {
-              "value": "bold",
-              "label": "Bold"
-            },
-            {
-              "value": "bolder",
-              "label": "Bolder"
-            },
-            {
-              "value": "lighter",
-              "label": "Lighter"
-            },
-            {
-              "value": "100",
-              "label": "100"
-            },
-            {
-              "value": "200",
-              "label": "200"
-            },
-            {
-              "value": "300",
-              "label": "300"
-            },
-            {
-              "value": "400",
-              "label": "400"
-            },
-            {
-              "value": "500",
-              "label": "500"
-            },
-            {
-              "value": "600",
-              "label": "600"
-            },
-            {
-              "value": "700",
-              "label": "700"
-            },
-            {
-              "value": "800",
-              "label": "800"
-            },
-            {
-              "value": "900",
-              "label": "900"
-            }
-          ],
-          "default": "normal"
-        }
-      ]
-    },
-    {
-      "type": "image",
-      "name": "Image",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        }
-      ]
+      "default": "center"
     }
   ],
   "presets": [
     {
-      "name": "Pwc Scrolling Text",
-      "blocks": [
-        {
-          "type": "text",
-          "settings": {
-            "new_text": "Welcome to our store",
-            "text_color": "#ffffff",
-            "text_transform": "uppercase",
-            "font_weight": "bold"
-          }
-        },
-        {
-          "type": "text",
-          "settings": {
-            "new_text": "Free shipping on all orders",
-            "text_color": "#00ff00",
-            "text_transform": "uppercase",
-            "font_weight": "bold"
-          }
-        }
-      ]
+      "name": "Custom Image Size"
     }
   ]
 }
 {% endschema %}
+
 
