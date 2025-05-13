@@ -32,7 +32,7 @@
 
 <div class="marquee">
   <div class="track">
-    <div class="marquee-content">
+    <div class="marquee-content" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
       {% for i in (1..5) %}
         {% for block in section.blocks %}
           <span class="marquee-gap" style="color:{{ block.settings.color }}">{{ block.settings.text }}</span>
@@ -43,26 +43,46 @@
 </div>
 
 {% schema %}
-  {
-  "name": "Marquee Full Width",
-  "settings": [],
+{
+  "name": "Custom Section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px"
+    }
+  ],
   "blocks": [
     {
       "type": "ScrollingText",
       "name": "Scrolling Text",
-      "limit": 4,
       "settings": [
         {
           "type": "text",
           "id": "text",
-          "default": "Title",
-          "label": "Scrolling Text"
+          "label": "Scrolling Text",
+          "default": "Title"
         },
         {
           "type": "color",
           "id": "color",
-          "default": "#000000",
-          "label": "Text Color"
+          "label": "Text Color",
+          "default": "#000000"
         }
       ]
     }
@@ -74,3 +94,4 @@
   ]
 }
 {% endschema %}
+
