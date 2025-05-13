@@ -1,99 +1,969 @@
+{%- liquid
+  assign sid = '#shopify-section-' | append: section.id
+  assign padding_horizontal = section.settings.padding_horizontal
+  assign padding_horizontal_mobile = section.settings.padding_horizontal_mobile
+  assign image_width = section.settings.image_width
+  assign image_height = section.settings.image_height
+  assign image_width_mobile = section.settings.image_width_mobile
+  assign image_height_mobile = section.settings.image_height_mobile
+  assign direction = section.settings.direction
+-%}
 
+<style>
+  /* Desktop styles */
+  {{ sid }} .pc-marquee.section-{{ section.id }} {
+    display: flex;
+    align-items: center;
+    height: {{ section.settings.marquee_height }}px;
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: {{ section.settings.colorBackground }};
+    color: {{ section.settings.colorText }};
+    padding: 0 {{ padding_horizontal }}px;
+  }
 
-.marquee-sections {
-  padding: 3em 3% 0;
-}
+  {{ sid }} .pc-marquee.section-{{ section.id }} a {
+    color: {{ section.settings.colorText }};
+    text-decoration: none;
+  }
 
-.marquee-box {
-  height: 180px;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  border: 1px solid #181818;
-}
+  {{ sid }} .pc-marquee.section-{{ section.id }} .pc-track {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee-{{ direction }} {{ section.settings.speed }}s linear infinite;
+  }
 
-.marquee-text {
-  white-space: nowrap;
-  text-transform: uppercase;
-  font-size: 7em;
-  font-weight: 100;
-  flex-shrink: 0;
-  padding: 0 10px;
-  width: max-content;
-  display: flex;
-  align-items: center;
-}
+  {{ sid }} .pc-marquee.section-{{ section.id }} .pc-content {
+    margin-left: 40px;
+    font-size: {{ section.settings.font_size }}px;
+  }
 
-/* Left to Right Animation */
-.a-section .marquee-text {
-  animation: a-text-scroll 35s linear infinite;
-}
+  {{ sid }} .pc-marquee.section-{{ section.id }} .pc-image {
+    margin-left: 40px;
+    width: {{ image_width }}px;
+    height: {{ image_height }}px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
 
-@keyframes a-text-scroll {
-  0% { transform: translate3d(-100%, 0, 0); }
-  100% { transform: translate3d(100%, 0, 0); } /* Changed to 100% for smooth scroll */
-}
+  {{ sid }} .pc-marquee.section-{{ section.id }} .pc-icon {
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: {{ image_width }}px;
+    height: {{ image_height }}px;
+  }
 
-/* Right to Left Animation */
-.b-section .marquee-text {
-  color: #475747;
-  animation: b-text-scroll 35s linear infinite;
-}
+  {{ sid }} .pc-marquee.section-{{ section.id }} .pc-icon svg {
+    width: {{ section.settings.icon_size }}px;
+    height: {{ section.settings.icon_size }}px;
+  }
 
-@keyframes b-text-scroll {
-  0% { transform: translate3d(100%, 0, 0); }
-  100% { transform: translate3d(-100%, 0, 0); }
-}
+  @keyframes marquee-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-20%);
+    }
+  }
 
-<section class="marquee-sections">
-  {% for block in section.blocks %}
-    <div class="marquee-box {{ block.settings.marquee_style }}">
-      <h2 class="marquee-text">{{ block.settings.marquee_text }}</h2>
-      <h2 class="marquee-text">{{ block.settings.marquee_text }}</h2>
-    </div>
-  {% endfor %}
-</section>
+  @keyframes marquee-right {
+    from {
+      transform: translateX(-20%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  /* Mobile styles */
+  @media screen and (max-width: 749px) {
+    {{ sid }} .pc-marquee.section-{{ section.id }} {
+      height: {{ section.settings.marquee_height_mobile }}px;
+      background: {{ section.settings.colorBackground_mobile | default: section.settings.colorBackground }};
+      color: {{ section.settings.colorText_mobile | default: section.settings.colorText }};
+      padding: 0 {{ padding_horizontal_mobile }}px;
+    }
+
+    {{ sid }} .pc-marquee.section-{{ section.id }} a {
+      color: {{ section.settings.colorText_mobile | default: section.settings.colorText }};
+    }
+
+    {{ sid }} .pc-marquee.section-{{ section.id }} .pc-content {
+      font-size: {{ section.settings.font_size_mobile }}px;
+    }
+
+    {{ sid }} .pc-marquee.section-{{ section.id }} .pc-image {
+      width: {{ image_width_mobile }}px;
+      height: {{ image_height_mobile }}px;
+    }
+
+    {{ sid }} .pc-marquee.section-{{ section.id }} .pc-icon {
+      width: {{ image_width_mobile }}px;
+      height: {{ image_height_mobile }}px;
+    }
+
+    {{ sid }} .pc-marquee.section-{{ section.id }} .pc-icon svg {
+      width: {{ section.settings.icon_size_mobile }}px;
+      height: {{ section.settings.icon_size_mobile }}px;
+    }
+  }
+
+  /* Block-specific styles */
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'text' -%}
+        {{ sid }} .pc-marquee.section-{{ section.id }} .pc-content-{{ block.id }} {
+          {%- if block.settings.text_color != blank -%}
+            color: {{ block.settings.text_color }};
+          {%- endif -%}
+          {%- if block.settings.text_transform != 'none' -%}
+            text-transform: {{ block.settings.text_transform }};
+          {%- endif -%}
+          {%- if block.settings.font_weight != 'normal' -%}
+            font-weight: {{ block.settings.font_weight }};
+          {%- endif -%}
+          {%- if block.settings.text_decoration != 'none' -%}
+            text-decoration: {{ block.settings.text_decoration }};
+          {%- endif -%}
+          {%- if block.settings.font_style != 'normal' -%}
+            font-style: {{ block.settings.font_style }};
+          {%- endif -%}
+          {%- if block.settings.letter_spacing != 0 -%}
+            letter-spacing: {{ block.settings.letter_spacing }}px;
+          {%- endif -%}
+        }
+
+        @media screen and (max-width: 749px) {
+          {{ sid }} .pc-marquee.section-{{ section.id }} .pc-content-{{ block.id }} {
+            {%- if block.settings.text_color_mobile != blank -%}
+              color: {{ block.settings.text_color_mobile }} !important;
+            {%- endif -%}
+            {%- if block.settings.text_transform_mobile != 'none' -%}
+              text-transform: {{ block.settings.text_transform_mobile }};
+            {%- endif -%}
+            {%- if block.settings.font_weight_mobile != 'default' -%}
+              font-weight: {{ block.settings.font_weight_mobile }};
+            {%- endif -%}
+            {%- if block.settings.text_decoration_mobile != 'none' -%}
+              text-decoration: {{ block.settings.text_decoration_mobile }};
+            {%- endif -%}
+            {%- if block.settings.font_style_mobile != 'default' -%}
+              font-style: {{ block.settings.font_style_mobile }};
+            {%- endif -%}
+            {%- if block.settings.letter_spacing_mobile != 0 -%}
+              letter-spacing: {{ block.settings.letter_spacing_mobile }}px;
+            {%- endif -%}
+          }
+        }
+
+      {%- when 'icon' -%}
+        {%- if block.settings.icon_color != blank -%}
+          {{ sid }} .pc-marquee.section-{{ section.id }} .pc-icon-{{ block.id }} {
+            color: {{ block.settings.icon_color }};
+          }
+        {%- endif -%}
+
+        {%- if block.settings.icon_color_mobile != blank -%}
+          @media screen and (max-width: 749px) {
+            {{ sid }} .pc-marquee.section-{{ section.id }} .pc-icon-{{ block.id }} {
+              color: {{ block.settings.icon_color_mobile }} !important;
+            }
+          }
+        {%- endif -%}
+    {%- endcase -%}
+  {%- endfor -%}
+</style>
+
+<div class="pc-marquee section-{{ section.id }}" role="region" {{ block.shopify_attributes }}>
+  {%- if section.settings.link != blank -%}
+    <a href="{{ section.settings.link }}" class="pc-link">
+  {%- endif -%}
+
+  <div class="pc-track">
+    {%- for i in (1..10) -%}
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'text' -%}
+            <span class="pc-content pc-text pc-content-{{ block.id }}">
+              {{ block.settings.new_text | escape }}
+            </span>
+          {%- when 'image' -%}
+            {%- if block.settings.image != blank -%}
+              <img
+                class="pc-image"
+                src="{{ block.settings.image | img_url: 'master' }}"
+                alt="{{ block.settings.image.alt | escape }}"
+                width="{{ image_width }}"
+                height="{{ image_height }}"
+                loading="lazy"
+              >
+            {%- endif -%}
+          {%- when 'icon' -%}
+            <div class="pc-icon pc-icon-{{ block.id }}">
+              {%- case block.settings.icon_name -%}
+                {% when 'shopping-cart' %}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                  </svg>
+                {% when 'star' %}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                {% when 'heart' %}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                {% when 'truck' %}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  </svg>
+                {% when 'tag' %}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+                  </svg>
+                {% when 'gift' %}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                  </svg>
+                {% when 'shield' %}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                {% when 'clock' %}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                {% when 'award' %}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                  </svg>
+                {% else %}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+              {%- endcase -%}
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+
+  {%- if section.settings.link != blank -%}
+    </a>
+  {%- endif -%}
+</div>
 
 {% schema %}
 {
-  "name": "Marquee Component",
-  "settings": [],
+  "name": "Pwc Marquee",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Desktop Settings"
+    },
+    {
+      "type": "color",
+      "id": "colorBackground",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "colorText",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Marquee direction",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left to right"
+        },
+        {
+          "value": "right",
+          "label": "Right to left"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "marquee_height",
+      "min": 24,
+      "max": 200,
+      "step": 2,
+      "default": 46,
+      "label": "Marquee height (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 8,
+      "max": 100,
+      "step": 2,
+      "default": 24,
+      "label": "Font size (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 8,
+      "max": 100,
+      "step": 2,
+      "default": 24,
+      "label": "Icon size (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 20,
+      "label": "Horizontal padding (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "min": 10,
+      "max": 200,
+      "step": 5,
+      "default": 40,
+      "label": "Image width (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "min": 10,
+      "max": 200,
+      "step": 5,
+      "default": 40,
+      "label": "Image height (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "default": 12,
+      "label": "Animation speed (seconds)"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "color",
+      "id": "colorBackground_mobile",
+      "label": "Background color (mobile)",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "colorText_mobile",
+      "label": "Text color (mobile)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "marquee_height_mobile",
+      "min": 24,
+      "max": 200,
+      "step": 2,
+      "default": 36,
+      "label": "Marquee height (mobile) (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "min": 8,
+      "max": 60,
+      "step": 2,
+      "default": 16,
+      "label": "Font size (mobile) (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "min": 8,
+      "max": 60,
+      "step": 2,
+      "default": 16,
+      "label": "Icon size (mobile) (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "default": 10,
+      "label": "Horizontal padding (mobile) (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "image_width_mobile",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "default": 30,
+      "label": "Image width (mobile) (px)",
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "image_height_mobile",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "default": 30,
+      "label": "Image height (mobile) (px)",
+      "unit": "px"
+    }
+  ],
   "blocks": [
     {
-      "type": "marquee_block",
-      "name": "Marquee Block",
+      "type": "text",
+      "name": "Text",
+      "limit": 20,
       "settings": [
         {
           "type": "text",
-          "id": "marquee_text",
-          "label": "Marquee Text",
-          "default": "Scrolling text using CSS only •"
+          "id": "new_text",
+          "default": "Welcome to store",
+          "label": "Text"
+        },
+        {
+          "type": "header",
+          "content": "Desktop Text Style"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#ffffff"
         },
         {
           "type": "select",
-          "id": "marquee_style",
-          "label": "Marquee Style",
+          "id": "text_transform",
+          "label": "Text transform",
           "options": [
             {
-              "value": "a-section",
-              "label": "Left to Right"
+              "value": "none",
+              "label": "None"
             },
             {
-              "value": "b-section",
-              "label": "Right to Left"
+              "value": "uppercase",
+              "label": "Uppercase"
+            },
+            {
+              "value": "lowercase",
+              "label": "Lowercase"
+            },
+            {
+              "value": "capitalize",
+              "label": "Capitalize"
             }
           ],
-          "default": "a-section"
+          "default": "none"
+        },
+        {
+          "type": "select",
+          "id": "font_weight",
+          "label": "Font weight",
+          "options": [
+            {
+              "value": "normal",
+              "label": "Normal"
+            },
+            {
+              "value": "bold",
+              "label": "Bold"
+            },
+            {
+              "value": "bolder",
+              "label": "Bolder"
+            },
+            {
+              "value": "lighter",
+              "label": "Lighter"
+            },
+            {
+              "value": "100",
+              "label": "100"
+            },
+            {
+              "value": "200",
+              "label": "200"
+            },
+            {
+              "value": "300",
+              "label": "300"
+            },
+            {
+              "value": "400",
+              "label": "400"
+            },
+            {
+              "value": "500",
+              "label": "500"
+            },
+            {
+              "value": "600",
+              "label": "600"
+            },
+            {
+              "value": "700",
+              "label": "700"
+            },
+            {
+              "value": "800",
+              "label": "800"
+            },
+            {
+              "value": "900",
+              "label": "900"
+            }
+          ],
+          "default": "normal"
+        },
+        {
+          "type": "select",
+          "id": "text_decoration",
+          "label": "Text decoration",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "underline",
+              "label": "Underline"
+            },
+            {
+              "value": "overline",
+              "label": "Overline"
+            },
+            {
+              "value": "line-through",
+              "label": "Line through"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "select",
+          "id": "font_style",
+          "label": "Font style",
+          "options": [
+            {
+              "value": "normal",
+              "label": "Normal"
+            },
+            {
+              "value": "italic",
+              "label": "Italic"
+            },
+            {
+              "value": "oblique",
+              "label": "Oblique"
+            }
+          ],
+          "default": "normal"
+        },
+        {
+          "type": "range",
+          "id": "letter_spacing",
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "unit": "px",
+          "label": "Letter spacing",
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "Mobile Text Style"
+        },
+        {
+          "type": "color",
+          "id": "text_color_mobile",
+          "label": "Text color (mobile)",
+          "default": "#ffffff"
+        },
+        {
+          "type": "select",
+          "id": "text_transform_mobile",
+          "label": "Text transform (mobile)",
+          "options": [
+            {
+              "value": "none",
+              "label": "None (inherit from desktop)"
+            },
+            {
+              "value": "uppercase",
+              "label": "Uppercase"
+            },
+            {
+              "value": "lowercase",
+              "label": "Lowercase"
+            },
+            {
+              "value": "capitalize",
+              "label": "Capitalize"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "select",
+          "id": "font_weight_mobile",
+          "label": "Font weight (mobile)",
+          "options": [
+            {
+              "value": "default",
+              "label": "Default (inherit from desktop)"
+            },
+            {
+              "value": "normal",
+              "label": "Normal"
+            },
+            {
+              "value": "bold",
+              "label": "Bold"
+            },
+            {
+              "value": "bolder",
+              "label": "Bolder"
+            },
+            {
+              "value": "lighter",
+              "label": "Lighter"
+            },
+            {
+              "value": "100",
+              "label": "100"
+            },
+            {
+              "value": "200",
+              "label": "200"
+            },
+            {
+              "value": "300",
+              "label": "300"
+            },
+            {
+              "value": "400",
+              "label": "400"
+            },
+            {
+              "value": "500",
+              "label": "500"
+            },
+            {
+              "value": "600",
+              "label": "600"
+            },
+            {
+              "value": "700",
+              "label": "700"
+            },
+            {
+              "value": "800",
+              "label": "800"
+            },
+            {
+              "value": "900",
+              "label": "900"
+            }
+          ],
+          "default": "default"
+        },
+        {
+          "type": "select",
+          "id": "text_decoration_mobile",
+          "label": "Text decoration (mobile)",
+          "options": [
+            {
+              "value": "none",
+              "label": "None (inherit from desktop)"
+            },
+            {
+              "value": "underline",
+              "label": "Underline"
+            },
+            {
+              "value": "overline",
+              "label": "Overline"
+            },
+            {
+              "value": "line-through",
+              "label": "Line through"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "select",
+          "id": "font_style_mobile",
+          "label": "Font style (mobile)",
+          "options": [
+            {
+              "value": "default",
+              "label": "Default (inherit from desktop)"
+            },
+            {
+              "value": "normal",
+              "label": "Normal"
+            },
+            {
+              "value": "italic",
+              "label": "Italic"
+            },
+            {
+              "value": "oblique",
+              "label": "Oblique"
+            }
+          ],
+          "default": "default"
+        },
+        {
+          "type": "range",
+          "id": "letter_spacing_mobile",
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "unit": "px",
+          "label": "Letter spacing (mobile)",
+          "default": 0
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "limit": 20,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "icon",
+      "name": "Icon",
+      "limit": 20,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon_name",
+          "label": "Icon",
+          "default": "shopping-cart",
+          "options": [
+            {
+              "value": "shopping-cart",
+              "label": "Shopping Cart"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "tag",
+              "label": "Tag"
+            },
+            {
+              "value": "gift",
+              "label": "Gift"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "award",
+              "label": "Award"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "icon_color",
+          "label": "Icon color (desktop)",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "icon_color_mobile",
+          "label": "Icon color (mobile)",
+          "default": "#ffffff"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Default",
-      "category": "Custom"
+      "name": "Pwc Marquee",
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+            "new_text": "Welcome to our store",
+            "text_color": "#ffffff",
+            "text_transform": "uppercase",
+            "font_weight": "bold",
+            "text_color_mobile": "#ffffff",
+            "text_transform_mobile": "uppercase",
+            "font_weight_mobile": "bold"
+          }
+        },
+        {
+          "type": "icon",
+          "settings": {
+            "icon_name": "shopping-cart",
+            "icon_color": "#ff0000",
+            "icon_color_mobile": "#ff0000"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "new_text": "Free shipping on all orders",
+            "text_color": "#00ff00",
+            "text_decoration": "underline",
+            "text_color_mobile": "#00cc00",
+            "font_style": "italic"
+          }
+        },
+        {
+          "type": "icon",
+          "settings": {
+            "icon_name": "star",
+            "icon_color": "#ffff00",
+            "icon_color_mobile": "#ffff00"
+          }
+        }
+      ]
     }
   ]
 }
 {% endschema %}
-
