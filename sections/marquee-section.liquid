@@ -32,7 +32,17 @@
 
 <div class="marquee">
   <div class="track">
-    <div class="marquee-content" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+    <div class="marquee-content" 
+      style="
+    padding-top: {{ section.settings.padding_top }}px; 
+    padding-bottom: {{ section.settings.padding_bottom }}px; 
+    background-color: {{ section.settings.background_color }};
+    {% if section.settings.background_image %}
+      background-image: url('{{ section.settings.background_image | image_url }}');
+      background-size: {{ section.settings.background_size }};
+      background-repeat: {% if section.settings.background_size == 'repeat' %}repeat{% else %}no-repeat{% endif %};
+    {% endif %}
+  ">
       {% for i in (1..5) %}
         {% for block in section.blocks %}
           <span class="marquee-gap" style="color:{{ block.settings.color }}">{{ block.settings.text }}</span>
