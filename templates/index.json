@@ -90,6 +90,7 @@
         "slide_jVwzzq",
         "slide_F8JHfY"
       ],
+      "disabled": true,
       "settings": {
         "layout": "full_bleed",
         "slide_height": "large",
@@ -173,6 +174,7 @@
         "column_8pTtD4",
         "column_wCKA8T"
       ],
+      "disabled": true,
       "settings": {
         "title": "",
         "swipe_on_desktop": true,
@@ -241,6 +243,7 @@
         "column_R8RD4d",
         "column_7j8NNV"
       ],
+      "disabled": true,
       "settings": {
         "title": "The Transformation",
         "subtitle": "Discover our curated collection of luxurious skincare products designed to elevate your skincare routine to new heights.",
@@ -293,6 +296,7 @@
         "text_fAxEWK",
         "button_RNP6dA"
       ],
+      "disabled": true,
       "settings": {
         "background_image": "shopify://shop_images/view-frame-with-cosmetics.jpg",
         "image": "shopify://shop_images/download_2.png",
@@ -406,6 +410,7 @@
         "carousel_H9KKMg",
         "carousel_zDcdx7"
       ],
+      "disabled": true,
       "settings": {
         "bg": "",
         "product": "make-up-for-ever",
@@ -459,6 +464,7 @@
         "text_F3dxTz",
         "button_rDi3ew"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "desktop_content_position": "center",
@@ -491,6 +497,7 @@
         "heading_mnNtUK",
         "text_jzdK8G"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/pngwing.com_2.png",
         "height": "adapt",
@@ -549,6 +556,7 @@
         "column_EL9KJF",
         "column_MrGUFk"
       ],
+      "disabled": true,
       "settings": {
         "title": "Testimonials",
         "subtitle": "Get inspired by other customers",
@@ -651,6 +659,7 @@
         "featured_collection_k8Hk37",
         "featured_collection_43AVmH"
       ],
+      "disabled": true,
       "settings": {
         "title": "Our Best Collections",
         "column_alignment_title": "center",
@@ -698,6 +707,7 @@
         "faq_4Tz4GY",
         "faq_mCPJLd"
       ],
+      "disabled": true,
       "settings": {
         "enable_rich_schema": true,
         "section_heading": "Are natural skincare products better than synthetic ones",
@@ -791,6 +801,7 @@
         "logo_image_mgxrxy",
         "logo_image_PVTdKj"
       ],
+      "disabled": true,
       "settings": {
         "title": "",
         "logo_width": "200px",
@@ -956,12 +967,14 @@
     },
     "product_slider_carousel_nN7gP7": {
       "type": "product-slider-carousel",
+      "disabled": true,
       "settings": {
         "collection": "new-arrivals"
       }
     },
     "featured_collection_ikK66Q": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Featured collection",
         "column_alignment_title": "left",
@@ -991,6 +1004,7 @@
     },
     "tabbed_collections_UhmkKW": {
       "type": "tabbed-collections",
+      "disabled": true,
       "settings": {
         "title": "Featured collection",
         "heading_size": "h1",
@@ -1059,6 +1073,7 @@
         "content_6PPzhm",
         "content_jCx9rT"
       ],
+      "disabled": true,
       "settings": {}
     },
     "marquee_section_xUqJDh": {
@@ -1129,6 +1144,7 @@
         "column_zrpLd9",
         "column_yRDJWC"
       ],
+      "disabled": true,
       "settings": {
         "title": "Testimonials",
         "subtitle": "Get inspired by other customers",
@@ -1178,6 +1194,7 @@
         "content_FKjTeL",
         "content_FAnKgf"
       ],
+      "disabled": true,
       "settings": {
         "title": "Top Title",
         "subtitle": "Subtitle",
@@ -1219,6 +1236,7 @@
         "collection_Jchyck",
         "collection_KP4Qpd"
       ],
+      "disabled": true,
       "settings": {
         "products_per_page": 8,
         "columns_desktop": 4,
@@ -1239,6 +1257,7 @@
     },
     "custom_video_section_ge7LfD": {
       "type": "custom-video-section",
+      "disabled": true,
       "settings": {
         "heading": "ffff",
         "heading_size": "h1",
