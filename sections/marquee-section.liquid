@@ -37,11 +37,6 @@
     padding-top: {{ section.settings.padding_top }}px; 
     padding-bottom: {{ section.settings.padding_bottom }}px; 
     background-color: {{ section.settings.background_color }};
-    {% if section.settings.background_image %}
-      background-image: url('{{ section.settings.background_image | image_url }}');
-      background-size: {{ section.settings.background_size }};
-      background-repeat: {% if section.settings.background_size == 'repeat' %}repeat{% else %}no-repeat{% endif %};
-    {% endif %}
   ">
       {% for i in (1..5) %}
         {% for block in section.blocks %}
@@ -81,31 +76,6 @@
       "id": "background_color",
       "label": "Background Color",
       "default": "#ffffff"
-    },
-    {
-      "type": "image_picker",
-      "id": "background_image",
-      "label": "Background Image"
-    },
-    {
-      "type": "select",
-      "id": "background_size",
-      "label": "Background Image Size",
-      "options": [
-        {
-          "value": "cover",
-          "label": "Cover"
-        },
-        {
-          "value": "contain",
-          "label": "Contain"
-        },
-        {
-          "value": "repeat",
-          "label": "Repeat"
-        }
-      ],
-      "default": "cover"
     }
   ],
   "blocks": [
