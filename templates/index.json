@@ -1083,17 +1083,11 @@
           "settings": {
             "new_text": "Welcome to store",
             "text_color": "#ffffff",
-            "text_transform": "none",
+            "text_transform": "lowercase",
             "font_weight": "normal",
             "text_decoration": "none",
             "font_style": "normal",
-            "letter_spacing": 0,
-            "text_color_mobile": "#ffffff",
-            "text_transform_mobile": "none",
-            "font_weight_mobile": "default",
-            "text_decoration_mobile": "none",
-            "font_style_mobile": "default",
-            "letter_spacing_mobile": 0
+            "letter_spacing": 0
           }
         },
         "image_fyFYpd": {
@@ -1111,13 +1105,7 @@
             "font_weight": "normal",
             "text_decoration": "none",
             "font_style": "normal",
-            "letter_spacing": 0,
-            "text_color_mobile": "#ffffff",
-            "text_transform_mobile": "none",
-            "font_weight_mobile": "default",
-            "text_decoration_mobile": "none",
-            "font_style_mobile": "default",
-            "letter_spacing_mobile": 0
+            "letter_spacing": 0
           }
         }
       },
@@ -1133,19 +1121,11 @@
         "direction": "right",
         "marquee_height": 56,
         "font_size": 36,
-        "icon_size": 54,
-        "padding_horizontal": 20,
+        "padding_top": 10,
+        "padding_bottom": 10,
         "image_width": 60,
         "image_height": 75,
-        "speed": 10,
-        "colorBackground_mobile": "#000000",
-        "colorText_mobile": "#ffffff",
-        "marquee_height_mobile": 36,
-        "font_size_mobile": 8,
-        "icon_size_mobile": 16,
-        "padding_horizontal_mobile": 10,
-        "image_width_mobile": 30,
-        "image_height_mobile": 30
+        "speed": 10
       }
     },
     "testimonials_section_XR78Jc": {
