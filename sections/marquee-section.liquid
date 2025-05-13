@@ -3,6 +3,8 @@
   assign padding_horizontal = section.settings.padding_horizontal
   assign image_width = section.settings.image_width
   assign image_height = section.settings.image_height
+  assign padding_top = section.settings.padding_top
+  assign padding_bottom = section.padding_bottom
   assign direction = section.settings.direction
 -%}
 
@@ -110,7 +112,7 @@
 <div class="pc-marquee section-{{ section.id }}" 
      role="region" 
      {{ block.shopify_attributes }}
-     style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+     style="padding-top: {{ padding_top }}px; padding-bottom: {{ padding_bottom }}px;">
   {%- if section.settings.link != blank -%}
     <a href="{{ section.settings.link }}" class="pc-link">
   {%- endif -%}
