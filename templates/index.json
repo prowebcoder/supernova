@@ -1078,33 +1078,48 @@
     "marquee_section_xUqJDh": {
       "type": "marquee-section",
       "blocks": {
-        "scrolling_text_797i8P": {
-          "type": "ScrollingText",
+        "text_8C9heV": {
+          "type": "text",
           "settings": {
-            "text": "Title",
-            "text_size": 40,
-            "color": "#6b8f1b"
-          }
-        },
-        "scrolling_text_8zhWzN": {
-          "type": "ScrollingText",
-          "settings": {
-            "text": "Title",
-            "text_size": 40,
-            "color": "#000000"
+            "new_text": "Welcome to store",
+            "text_color": "#ffffff",
+            "text_transform": "none",
+            "font_weight": "normal",
+            "text_decoration": "none",
+            "font_style": "normal",
+            "letter_spacing": 0,
+            "text_color_mobile": "#ffffff",
+            "text_transform_mobile": "none",
+            "font_weight_mobile": "default",
+            "text_decoration_mobile": "none",
+            "font_style_mobile": "default",
+            "letter_spacing_mobile": 0
           }
         }
       },
       "block_order": [
-        "scrolling_text_797i8P",
-        "scrolling_text_8zhWzN"
+        "text_8C9heV"
       ],
       "settings": {
-        "background_color": "#eb7b7b",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "margin_top": 0,
-        "margin_bottom": 0
+        "colorBackground": "#000000",
+        "colorText": "#ffffff",
+        "link": "",
+        "direction": "right",
+        "marquee_height": 46,
+        "font_size": 24,
+        "icon_size": 24,
+        "padding_horizontal": 20,
+        "image_width": 40,
+        "image_height": 40,
+        "speed": 12,
+        "colorBackground_mobile": "#000000",
+        "colorText_mobile": "#ffffff",
+        "marquee_height_mobile": 36,
+        "font_size_mobile": 16,
+        "icon_size_mobile": 16,
+        "padding_horizontal_mobile": 10,
+        "image_width_mobile": 30,
+        "image_height_mobile": 30
       }
     },
     "testimonials_section_XR78Jc": {
