@@ -1099,8 +1099,9 @@
         "image_fyFYpd": {
           "type": "image",
           "settings": {
-            "image_width": 150,
-            "image_height": 150,
+            "image": "shopify://shop_images/LogoBlancoYVerde.webp",
+            "image_width": 50,
+            "image_height": 50,
             "image_object_fit": "cover"
           }
         }
@@ -1116,11 +1117,11 @@
         "direction": "right",
         "marquee_height": 46,
         "font_size": 24,
-        "icon_size": 24,
+        "icon_size": 8,
         "padding_horizontal": 20,
-        "image_width": 40,
+        "image_width": 90,
         "image_height": 40,
-        "speed": 12,
+        "speed": 14,
         "colorBackground_mobile": "#000000",
         "colorText_mobile": "#ffffff",
         "marquee_height_mobile": 36,
