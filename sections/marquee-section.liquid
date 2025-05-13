@@ -1,3 +1,51 @@
+
+{%- assign id = '#shopify-section-' | append: section.id -%}
+
+{% style %}
+  {{id}} .marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f8f8f8;
+  }
+
+  {{id}} .marquee-track {
+    display: inline-flex;
+    gap: 3rem; /* Spacing between texts */
+    animation: scroll-left 15s linear infinite;
+    white-space: nowrap;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  {{id}} .marquee-item {
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  {{id}} .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+{% endstyle %}
+
+<div class="marquee">
+  <div class="marquee-track">
+    {% for block in section.blocks %}
+      {% if block.settings.text != blank %}
+        <span class="marquee-item">{{ block.settings.text }}</span>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+
 {% schema %}
 {
   "name": "Simple Scrolling Marquee",
