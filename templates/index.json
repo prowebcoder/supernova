@@ -515,7 +515,7 @@
             "image": "shopify://shop_images/Testimonials-circle-photos_Ivan.png",
             "toggle_image": true,
             "title": "Jack",
-            "text": "<p>'ve been using [product name] for a few weeks now, and I'm amazed at the results! My skin feels incredibly smooth and hydrated.</p>",
+            "text": "<p>I've been using [product name] for a few weeks now, and I'm amazed at the results! My skin feels incredibly smooth and hydrated.</p>",
             "stars_count": "5",
             "toggle_review_stars": true
           }
@@ -548,7 +548,6 @@
         "column_EL9KJF",
         "column_MrGUFk"
       ],
-      "disabled": true,
       "settings": {
         "title": "Testimonials",
         "subtitle": "Get inspired by other customers",
@@ -585,10 +584,9 @@
       "block_order": [
         "text_mytHQE"
       ],
-      "disabled": true,
       "settings": {
         "paral-full": true,
-        "par_img_sz": "350",
+        "par_img_sz": "450",
         "par_hd_sz": "35",
         "par_subhd_sz": "20",
         "par_button_sz": "25",
