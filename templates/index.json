@@ -312,7 +312,6 @@
     },
     "featured_collection": {
       "type": "featured-collection",
-      "disabled": true,
       "custom_css": [
         ".quick-add__submit {padding: 0.8rem; max-width: 50px; box-sizing: border-box; margin: 0 auto;}",
         ".card--card.card--media > .card__content {margin-top: calc(0rem - var(--image-padding)); position: absolute; bottom: 0; text-align: center;}"
