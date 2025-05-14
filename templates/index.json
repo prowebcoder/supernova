@@ -17,7 +17,7 @@
           "settings": {
             "image": "shopify://shop_images/Slider_3.png",
             "heading": "Discover Your Glow",
-            "heading_size": "h1",
+            "heading_size": "h2",
             "subheading": "<p>Dive into Luxurious Beauty</p>",
             "button_label": "Shop Now",
             "link": "shopify://collections",
@@ -90,7 +90,6 @@
         "slide_jVwzzq",
         "slide_F8JHfY"
       ],
-      "disabled": true,
       "settings": {
         "layout": "full_bleed",
         "slide_height": "large",
@@ -174,7 +173,6 @@
         "column_8pTtD4",
         "column_wCKA8T"
       ],
-      "disabled": true,
       "settings": {
         "title": "",
         "swipe_on_desktop": true,
@@ -243,7 +241,6 @@
         "column_R8RD4d",
         "column_7j8NNV"
       ],
-      "disabled": true,
       "settings": {
         "title": "The Transformation",
         "subtitle": "Discover our curated collection of luxurious skincare products designed to elevate your skincare routine to new heights.",
@@ -1083,11 +1080,11 @@
           "settings": {
             "new_text": "Welcome to store",
             "text_color": "#ffffff",
-            "text_transform": "lowercase",
-            "font_weight": "normal",
+            "text_transform": "uppercase",
+            "font_weight": "400",
             "text_decoration": "none",
             "font_style": "normal",
-            "letter_spacing": 0
+            "letter_spacing": 2
           }
         },
         "image_fyFYpd": {
@@ -1118,13 +1115,13 @@
         "colorBackground": "#d57777",
         "colorText": "#ffffff",
         "link": "",
-        "direction": "right",
-        "marquee_height": 56,
-        "font_size": 36,
-        "padding_top": 20,
-        "padding_bottom": 25,
-        "image_width": 50,
-        "speed": 10
+        "direction": "left",
+        "marquee_height": 74,
+        "font_size": 30,
+        "padding_top": 45,
+        "padding_bottom": 45,
+        "image_width": 95,
+        "speed": 9
       }
     },
     "testimonials_section_XR78Jc": {
