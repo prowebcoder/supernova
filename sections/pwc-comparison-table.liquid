@@ -1,6 +1,951 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+{% comment %} PWC - Comparison Table #1 {% endcomment %}
+{%- assign sec_id = '#shopify-section-' | append: section.id -%}
+{%- assign parts = sec_id | split: '_' -%}
+{%- assign last_lower = parts | last -%}
+{%- assign last_part = last_lower | downcase -%}
+
+<style>
+  {{ sec_id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.bg_color }};
   }
+
+  {{ sec_id }} .pc-comparison-section {
+    width: 100%;
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  {{ sec_id }} .pc-heading-title {
+    padding-bottom: {{ section.settings.heading_padding_bottom }}px;
+    text-align: {{ section.settings.column_alignment_title }};
+  }
+
+  {{ sec_id }} .pc-head-title h1 {
+    font-size: {{ section.settings.title_font_size }}px;
+    font-weight: {{ section.settings.title_font_weight }};
+    color: {{ section.settings.title_color }};
+    margin: 0 0 {{ section.settings.title_margin_bottom }}px;
+    line-height: 1.2;
+  }
+
+  {{ sec_id }} .pc-head-sub {
+    font-size: {{ section.settings.subtitle_font_size }}px;
+    font-weight: {{ section.settings.subtitle_font_weight }};
+    color: {{ section.settings.subtitle_color }};
+    max-width: {{ section.settings.subtitle_max_width }}px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  {{ sec_id }} .pc-comparison-tables {
+    display: flex;
+    top: 0px;
+    z-index: 10;
+    padding-bottom: 14px;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  {{ sec_id }} .pc-comparison-tables li {
+    list-style: none;
+    flex: 1;
+  }
+
+  {{ sec_id }} .pc-comparison-tables li:last-child {
+    border-right: 1px solid {{ section.settings.border_color }};
+  }
+
+  {{ sec_id }} .pc-comparison-tables button {
+    width: 100%;
+    border: 1px solid {{ section.settings.border_color }};
+    border-right: 0;
+    border-top: 0;
+    padding: 10px;
+    background: {{ section.settings.button_bg_color }};
+    font-size: {{ section.settings.button_font_size }}px;
+    font-weight: {{ section.settings.button_font_weight }};
+    height: 60px;
+    color: {{ section.settings.button_text_color }};
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  {{ sec_id }} .pc-comparison-tables li.pc-active button {
+    background: {{ section.settings.button_active_bg_color }};
+    color: {{ section.settings.button_active_text_color }};
+  }
+
+  {{ sec_id }} .pc-comparison-table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  {{ sec_id }} .pc-comparison-table th {
+    background: {{ section.settings.table_header_bg }};
+    display: none;
+    color: {{ section.settings.table_heading_color }};
+    font-weight: {{ section.settings.table_heading_font_weight }};
+    font-size: {{ section.settings.table_heading_font_size }}px;
+    padding: {{ section.settings.table_cell_padding }}px;
+  }
+
+  {{ sec_id }} .pc-comparison-table td,
+  {{ sec_id }} .pc-comparison-table th {
+    height: 53px;
+    border: 1px solid {{ section.settings.border_color }};
+    padding: {{ section.settings.table_cell_padding }}px;
+    text-align: left;
+  }
+
+  {{ sec_id }} .pc-comparison-table td + td,
+  {{ sec_id }} .pc-comparison-table th + th {
+    text-align: center;
+    display: none;
+  }
+
+  {{ sec_id }} .pc-comparison-table td.pc-default {
+    display: table-cell;
+  }
+
+  {{ sec_id }} .pc-sep {
+    background: {{ section.settings.table_header_bg }};
+    font-weight: bold;
+    color: {{ section.settings.table_heading_color }};
+    font-size: {{ section.settings.separator_font_size }}px;
+  }
+
+  {{ sec_id }} .pc-untick {
+    font-size: 18px;
+    color: {{ section.settings.unchecked_color }};
+  }
+
+  {{ sec_id }} .pc-txt-l {
+    font-size: {{ section.settings.price_font_size }}px;
+    font-weight: {{ section.settings.price_font_weight }};
+  }
+
+  {{ sec_id }} .pc-txt-top {
+    position: relative;
+    top: -9px;
+    left: -2px;
+    font-size: {{ section.settings.currency_font_size }}px;
+  }
+
+  {{ sec_id }} .pc-tick {
+    font-size: 18px;
+    color: {{ section.settings.checked_color }};
+  }
+
+  {{ sec_id }} .pc-hide {
+    border: 0;
+    background: none;
+  }
+
+  {{ sec_id }} .pc-always-visible {
+    width: 300px;
+    font-weight: {{ section.settings.row_header_font_weight }};
+    font-size: {{ section.settings.row_header_font_size }}px;
+    color: {{ section.settings.row_header_color }};
+  }
+
+  @media screen and (max-width: 767px) {
+    {{ sec_id }} .pc-head-title h1 {
+      font-size: {{ section.settings.mobile_title_font_size }}px;
+      margin-bottom: {{ section.settings.mobile_title_margin_bottom }}px;
+    }
+    
+    {{ sec_id }} .pc-head-sub {
+      font-size: {{ section.settings.mobile_subtitle_font_size }}px;
+    }
+    
+    {{ sec_id }} .pc-comparison-tables {
+      display: flex;
+    }
+    
+    {{ sec_id }} .pc-comparison-table td,
+    {{ sec_id }} .pc-comparison-table th {
+      width: 25%;
+      font-size: {{ section.settings.mobile_table_font_size }}px;
+    }
+    
+    {{ sec_id }} .pc-comparison-table .pc-always-visible {
+      width: auto;
+    }
+  }
+
+  @media (min-width: 768px) {
+    {{ sec_id }} .pc-comparison-tables {
+      display: none;
+    }
+    
+    {{ sec_id }} .pc-comparison-table td,
+    {{ sec_id }} .pc-comparison-table th {
+      display: table-cell !important;
+    }
+    
+    {{ sec_id }} .pc-comparison-table td.pc-always-visible,
+    {{ sec_id }} .pc-comparison-table th.pc-always-visible {
+      width: 300px;
+    }
+    
+    {{ sec_id }} .pc-comparison-table td,
+    {{ sec_id }} .pc-comparison-table th {
+      width: 15%;
+    }
+    
+    {{ sec_id }} .pc-comparison-table td + td,
+    {{ sec_id }} .pc-comparison-table th + th {
+      width: auto;
+    }
+  }
+</style>
+
+<div class="pc-comparison-section">
+  {% if section.settings.title != blank or section.settings.subtitle != blank %}
+    <div class="pc-heading-title">
+      {% if section.settings.title != blank %}
+        <div class="pc-head-title">
+          <h1>{{ section.settings.title }}</h1>
+        </div>
+      {% endif %}
+      {% if section.settings.subtitle != blank %}
+        <div class="pc-head-sub">{{ section.settings.subtitle }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+  
+  {% assign headings_count = 0 %}
+  {% if section.settings.heading_1 != blank %}{% assign headings_count = headings_count | plus: 1 %}{% endif %}
+  {% if section.settings.heading_2 != blank %}{% assign headings_count = headings_count | plus: 1 %}{% endif %}
+  {% if section.settings.heading_3 != blank %}{% assign headings_count = headings_count | plus: 1 %}{% endif %}
+  {% if section.settings.heading_4 != blank %}{% assign headings_count = headings_count | plus: 1 %}{% endif %}
+  
+  {% if headings_count > 0 %}
+    <ul class="pc-comparison-tables">
+      {% if section.settings.heading_1 != blank %}
+        <li class="{% if forloop.first %}pc-active{% endif %}">
+          <button>{{ section.settings.heading_1 }}</button>
+        </li>
+      {% endif %}
+      {% if section.settings.heading_2 != blank %}
+        <li class="{% if forloop.first and section.settings.heading_1 == blank %}pc-active{% endif %}">
+          <button>{{ section.settings.heading_2 }}</button>
+        </li>
+      {% endif %}
+      {% if section.settings.heading_3 != blank %}
+        <li class="{% if forloop.first and section.settings.heading_1 == blank and section.settings.heading_2 == blank %}pc-active{% endif %}">
+          <button>{{ section.settings.heading_3 }}</button>
+        </li>
+      {% endif %}
+      {% if section.settings.heading_4 != blank %}
+        <li class="{% if forloop.first and section.settings.heading_1 == blank and section.settings.heading_2 == blank and section.settings.heading_3 == blank %}pc-active{% endif %}">
+          <button>{{ section.settings.heading_4 }}</button>
+        </li>
+      {% endif %}
+    </ul>
+  {% endif %}
+
+  <table class="pc-comparison-table">
+    <thead>
+      <tr>
+        <th class="pc-hide pc-always-visible"></th>
+        {% if section.settings.heading_1 != blank %}
+          <th class="pc-default">{{ section.settings.heading_1 }}</th>
+        {% endif %}
+        {% if section.settings.heading_2 != blank %}
+          <th>{{ section.settings.heading_2 }}</th>
+        {% endif %}
+        {% if section.settings.heading_3 != blank %}
+          <th>{{ section.settings.heading_3 }}</th>
+        {% endif %}
+        {% if section.settings.heading_4 != blank %}
+          <th>{{ section.settings.heading_4 }}</th>
+        {% endif %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'heading' %}
+            <tr>
+              <td colspan="{{ headings_count | plus: 1 }}" class="pc-sep">{{ block.settings.caption }}</td>
+            </tr>
+            
+          {% when 'data' %}
+            <tr>
+              <td class="pc-always-visible">{{ block.settings.firstcol }}</td>
+              {% if section.settings.heading_1 != blank %}
+                <td>
+                  <span class="{% if block.settings.header_1_val == "checked" %}pc-tick{% else %}pc-untick{% endif %}">
+                    {%- if block.settings.header_1_val == 'checked' %}&#10004;{% else %}&#10008;{% endif -%}
+                  </span>
+                </td>
+              {% endif %}
+              {% if section.settings.heading_2 != blank %}
+                <td>
+                  <span class="{% if block.settings.header_2_val == "checked" %}pc-tick{% else %}pc-untick{% endif %}">
+                    {%- if block.settings.header_2_val == 'checked' %}&#10004;{% else %}&#10008;{% endif -%}
+                  </span>
+                </td>
+              {% endif %}
+              {% if section.settings.heading_3 != blank %}
+                <td>
+                  <span class="{% if block.settings.header_3_val == "checked" %}pc-tick{% else %}pc-untick{% endif %}">
+                    {%- if block.settings.header_3_val == 'checked' %}&#10004;{% else %}&#10008;{% endif -%}
+                  </span>
+                </td>
+              {% endif %}
+              {% if section.settings.heading_4 != blank %}
+                <td>
+                  <span class="{% if block.settings.header_4_val == "checked" %}pc-tick{% else %}pc-untick{% endif %}">
+                    {%- if block.settings.header_4_val == 'checked' %}&#10004;{% else %}&#10008;{% endif -%}
+                  </span>
+                </td>
+              {% endif %}
+            </tr>
+            
+          {% when 'price' %}
+            <tr>
+              <td class="pc-always-visible">{{ block.settings.price_interval }}</td>
+              {% if section.settings.heading_1 != blank %}
+                <td>
+                  <span class="pc-txt-top">{{ section.settings.currency }}</span>
+                  <span class="pc-txt-l">{{ block.settings.price_1 }}</span>
+                </td>
+              {% endif %}
+              {% if section.settings.heading_2 != blank %}
+                <td>
+                  <span class="pc-txt-top">{{ section.settings.currency }}</span>
+                  <span class="pc-txt-l">{{ block.settings.price_2 }}</span>
+                </td>
+              {% endif %}
+              {% if section.settings.heading_3 != blank %}
+                <td>
+                  <span class="pc-txt-top">{{ section.settings.currency }}</span>
+                  <span class="pc-txt-l">{{ block.settings.price_3 }}</span>
+                </td>
+              {% endif %}
+              {% if section.settings.heading_4 != blank %}
+                <td>
+                  <span class="pc-txt-top">{{ section.settings.currency }}</span>
+                  <span class="pc-txt-l">{{ block.settings.price_4 }}</span>
+                </td>
+              {% endif %}
+            </tr>
+        {% endcase %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<script>
+  document.querySelector('.pc-comparison-tables')?.addEventListener('click', function(event) {
+    if (event.target.tagName === 'LI' || event.target.tagName === 'BUTTON') {
+      const li = event.target.tagName === 'LI' ? event.target : event.target.parentElement;
+      const pos = Array.from(li.parentElement.children).indexOf(li) + 2;
+      
+      document.querySelectorAll('.pc-comparison-table tr td:not(:first-child)').forEach(td => {
+        td.style.display = 'none';
+      });
+      
+      document.querySelectorAll(`.pc-comparison-table td:nth-child(${pos})`).forEach(td => {
+        td.style.display = 'table-cell';
+      });
+      
+      document.querySelectorAll('.pc-comparison-table tr th:not(:first-child)').forEach(th => {
+        th.style.display = 'none';
+      });
+      
+      document.querySelectorAll('.pc-comparison-tables li').forEach(item => {
+        item.classList.remove('pc-active');
+      });
+      
+      li.classList.add('pc-active');
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "PWC - Comparison Table #1",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Compare Plans"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "<p>Find the perfect plan for your needs</p>"
+    },
+    {
+      "type": "select",
+      "id": "column_alignment_title",
+      "label": "Title Alignment",
+      "options": [
+        {"value": "left", "label": "Left"},
+        {"value": "center", "label": "Center"}
+      ],
+      "default": "left"
+    },
+    {
+      "type": "text",
+      "id": "currency",
+      "label": "Currency Symbol",
+      "default": "$"
+    },
+    {
+      "type": "header",
+      "content": "Table Headings"
+    },
+    {
+      "type": "text",
+      "id": "heading_1",
+      "label": "Heading 1",
+      "default": "Basic"
+    },
+    {
+      "type": "text",
+      "id": "heading_2",
+      "label": "Heading 2",
+      "default": "Standard"
+    },
+    {
+      "type": "text",
+      "id": "heading_3",
+      "label": "Heading 3",
+      "default": "Premium"
+    },
+    {
+      "type": "text",
+      "id": "heading_4",
+      "label": "Heading 4",
+      "default": "Enterprise"
+    },
+    {
+      "type": "header",
+      "content": "Section Styling"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Max Width",
+      "min": 800,
+      "max": 2000,
+      "step": 50,
+      "unit": "px",
+      "default": 1000
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#dddddd"
+    },
+    {
+      "type": "header",
+      "content": "Title Styling"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Font Size (Desktop)",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_font_size",
+      "label": "Font Size (Mobile)",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "title_font_weight",
+      "label": "Font Weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 600
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom",
+      "label": "Bottom Margin",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_margin_bottom",
+      "label": "Mobile Bottom Margin",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Subtitle Styling"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size",
+      "label": "Font Size (Desktop)",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "mobile_subtitle_font_size",
+      "label": "Font Size (Mobile)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_weight",
+      "label": "Font Weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 400
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_max_width",
+      "label": "Max Width",
+      "min": 300,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "heading_padding_bottom",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Table Styling"
+    },
+    {
+      "type": "color",
+      "id": "table_header_bg",
+      "label": "Header Background",
+      "default": "#f2f2f2"
+    },
+    {
+      "type": "color",
+      "id": "table_heading_color",
+      "label": "Header Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "table_heading_font_size",
+      "label": "Header Font Size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "table_heading_font_weight",
+      "label": "Header Font Weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "table_cell_padding",
+      "label": "Cell Padding",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "row_header_color",
+      "label": "Row Header Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "row_header_font_size",
+      "label": "Row Header Font Size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "row_header_font_weight",
+      "label": "Row Header Font Weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "mobile_table_font_size",
+      "label": "Mobile Font Size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Feature Indicators"
+    },
+    {
+      "type": "color",
+      "id": "checked_color",
+      "label": "Checked Color",
+      "default": "#2CA01C"
+    },
+    {
+      "type": "color",
+      "id": "unchecked_color",
+      "label": "Unchecked Color",
+      "default": "#d72700"
+    },
+    {
+      "type": "header",
+      "content": "Price Styling"
+    },
+    {
+      "type": "range",
+      "id": "price_font_size",
+      "label": "Price Font Size",
+      "min": 18,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "price_font_weight",
+      "label": "Price Font Weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "currency_font_size",
+      "label": "Currency Font Size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Separator Styling"
+    },
+    {
+      "type": "range",
+      "id": "separator_font_size",
+      "label": "Font Size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "header",
+      "content": "Mobile Toggle Buttons"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Font Size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_font_weight",
+      "label": "Font Weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 600
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text Color",
+      "default": "#999999"
+    },
+    {
+      "type": "color",
+      "id": "button_active_bg_color",
+      "label": "Active Background",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "button_active_text_color",
+      "label": "Active Text Color",
+      "default": "#000000"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Section Heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Heading",
+          "default": "Features"
+        }
+      ]
+    },
+    {
+      "type": "data",
+      "name": "Feature Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "firstcol",
+          "label": "Feature Name",
+          "default": "Feature"
+        },
+        {
+          "type": "radio",
+          "id": "header_1_val",
+          "label": "Header 1",
+          "options": [
+            {"value": "checked", "label": "Checked"},
+            {"value": "unchecked", "label": "Unchecked"}
+          ],
+          "default": "checked"
+        },
+        {
+          "type": "radio",
+          "id": "header_2_val",
+          "label": "Header 2",
+          "options": [
+            {"value": "checked", "label": "Checked"},
+            {"value": "unchecked", "label": "Unchecked"}
+          ],
+          "default": "checked"
+        },
+        {
+          "type": "radio",
+          "id": "header_3_val",
+          "label": "Header 3",
+          "options": [
+            {"value": "checked", "label": "Checked"},
+            {"value": "unchecked", "label": "Unchecked"}
+          ],
+          "default": "checked"
+        },
+        {
+          "type": "radio",
+          "id": "header_4_val",
+          "label": "Header 4",
+          "options": [
+            {"value": "checked", "label": "Checked"},
+            {"value": "unchecked", "label": "Unchecked"}
+          ],
+          "default": "checked"
+        }
+      ]
+    },
+    {
+      "type": "price",
+      "name": "Price Row",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "price_interval",
+          "label": "Price Label",
+          "default": "Monthly Price"
+        },
+        {
+          "type": "text",
+          "id": "price_1",
+          "label": "Header 1 Price",
+          "default": "10"
+        },
+        {
+          "type": "text",
+          "id": "price_2",
+          "label": "Header 2 Price",
+          "default": "20"
+        },
+        {
+          "type": "text",
+          "id": "price_3",
+          "label": "Header 3 Price",
+          "default": "30"
+        },
+        {
+          "type": "text",
+          "id": "price_4",
+          "label": "Header 4 Price",
+          "default": "50"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PWC - Comparison Table #1",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "heading",
+          "settings": {
+            "caption": "Core Features"
+          }
+        },
+        {
+          "type": "data",
+          "settings": {
+            "firstcol": "Feature One",
+            "header_1_val": "checked",
+            "header_2_val": "checked",
+            "header_3_val": "checked",
+            "header_4_val": "checked"
+          }
+        },
+        {
+          "type": "data",
+          "settings": {
+            "firstcol": "Feature Two",
+            "header_1_val": "checked",
+            "header_2_val": "checked",
+            "header_3_val": "checked",
+            "header_4_val": "checked"
+          }
+        },
+        {
+          "type": "heading",
+          "settings": {
+            "caption": "Advanced Features"
+          }
+        },
+        {
+          "type": "data",
+          "settings": {
+            "firstcol": "Feature Three",
+            "header_1_val": "unchecked",
+            "header_2_val": "checked",
+            "header_3_val": "checked",
+            "header_4_val": "checked"
+          }
+        },
+        {
+          "type": "price",
+          "settings": {
+            "price_interval": "Monthly Price",
+            "price_1": "10",
+            "price_2": "20",
+            "price_3": "30",
+            "price_4": "50"
+          }
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}
