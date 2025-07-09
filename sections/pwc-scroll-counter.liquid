@@ -1,0 +1,388 @@
+{%- assign sec_id = '#shopify-section-' | append: section.id -%}
+{%- assign parts = sec_id | split: '_' -%}
+{%- assign last_lower = parts | last -%}
+{%- assign last_part = last_lower | downcase -%}
+
+{% style %}
+  {{ sec_id }} {
+    padding-top: {{ section.settings.padding_top_desktop }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    padding-left: {{ section.settings.padding_left_desktop }}px;
+    padding-right: {{ section.settings.padding_right_desktop }}px;
+    background-color: {{ section.settings.bg_color }};
+    {% if section.settings.enable_shadow %}box-shadow: 0 4px 12px rgba(0,0,0,0.1);{% endif %}
+  }
+
+  {{ sec_id }} .pc-counter-title-{{ last_part }},
+  {{ sec_id }} .pc-counter-subtitle-{{ last_part }} {
+    text-align: {{ section.settings.text_align }};
+  }
+
+  {{ sec_id }} .pc-counter-title-{{ last_part }} {
+    font-size: {{ section.settings.title_font_size_desktop }}px;
+    color: {{ section.settings.title_color }};
+    margin-bottom: 10px;
+  }
+
+  {{ sec_id }} .pc-counter-subtitle-{{ last_part }} {
+    font-size: {{ section.settings.subtitle_font_size_desktop }}px;
+    color: {{ section.settings.subtitle_color }};
+    margin-bottom: 30px;
+  }
+
+  {{ sec_id }} .pc-counter-container-{{ last_part }} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: var(--page-width);
+    margin: 0 auto;
+  }
+
+  {{ sec_id }} .pc-counter-content-{{ last_part }} {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  {{ sec_id }} .pc-counter-content-{{ last_part }}:hover {
+    transform: translateY(-5px);
+  }
+
+  {{ sec_id }} .pc-flex-counter-{{ last_part }} {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: baseline;
+  }
+
+  {{ sec_id }} .pc-counter-value-{{ last_part }} {
+    font-size: 60px;
+    font-weight: bold;
+    color: #3498db;
+  }
+
+  {{ sec_id }} .pc-counter-label-{{ last_part }} {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3498db;
+  }
+
+  {{ sec_id }} .pc-counter-description-{{ last_part }} {
+    font-size: 14px;
+    color: #666;
+  }
+
+  @media screen and (max-width: 768px) {
+    {{ sec_id }} {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      padding-left: {{ section.settings.padding_left_mobile }}px;
+      padding-right: {{ section.settings.padding_right_mobile }}px;
+    }
+
+    {{ sec_id }} .pc-counter-title-{{ last_part }} {
+      font-size: {{ section.settings.title_font_size_mobile }}px;
+    }
+
+    {{ sec_id }} .pc-counter-subtitle-{{ last_part }} {
+      font-size: {{ section.settings.subtitle_font_size_mobile }}px;
+    }
+
+    {{ sec_id }} .pc-counter-value-{{ last_part }} {
+      font-size: 36px;
+    }
+
+    {{ sec_id }} .pc-counter-label-{{ last_part }} {
+      font-size: 16px;
+    }
+
+    {{ sec_id }} .pc-counter-description-{{ last_part }} {
+      font-size: 12px;
+    }
+  }
+{% endstyle %}
+
+<pc-scrollup-counter-{{ last_part }}>
+  <div class="page-width {{ section.settings.cell_align }}">
+    <h2 class="pc-counter-title-{{ last_part }}">{{ section.settings.title }}</h2>
+    <h3 class="pc-counter-subtitle-{{ last_part }}">{{ section.settings.subtitle }}</h3>
+  </div>
+
+  <div class="pc-counter-container-{{ last_part }} gradient color-{{ section.settings.section_color_scheme }}">
+    {% for block in section.blocks %}
+      <div class="pc-counter-content-{{ last_part }}" data-count="{{ block.settings.number }}">
+        <div class="pc-flex-counter-{{ last_part }}">
+          <div class="pc-counter-value-{{ last_part }}">0</div>
+          <div class="pc-counter-label-{{ last_part }}">{{ block.settings.label }}</div>
+        </div>
+        <div class="pc-counter-description-{{ last_part }}">{{ block.settings.description }}</div>
+      </div>
+    {% endfor %}
+  </div>
+</pc-scrollup-counter-{{ last_part }}>
+
+<script>
+  customElements.define('pc-scrollup-counter-{{ last_part }}', class extends HTMLElement {
+    connectedCallback() {
+      const elements = this.querySelectorAll('.pc-counter-content-{{ last_part }}');
+      const counted = new Set();
+
+      function isInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return rect.top >= 0 && rect.bottom <= window.innerHeight;
+      }
+
+      function startCount(el, target, duration = 2000) {
+        const counter = el.querySelector('.pc-counter-value-{{ last_part }}');
+        let current = 0;
+        const increment = Math.ceil(target / (duration / 10));
+        const interval = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(interval);
+          }
+          counter.textContent = current;
+        }, 10);
+      }
+
+      function handleScroll() {
+        elements.forEach(el => {
+          if (!counted.has(el) && isInViewport(el)) {
+            const target = parseInt(el.dataset.count);
+            startCount(el, target);
+            counted.add(el);
+          }
+        });
+      }
+
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "PWC - Scrollup Counter #1",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Top Title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "default": "Subtitle goes here",
+      "label": "Subtitle"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_desktop",
+      "label": "Title Font Size (Desktop)",
+      "min": 10,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_desktop",
+      "label": "Subtitle Font Size (Desktop)",
+      "min": 10,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "title_font_size_mobile",
+      "label": "Title Font Size (Mobile)",
+      "min": 10,
+      "max": 72,
+      "step": 1,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size_mobile",
+      "label": "Subtitle Font Size (Mobile)",
+      "min": 10,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Top Padding (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Bottom Padding (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "label": "Left Padding (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "label": "Right Padding (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Top Padding (Mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Bottom Padding (Mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "label": "Left Padding (Mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "label": "Right Padding (Mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_shadow",
+      "label": "Enable Shadow",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "Section Color Scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "select",
+      "id": "cell_align",
+      "label": "Content Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "counter_item",
+      "name": "Counter Item",
+      "settings": [
+        {
+          "type": "number",
+          "id": "number",
+          "label": "Counter Value",
+          "default": 1000
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Counter Label",
+          "default": "K+"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "Happy Customers"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Scrollup Counter"
+    }
+  ]
+}
+{% endschema %}
