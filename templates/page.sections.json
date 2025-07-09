@@ -724,7 +724,7 @@
         "counter_gap": 4,
         "counter_margin_bottom": 10,
         "animation_duration": 2000,
-        "mobile_min_column_width": 100,
+        "mobile_min_column_width": 150,
         "mobile_grid_gap": 10,
         "mobile_grid_padding": 10,
         "mobile_item_min_height": 150,
