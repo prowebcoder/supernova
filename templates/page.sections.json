@@ -283,22 +283,22 @@
           "type": "Content",
           "settings": {
             "number": 1,
-            "label": "K",
+            "label": "",
             "description": "description"
           }
         },
         "content_BCWdFn": {
           "type": "Content",
           "settings": {
-            "number": 1,
-            "label": "K",
+            "number": 1000,
+            "label": "Cups",
             "description": "description"
           }
         },
         "content_aDj3QL": {
           "type": "Content",
           "settings": {
-            "number": 1,
+            "number": 6509,
             "label": "K",
             "description": "description"
           }
