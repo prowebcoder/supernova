@@ -569,9 +569,9 @@
           "type": "data",
           "settings": {
             "firstcol": "Feature One",
-            "header_1_val": "checked",
-            "header_2_val": "checked",
-            "header_3_val": "checked",
+            "header_1_val": "unchecked",
+            "header_2_val": "unchecked",
+            "header_3_val": "unchecked",
             "header_4_val": "checked"
           }
         },
@@ -579,8 +579,8 @@
           "type": "data",
           "settings": {
             "firstcol": "Feature Two",
-            "header_1_val": "checked",
-            "header_2_val": "checked",
+            "header_1_val": "unchecked",
+            "header_2_val": "unchecked",
             "header_3_val": "checked",
             "header_4_val": "checked"
           }
