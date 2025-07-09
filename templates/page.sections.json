@@ -791,7 +791,7 @@
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40,
         "enable_shadow": true,
-        "bg_color": "#ffffff"
+        "bg_color": "#fff8c9"
       }
     }
   },
