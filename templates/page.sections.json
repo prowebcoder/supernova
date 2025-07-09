@@ -519,7 +519,7 @@
         "header_font_weight": 600,
         "header_text_color": "#000000",
         "header_border_color": "#ffffff",
-        "header_padding": 40,
+        "header_padding": 10,
         "price_font_size": 42,
         "mobile_price_font_size": 30,
         "price_text_color": "#000000",
