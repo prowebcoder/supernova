@@ -499,7 +499,7 @@
         "mobile_title_font_size": 30,
         "title_font_weight": 400,
         "title_color": "#000000",
-        "title_align": "left",
+        "title_align": "center",
         "title_margin_bottom": 20,
         "mobile_title_margin_bottom": 15,
         "subtitle_font_size": 20,
