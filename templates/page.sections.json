@@ -735,6 +735,105 @@
         "enable_shadow": true,
         "bg_color": "#fff8c9"
       }
+    },
+    "pwc_scroll_counter_yNAjwe": {
+      "type": "pwc-scroll-counter",
+      "blocks": {
+        "counter_n3nLFt": {
+          "type": "counter",
+          "settings": {
+            "number": 100,
+            "label": "+",
+            "description": "Happy Customers"
+          }
+        },
+        "counter_CJj3zf": {
+          "type": "counter",
+          "settings": {
+            "number": 24,
+            "label": "/7",
+            "description": "Support Availability"
+          }
+        },
+        "counter_Wefehz": {
+          "type": "counter",
+          "settings": {
+            "number": 99,
+            "label": "%",
+            "description": "Satisfaction Rate"
+          }
+        },
+        "counter_HGaMF8": {
+          "type": "counter",
+          "settings": {
+            "number": 15,
+            "label": "k",
+            "description": "Products Sold"
+          }
+        }
+      },
+      "block_order": [
+        "counter_n3nLFt",
+        "counter_CJj3zf",
+        "counter_Wefehz",
+        "counter_HGaMF8"
+      ],
+      "name": "PWC - Counter #3",
+      "settings": {
+        "title": "Our Achievements",
+        "subtitle": "<p>See what we've accomplished so far</p>",
+        "cell_align": "center",
+        "max_width": 1200,
+        "min_column_width": 200,
+        "grid_gap": 20,
+        "grid_padding": 20,
+        "item_min_height": 200,
+        "item_padding": 20,
+        "item_border_radius": 10,
+        "hover_lift": 5,
+        "counter_gap": 4,
+        "counter_margin_bottom": 10,
+        "animation_duration": 2000,
+        "mobile_min_column_width": 100,
+        "mobile_grid_gap": 10,
+        "mobile_grid_padding": 10,
+        "mobile_item_min_height": 150,
+        "heading_spacing": 30,
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80,
+        "padding_left_desktop": 20,
+        "padding_right_desktop": 20,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "padding_left_mobile": 15,
+        "padding_right_mobile": 15,
+        "title_font_size": 36,
+        "title_font_weight": 700,
+        "title_color": "#000000",
+        "title_margin_bottom": 16,
+        "subtitle_font_size": 18,
+        "subtitle_font_weight": 400,
+        "subtitle_color": "#666666",
+        "subtitle_max_width": 700,
+        "number_font_size": 60,
+        "number_font_weight": 700,
+        "number_color": "#3498db",
+        "label_font_size": 24,
+        "label_font_weight": 600,
+        "label_color": "#3498db",
+        "desc_font_size": 14,
+        "desc_font_weight": 400,
+        "desc_color": "#666666",
+        "mobile_title_font_size": 28,
+        "mobile_title_margin_bottom": 10,
+        "mobile_subtitle_font_size": 16,
+        "mobile_number_font_size": 36,
+        "mobile_label_font_size": 18,
+        "mobile_desc_font_size": 12,
+        "bg_color": "#ffffff",
+        "item_bg_color": "#ffffff",
+        "enable_shadow": true
+      }
     }
   },
   "order": [
@@ -747,6 +846,7 @@
     "text_with_image_slider_component_qwyqbU",
     "pwc_pricing_table_eGb3RU",
     "pwc_comparison_table_cHTGFF",
-    "pwc_horizontal_counter_3_9cXLHG"
+    "pwc_horizontal_counter_3_9cXLHG",
+    "pwc_scroll_counter_yNAjwe"
   ]
 }
