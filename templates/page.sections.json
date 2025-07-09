@@ -723,6 +723,76 @@
         "section_color_scheme": "",
         "cell_align": "center"
       }
+    },
+    "pwc_horizontal_counter_3_9cXLHG": {
+      "type": "pwc-horizontal-counter-3",
+      "blocks": {
+        "counter_item_XEfVQb": {
+          "type": "counter_item",
+          "settings": {
+            "number": 1000,
+            "label": "K+",
+            "description": "Happy Customers"
+          }
+        },
+        "counter_item_FJq9eB": {
+          "type": "counter_item",
+          "settings": {
+            "number": 1000,
+            "label": "K+",
+            "description": "Happy Customers"
+          }
+        },
+        "counter_item_QKcfa6": {
+          "type": "counter_item",
+          "settings": {
+            "number": 1000,
+            "label": "K+",
+            "description": "Happy Customers"
+          }
+        },
+        "counter_item_pkbFcm": {
+          "type": "counter_item",
+          "settings": {
+            "number": 1000,
+            "label": "K+",
+            "description": "Happy Customers"
+          }
+        },
+        "counter_item_AcURFW": {
+          "type": "counter_item",
+          "settings": {
+            "number": 1000,
+            "label": "K+",
+            "description": "Happy Customers"
+          }
+        }
+      },
+      "block_order": [
+        "counter_item_XEfVQb",
+        "counter_item_FJq9eB",
+        "counter_item_QKcfa6",
+        "counter_item_pkbFcm",
+        "counter_item_AcURFW"
+      ],
+      "name": "Scroll Counter Horizontal",
+      "settings": {
+        "title": "We’re trusted by numbers",
+        "subtitle": "Proven track record",
+        "text_align": "center",
+        "title_color": "#000000",
+        "subtitle_color": "#333333",
+        "title_font_size_desktop": 36,
+        "subtitle_font_size_desktop": 18,
+        "title_font_size_mobile": 28,
+        "subtitle_font_size_mobile": 16,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "enable_shadow": true,
+        "bg_color": "#ffffff"
+      }
     }
   },
   "order": [
@@ -735,6 +805,7 @@
     "text_with_image_slider_component_qwyqbU",
     "pwc_pricing_table_eGb3RU",
     "pwc_comparison_table_cHTGFF",
-    "pwc_scroll_counter_zQjewX"
+    "pwc_scroll_counter_zQjewX",
+    "pwc_horizontal_counter_3_9cXLHG"
   ]
 }
