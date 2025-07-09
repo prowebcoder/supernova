@@ -176,7 +176,7 @@
             "caption": "Add a tagline"
           }
         },
-        "price_3JjyF9": {
+        "price_giMJK8": {
           "type": "price",
           "settings": {
             "price_interval": "Monthly",
@@ -245,7 +245,7 @@
       },
       "block_order": [
         "heading_jX3hCd",
-        "price_3JjyF9",
+        "price_giMJK8",
         "data_edUenw",
         "data_3TQhCK",
         "heading_NCz6xM",
@@ -264,8 +264,8 @@
         "heading_1": "Heading 1",
         "heading_2": "Heading 2",
         "heading_3": "Heading 3",
-        "heading_4": "Heading 4",
-        "heading_5": "Heading 5",
+        "heading_4": "",
+        "heading_5": "",
         "padding_top": 36,
         "padding_bottom": 100
       }
