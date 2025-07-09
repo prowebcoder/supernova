@@ -760,7 +760,7 @@
         "mobile_number_font_size": 36,
         "mobile_label_font_size": 18,
         "mobile_desc_font_size": 12,
-        "bg_color": "#ffffff",
+        "bg_color": "rgba(0,0,0,0)",
         "item_bg_color": "#ffffff",
         "enable_shadow": true
       }
