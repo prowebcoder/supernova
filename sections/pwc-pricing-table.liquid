@@ -1,6 +1,962 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+{% comment %} PWC - Pricing Table #1 {% endcomment %}
+{%- assign sec_id = '#shopify-section-' | append: section.id -%}
+{%- assign parts = sec_id | split: '_' -%}
+{%- assign last_lower = parts | last -%}
+{%- assign last_part = last_lower | downcase -%}
+
+<style>
+  {{ sec_id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.bg_color }};
   }
+  
+  {{ sec_id }} .pc-pricing-table {
+    margin: 40px auto;
+    max-width: {{ section.settings.max_width }}px;
+  }
+  
+  {{ sec_id }} .pc-title {
+    text-align: {{ section.settings.title_align }};
+    font-size: {{ section.settings.title_font_size }}px;
+    font-weight: {{ section.settings.title_font_weight }};
+    color: {{ section.settings.title_color }};
+    margin-bottom: {{ section.settings.title_margin_bottom }}px;
+    letter-spacing: 0.04em;
+  }
+  
+  {{ sec_id }} .pc-subtitle {
+    text-align: {{ section.settings.subtitle_align }};
+    font-size: {{ section.settings.subtitle_font_size }}px;
+    font-weight: {{ section.settings.subtitle_font_weight }};
+    color: {{ section.settings.subtitle_color }};
+    letter-spacing: 0.04em;
+    margin-bottom: {{ section.settings.subtitle_margin_bottom }}px;
+  }
+  
+  {{ sec_id }} .pc-tables-container {
+    list-style: none;
+    padding: 0 2em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: {{ section.settings.table_gap }}px;
+  }
+  
+  {{ sec_id }} .pc-table {
+    width: calc((100% - {{ section.settings.table_gap | times: 2 }}px) / 3);
+    padding: {{ section.settings.table_padding }}px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-radius: {{ section.settings.table_border_radius }}px;
+    background-color: {{ section.settings.table_bg_color }};
+    box-shadow: {% if section.settings.enable_table_shadow %}0 4px 20px rgba(0,0,0,0.1){% else %}none{% endif %};
+    position: relative;
+  }
+  
+  {{ sec_id }} .pc-table:hover {
+    transform: scale(1.08);
+  }
+  
+  {{ sec_id }} .pc-table-header {
+    font-size: {{ section.settings.header_font_size }}px;
+    padding: {{ section.settings.header_padding }}px 0;
+    border-bottom: 2px solid {{ section.settings.header_border_color }};
+    letter-spacing: 0.03em;
+    color: {{ section.settings.header_text_color }};
+    font-weight: {{ section.settings.header_font_weight }};
+  }
+  
+  {{ sec_id }} .pc-table-pricing {
+    font-size: {{ section.settings.price_font_size }}px;
+    padding: {{ section.settings.price_padding }}px 0;
+    border-bottom: 2px solid {{ section.settings.price_border_color }};
+    line-height: 0.7;
+    color: {{ section.settings.price_text_color }};
+  }
+  
+  {{ sec_id }} .pc-table-pricing span:first-of-type {
+    font-size: 0.35em;
+    vertical-align: top;
+    letter-spacing: 0.15em;
+  }
+  
+  {{ sec_id }} .pc-table-pricing span:last-of-type {
+    vertical-align: bottom;
+    font-size: 0.3em;
+    letter-spacing: 0.04em;
+    padding-left: 0.2em;
+  }
+  
+  {{ sec_id }} .pc-table-options {
+    list-style: none;
+    padding: {{ section.settings.list_padding }}px;
+    font-size: {{ section.settings.list_font_size }}px;
+    border-bottom: 2px solid {{ section.settings.list_border_color }};
+    color: {{ section.settings.list_text_color }};
+    text-align: left;
+  }
+  
+  {{ sec_id }} .pc-table-options > li {
+    padding: {{ section.settings.list_item_padding }}px 0;
+  }
+  
+  {{ sec_id }} .pc-table-options > li:before {
+    content: "✓";
+    display: inline-flex;
+    margin-right: 15px;
+    color: {{ section.settings.checkmark_color }};
+    background-color: {{ section.settings.checkmark_bg_color }};
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    font-size: 0.8em;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  {{ sec_id }} .pc-getstart-button {
+    color: {{ section.settings.button_text_color }};
+    border: 0;
+    background-color: {{ section.settings.button_bg_color }};
+    margin-top: {{ section.settings.button_margin_top }}px;
+    border-radius: {{ section.settings.button_border_radius }}px;
+    cursor: pointer;
+    padding: {{ section.settings.button_padding }}px;
+    box-shadow: 0px 3px 0px 0px {{ section.settings.button_shadow_color }};
+    letter-spacing: 0.07em;
+    transition: all 0.4s ease;
+    font-size: {{ section.settings.button_font_size }}px;
+    font-weight: {{ section.settings.button_font_weight }};
+    width: 100%;
+    display: block;
+    text-decoration: none;
+  }
+  
+  {{ sec_id }} .pc-getstart-button:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 40px 29px -19px {{ section.settings.button_shadow_color | color_modify: 'alpha', 0.9 }};
+  }
+  
+  {{ sec_id }} .pc-getstart-button:active {
+    box-shadow: inset 0 0 10px 1px {{ section.settings.button_shadow_color }}, 0px 40px 29px -19px {{ section.settings.button_shadow_color | color_modify: 'alpha', 0.95 }};
+    transform: scale(0.95) translateY(-9px);
+  }
+  
+  {{ sec_id }} .pc-popular-badge {
+    content: "Most Popular";
+    position: absolute;
+    color: {{ section.settings.badge_text_color }};
+    background-color: {{ section.settings.badge_bg_color }};
+    text-align: center;
+    right: 15px;
+    top: -25px;
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    font-size: 0.5em;
+    padding-top: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    transition: all 0.5s ease;
+  }
+  
+  /* Mobile Responsive Styles */
+  @media screen and (max-width: 1024px) {
+    {{ sec_id }} .pc-table {
+      width: calc((100% - {{ section.settings.table_gap }}px) / 2);
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    {{ sec_id }} .pc-tables-container {
+      padding: 0;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    {{ sec_id }} .pc-table {
+      width: 90%;
+      max-width: 90%;
+      margin-bottom: 20px;
+      padding: 10px 20px;
+    }
+    
+    {{ sec_id }} .pc-table:hover {
+      transform: none;
+    }
+    
+    {{ sec_id }} .pc-title {
+      font-size: {{ section.settings.mobile_title_font_size }}px;
+      margin-bottom: {{ section.settings.mobile_title_margin_bottom }}px;
+    }
+    
+    {{ sec_id }} .pc-subtitle {
+      font-size: {{ section.settings.mobile_subtitle_font_size }}px;
+      margin-bottom: {{ section.settings.mobile_subtitle_margin_bottom }}px;
+    }
+    
+    {{ sec_id }} .pc-table-header {
+      font-size: {{ section.settings.mobile_header_font_size }}px;
+      padding: 0;
+      border-bottom: none;
+      width: 33%;
+      padding-top: 3%;
+      padding-bottom: 2%;
+      float: left;
+    }
+    
+    {{ sec_id }} .pc-table-pricing {
+      font-size: {{ section.settings.mobile_price_font_size }}px;
+      padding: 0;
+      border-bottom: none;
+      float: left;
+      clear: left;
+      width: 33%;
+    }
+    
+    {{ sec_id }} .pc-table-options {
+      padding: 0;
+      border-bottom: none;
+      margin-right: 10%;
+      font-size: {{ section.settings.mobile_list_font_size }}px;
+    }
+    
+    {{ sec_id }} .pc-getstart-button {
+      margin-top: 0;
+      font-size: {{ section.settings.mobile_button_font_size }}px;
+      padding: 10px;
+    }
+    
+    {{ sec_id }} .pc-popular-badge {
+      left: 10px;
+      width: 45px;
+      height: 45px;
+      top: -10px;
+      padding-top: 13px;
+      font-size: 0.8em;
+    }
+    
+    {{ sec_id }} .pc-getstart-button:hover,
+    {{ sec_id }} .pc-getstart-button:active {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    {{ sec_id }} .pc-table {
+      width: 100%;
+      max-width: 100%;
+    }
+    
+    {{ sec_id }} .pc-table-header,
+    {{ sec_id }} .pc-table-pricing {
+      float: none;
+      width: 100%;
+      text-align: center;
+    }
+    
+    {{ sec_id }} .pc-table-header {
+      font-size: {{ section.settings.mobile_header_font_size | times: 1.2 }}px;
+      margin-bottom: 5px;
+    }
+    
+    {{ sec_id }} .pc-table-pricing {
+      font-size: {{ section.settings.mobile_price_font_size | times: 1.2 }}px;
+      margin-bottom: 10px;
+    }
+    
+    {{ sec_id }} .pc-table-options {
+      margin-right: 0;
+      font-size: {{ section.settings.mobile_list_font_size | times: 1.2 }}px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    {{ sec_id }} .pc-table-options > li {
+      text-align: center;
+    }
+    
+    {{ sec_id }} .pc-getstart-button {
+      font-size: {{ section.settings.mobile_button_font_size | times: 1.2 }}px;
+      width: 80%;
+      margin: 10px auto;
+    }
+  }
+</style>
+
+<div class="pc-pricing-table">
+  <h2 class="pc-title">{{ section.settings.title }}</h2>
+  <h3 class="pc-subtitle">{{ section.settings.subtitle }}</h3>
+
+  <ul class="pc-tables-container">
+    {% for block in section.blocks %}
+      <li class="pc-table" style="background-color: {{ block.settings.bg_color }}">
+        {% if block.settings.popular_badge %}
+          <div class="pc-popular-badge">{{ block.settings.badge_text }}</div>
+        {% endif %}
+        
+        <h1 class="pc-table-header">{{ block.settings.title }}</h1>
+        <p class="pc-table-pricing">
+          <span>{{ block.settings.currency }}</span>
+          <span>{{ block.settings.price }}</span>
+          <span>{{ block.settings.interval }}</span>
+        </p>
+        <ul class="pc-table-options">
+          {% if block.settings.list_item_1 != blank %}<li>{{ block.settings.list_item_1 }}</li>{% endif %}
+          {% if block.settings.list_item_2 != blank %}<li>{{ block.settings.list_item_2 }}</li>{% endif %}
+          {% if block.settings.list_item_3 != blank %}<li>{{ block.settings.list_item_3 }}</li>{% endif %}
+          {% if block.settings.list_item_4 != blank %}<li>{{ block.settings.list_item_4 }}</li>{% endif %}
+          {% if block.settings.list_item_5 != blank %}<li>{{ block.settings.list_item_5 }}</li>{% endif %}
+        </ul>
+        <a href="{{ block.settings.button_link }}" class="pc-getstart-button">{{ block.settings.button_text }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+{
+  "name": "PWC - Pricing Table #1",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Choose Your Plan"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "<p>Find the perfect plan for your business</p>"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Max Container Width",
+      "min": 800,
+      "max": 2000,
+      "step": 50,
+      "unit": "px",
+      "default": 1350
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Section Padding Top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Section Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Title Styling"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Font Size (Desktop)",
+      "min": 20,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_font_size",
+      "label": "Font Size (Mobile)",
+      "min": 16,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "title_font_weight",
+      "label": "Font Weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 400
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "title_align",
+      "label": "Alignment",
+      "options": [
+        {"value": "left", "label": "Left"},
+        {"value": "center", "label": "Center"},
+        {"value": "right", "label": "Right"}
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom",
+      "label": "Bottom Margin (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_margin_bottom",
+      "label": "Bottom Margin (Mobile)",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Subtitle Styling"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size",
+      "label": "Font Size (Desktop)",
+      "min": 12,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_subtitle_font_size",
+      "label": "Font Size (Mobile)",
+      "min": 10,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_weight",
+      "label": "Font Weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 400
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Color",
+      "default": "#333333"
+    },
+    {
+      "type": "select",
+      "id": "subtitle_align",
+      "label": "Alignment",
+      "options": [
+        {"value": "left", "label": "Left"},
+        {"value": "center", "label": "Center"},
+        {"value": "right", "label": "Right"}
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_margin_bottom",
+      "label": "Bottom Margin (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mobile_subtitle_margin_bottom",
+      "label": "Bottom Margin (Mobile)",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Table Settings"
+    },
+    {
+      "type": "range",
+      "id": "table_gap",
+      "label": "Spacing Between Tables",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "table_padding",
+      "label": "Table Padding",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "table_border_radius",
+      "label": "Border Radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 5
+    },
+    {
+      "type": "color",
+      "id": "table_bg_color",
+      "label": "Default Background",
+      "default": "#f8f9fa"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_table_shadow",
+      "label": "Enable Shadow",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Header Styling"
+    },
+    {
+      "type": "range",
+      "id": "header_font_size",
+      "label": "Font Size (Desktop)",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "mobile_header_font_size",
+      "label": "Font Size (Mobile)",
+      "min": 14,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "header_font_weight",
+      "label": "Font Weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 600
+    },
+    {
+      "type": "color",
+      "id": "header_text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "header_border_color",
+      "label": "Border Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "header_padding",
+      "label": "Padding",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Pricing Styling"
+    },
+    {
+      "type": "range",
+      "id": "price_font_size",
+      "label": "Font Size (Desktop)",
+      "min": 24,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 42
+    },
+    {
+      "type": "range",
+      "id": "mobile_price_font_size",
+      "label": "Font Size (Mobile)",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "color",
+      "id": "price_text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "price_border_color",
+      "label": "Border Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "price_padding",
+      "label": "Padding",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Feature List Styling"
+    },
+    {
+      "type": "range",
+      "id": "list_font_size",
+      "label": "Font Size (Desktop)",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_list_font_size",
+      "label": "Font Size (Mobile)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "list_text_color",
+      "label": "Text Color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "list_border_color",
+      "label": "Border Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "list_padding",
+      "label": "Padding",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "list_item_padding",
+      "label": "Item Padding",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "color",
+      "id": "checkmark_color",
+      "label": "Checkmark Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "checkmark_bg_color",
+      "label": "Checkmark Background",
+      "default": "#71ce73"
+    },
+    {
+      "type": "header",
+      "content": "Button Styling"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Font Size (Desktop)",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_button_font_size",
+      "label": "Font Size (Mobile)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_font_weight",
+      "label": "Font Weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 600
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Background Color",
+      "default": "#71ce73"
+    },
+    {
+      "type": "color",
+      "id": "button_shadow_color",
+      "label": "Shadow Color",
+      "default": "#66ac64"
+    },
+    {
+      "type": "range",
+      "id": "button_padding",
+      "label": "Padding",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "button_margin_top",
+      "label": "Top Margin",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Border Radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Popular Badge"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Background Color",
+      "default": "#3bbdee"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pricing_table",
+      "name": "Pricing Table",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Basic Plan"
+        },
+        {
+          "type": "text",
+          "id": "currency",
+          "label": "Currency Symbol",
+          "default": "$"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "29"
+        },
+        {
+          "type": "text",
+          "id": "interval",
+          "label": "Interval",
+          "default": "/month"
+        },
+        {
+          "type": "text",
+          "id": "list_item_1",
+          "label": "Feature 1",
+          "default": "5 Products"
+        },
+        {
+          "type": "text",
+          "id": "list_item_2",
+          "label": "Feature 2",
+          "default": "Up to 1,000 subscribers"
+        },
+        {
+          "type": "text",
+          "id": "list_item_3",
+          "label": "Feature 3",
+          "default": "Basic analytics"
+        },
+        {
+          "type": "text",
+          "id": "list_item_4",
+          "label": "Feature 4",
+          "default": "Email support"
+        },
+        {
+          "type": "text",
+          "id": "list_item_5",
+          "label": "Feature 5",
+          "default": "24/7 customer service"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Get Started"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background Color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "checkbox",
+          "id": "popular_badge",
+          "label": "Show Popular Badge",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge Text",
+          "default": "Most Popular"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PWC - Pricing Table #1",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "pricing_table",
+          "settings": {
+            "title": "Basic Plan",
+            "price": "29",
+            "list_item_1": "5 Products",
+            "list_item_2": "Up to 1,000 subscribers",
+            "list_item_3": "Basic analytics",
+            "button_text": "Get Started"
+          }
+        },
+        {
+          "type": "pricing_table",
+          "settings": {
+            "title": "Pro Plan",
+            "price": "79",
+            "popular_badge": true,
+            "list_item_1": "Unlimited Products",
+            "list_item_2": "Up to 10,000 subscribers",
+            "list_item_3": "Advanced analytics",
+            "button_text": "Get Started"
+          }
+        },
+        {
+          "type": "pricing_table",
+          "settings": {
+            "title": "Enterprise Plan",
+            "price": "199",
+            "list_item_1": "Unlimited Products",
+            "list_item_2": "Unlimited subscribers",
+            "list_item_3": "Advanced analytics",
+            "button_text": "Get Started"
+          }
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}
