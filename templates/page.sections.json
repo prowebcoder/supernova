@@ -438,7 +438,7 @@
             "list_item_5": "24/7 customer service",
             "button_text": "Get Started",
             "button_link": "",
-            "bg_color": "#ffffff",
+            "bg_color": "#dfebff",
             "popular_badge": false,
             "badge_text": "Most Popular"
           }
@@ -457,7 +457,7 @@
             "list_item_5": "24/7 customer service",
             "button_text": "Get Started",
             "button_link": "",
-            "bg_color": "#ffffff",
+            "bg_color": "#ffc5af",
             "popular_badge": true,
             "badge_text": "Most Popular"
           }
@@ -476,7 +476,7 @@
             "list_item_5": "24/7 customer service",
             "button_text": "Get Started",
             "button_link": "",
-            "bg_color": "#ffffff",
+            "bg_color": "#ffcfe5",
             "popular_badge": false,
             "badge_text": "Most Popular"
           }
