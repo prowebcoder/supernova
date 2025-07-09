@@ -545,6 +545,120 @@
         "badge_text_color": "#ffffff",
         "badge_bg_color": "#3bbdee"
       }
+    },
+    "pwc_comparison_table_cHTGFF": {
+      "type": "pwc-comparison-table",
+      "blocks": {
+        "heading_YQh7DX": {
+          "type": "heading",
+          "settings": {
+            "caption": "Core Features"
+          }
+        },
+        "price_ErTRpb": {
+          "type": "price",
+          "settings": {
+            "price_interval": "Monthly Price",
+            "price_1": "10",
+            "price_2": "20",
+            "price_3": "30",
+            "price_4": "50"
+          }
+        },
+        "data_AazKqi": {
+          "type": "data",
+          "settings": {
+            "firstcol": "Feature One",
+            "header_1_val": "checked",
+            "header_2_val": "checked",
+            "header_3_val": "checked",
+            "header_4_val": "checked"
+          }
+        },
+        "data_F6gzkH": {
+          "type": "data",
+          "settings": {
+            "firstcol": "Feature Two",
+            "header_1_val": "checked",
+            "header_2_val": "checked",
+            "header_3_val": "checked",
+            "header_4_val": "checked"
+          }
+        },
+        "heading_PACP6p": {
+          "type": "heading",
+          "settings": {
+            "caption": "Advanced Features"
+          }
+        },
+        "data_Tkp6yN": {
+          "type": "data",
+          "settings": {
+            "firstcol": "Feature Three",
+            "header_1_val": "unchecked",
+            "header_2_val": "checked",
+            "header_3_val": "checked",
+            "header_4_val": "checked"
+          }
+        }
+      },
+      "block_order": [
+        "heading_YQh7DX",
+        "price_ErTRpb",
+        "data_AazKqi",
+        "data_F6gzkH",
+        "heading_PACP6p",
+        "data_Tkp6yN"
+      ],
+      "name": "PWC - Comparison Table #1",
+      "settings": {
+        "title": "Compare Plans",
+        "subtitle": "<p>Find the perfect plan for your needs</p>",
+        "column_alignment_title": "center",
+        "currency": "$",
+        "heading_1": "Basic",
+        "heading_2": "Standard",
+        "heading_3": "Premium",
+        "heading_4": "Enterprise",
+        "max_width": 1000,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "bg_color": "#ffffff",
+        "border_color": "#dddddd",
+        "title_font_size": 36,
+        "mobile_title_font_size": 28,
+        "title_font_weight": 600,
+        "title_color": "#000000",
+        "title_margin_bottom": 10,
+        "mobile_title_margin_bottom": 8,
+        "subtitle_font_size": 18,
+        "mobile_subtitle_font_size": 16,
+        "subtitle_font_weight": 400,
+        "subtitle_color": "#666666",
+        "subtitle_max_width": 700,
+        "heading_padding_bottom": 30,
+        "table_header_bg": "#f2f2f2",
+        "table_heading_color": "#000000",
+        "table_heading_font_size": 16,
+        "table_heading_font_weight": 600,
+        "table_cell_padding": 15,
+        "row_header_color": "#000000",
+        "row_header_font_size": 16,
+        "row_header_font_weight": 400,
+        "mobile_table_font_size": 14,
+        "checked_color": "#2CA01C",
+        "unchecked_color": "#d72700",
+        "price_font_size": 28,
+        "price_font_weight": 700,
+        "currency_font_size": 16,
+        "separator_font_size": 18,
+        "button_font_size": 14,
+        "button_font_weight": 600,
+        "button_bg_color": "#ffffff",
+        "button_text_color": "#999999",
+        "button_active_bg_color": "#f5f5f5",
+        "button_active_text_color": "#000000"
+      }
     }
   },
   "order": [
@@ -555,6 +669,7 @@
     "scroll_up_counter_zYenp7",
     "pricing_table_RK9Xk7",
     "text_with_image_slider_component_qwyqbU",
-    "pwc_pricing_table_eGb3RU"
+    "pwc_pricing_table_eGb3RU",
+    "pwc_comparison_table_cHTGFF"
   ]
 }
