@@ -1289,6 +1289,156 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "partner_logo_section_L6TwH8": {
+      "type": "partner-logo-section",
+      "blocks": {
+        "logo_image_GQyK49": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/LogoBlancoYVerde.webp",
+            "link": ""
+          }
+        },
+        "logo_image_qnFEwG": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/LogoBlancoYVerde.webp",
+            "link": ""
+          }
+        },
+        "logo_image_A33nMp": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/LogoBlancoYVerde.webp",
+            "link": ""
+          }
+        },
+        "logo_image_VECQ9L": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/LogoBlancoYVerde.webp",
+            "link": ""
+          }
+        },
+        "logo_image_FRX3fr": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/LogoBlancoYVerde.webp",
+            "link": ""
+          }
+        },
+        "logo_image_xKFNpD": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/LogoBlancoYVerde.webp",
+            "link": ""
+          }
+        },
+        "logo_image_KWKK3X": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/LogoBlancoYVerde.webp",
+            "link": ""
+          }
+        },
+        "logo_image_rdbLXE": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/LogoBlancoYVerde.webp",
+            "link": ""
+          }
+        },
+        "logo_image_Jj94hH": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/LogoBlancoYVerde.webp",
+            "link": ""
+          }
+        },
+        "logo_image_dzgHXG": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/LogoBlancoYVerde.webp",
+            "link": ""
+          }
+        },
+        "logo_image_XAencG": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/LogoBlancoYVerde.webp",
+            "link": ""
+          }
+        },
+        "logo_image_UhPQpk": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/LogoBlancoYVerde.webp",
+            "link": ""
+          }
+        },
+        "logo_image_qVKMVT": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/LogoBlancoYVerde.webp",
+            "link": ""
+          }
+        },
+        "logo_image_KKVaHV": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/LogoBlancoYVerde.webp",
+            "link": ""
+          }
+        },
+        "logo_image_mDYg9h": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/LogoBlancoYVerde.webp",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_image_GQyK49",
+        "logo_image_qnFEwG",
+        "logo_image_A33nMp",
+        "logo_image_VECQ9L",
+        "logo_image_FRX3fr",
+        "logo_image_xKFNpD",
+        "logo_image_KWKK3X",
+        "logo_image_rdbLXE",
+        "logo_image_Jj94hH",
+        "logo_image_dzgHXG",
+        "logo_image_XAencG",
+        "logo_image_UhPQpk",
+        "logo_image_qVKMVT",
+        "logo_image_KKVaHV",
+        "logo_image_mDYg9h"
+      ],
+      "name": "PWC - Partner Logo #1",
+      "settings": {
+        "title": "<strong>Our Partner </strong>Join forces",
+        "subtitle": "<p>Our <strong>products </strong>are designed and manufactured by a <strong>Professional Team</strong>. As a top priority we work hard to ensure that each customer has a satisfied <strong>Shopping Experience</strong>.<br/></p>",
+        "image": "shopify://shop_images/Logo_1.png",
+        "logo_width": 300,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "bg_color": "#ffffff",
+        "title_color": "#000000",
+        "title_font_size": 42,
+        "title_line_height": 56,
+        "desc_color": "#000000",
+        "desc_font_size": 20,
+        "desc_line_height": 33,
+        "mobile_title_font_size": 30,
+        "mobile_title_line_height": 48,
+        "mobile_desc_font_size": 14,
+        "mobile_desc_line_height": 24,
+        "border_color": "rgba(0, 0, 0, 0.1)",
+        "block_bg_color": "transparent",
+        "enable_shadow": false
+      }
     }
   },
   "order": [
@@ -1315,6 +1465,7 @@
     "testimonials_section_XR78Jc",
     "scroll_up_counter_Rxn97x",
     "collections_blocks_tabs_xmXtyc",
-    "custom_video_section_ge7LfD"
+    "custom_video_section_ge7LfD",
+    "partner_logo_section_L6TwH8"
   ]
 }
