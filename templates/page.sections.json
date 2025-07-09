@@ -312,7 +312,7 @@
       "settings": {
         "title": "Top Title",
         "subtitle": "Subtitle",
-        "section_color_scheme": "",
+        "section_color_scheme": "scheme-1",
         "cell_align": "center"
       }
     },
