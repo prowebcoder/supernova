@@ -668,6 +668,37 @@
     },
     "pwc_scroll_counter_zQjewX": {
       "type": "pwc-scroll-counter",
+      "blocks": {
+        "counter_item_iWxgEY": {
+          "type": "counter_item",
+          "settings": {
+            "number": 1000,
+            "label": "K+",
+            "description": "Happy Customers"
+          }
+        },
+        "counter_item_ndEqf7": {
+          "type": "counter_item",
+          "settings": {
+            "number": 1000,
+            "label": "K+",
+            "description": "Happy Customers"
+          }
+        },
+        "counter_item_YRtwTd": {
+          "type": "counter_item",
+          "settings": {
+            "number": 1000,
+            "label": "K+",
+            "description": "Happy Customers"
+          }
+        }
+      },
+      "block_order": [
+        "counter_item_iWxgEY",
+        "counter_item_ndEqf7",
+        "counter_item_YRtwTd"
+      ],
       "name": "PWC: Scrollup Counter #2",
       "settings": {
         "title": "Top Title",
@@ -676,7 +707,7 @@
         "title_color": "#000000",
         "subtitle_color": "#333333",
         "title_font_size_desktop": 36,
-        "subtitle_font_size_desktop": 18,
+        "subtitle_font_size_desktop": 17,
         "title_font_size_mobile": 28,
         "subtitle_font_size_mobile": 16,
         "padding_top_desktop": 60,
