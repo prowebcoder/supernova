@@ -1,77 +1,94 @@
+{% comment %} PWC - Counter #1 {% endcomment %}
 {%- assign sec_id = '#shopify-section-' | append: section.id -%}
 {%- assign parts = sec_id | split: '_' -%}
 {%- assign last_lower = parts | last -%}
 {%- assign last_part = last_lower | downcase -%}
 
-{% style %}
+<style>
   {{ sec_id }} {
     padding-top: {{ section.settings.padding_top_desktop }}px;
     padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
     padding-left: {{ section.settings.padding_left_desktop }}px;
     padding-right: {{ section.settings.padding_right_desktop }}px;
     background-color: {{ section.settings.bg_color }};
-    {% if section.settings.enable_shadow %}box-shadow: 0 4px 12px rgba(0,0,0,0.1);{% endif %}
   }
 
-  {{ sec_id }} .pc-counter-title-{{ last_part }},
-  {{ sec_id }} .pc-counter-subtitle-{{ last_part }} {
-    text-align: {{ section.settings.text_align }};
-  }
-
-  {{ sec_id }} .pc-counter-title-{{ last_part }} {
-    font-size: {{ section.settings.title_font_size_desktop }}px;
-    color: {{ section.settings.title_color }};
-    margin-bottom: 10px;
-  }
-
-  {{ sec_id }} .pc-counter-subtitle-{{ last_part }} {
-    font-size: {{ section.settings.subtitle_font_size_desktop }}px;
-    color: {{ section.settings.subtitle_color }};
-    margin-bottom: 30px;
-  }
-
-  {{ sec_id }} .pc-counter-container-{{ last_part }} {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    max-width: var(--page-width);
+  {{ sec_id }} .pc-counter-section {
+    max-width: {{ section.settings.max_width }}px;
     margin: 0 auto;
   }
 
-  {{ sec_id }} .pc-counter-content-{{ last_part }} {
-    background-color: #fff;
-    padding: 20px;
+  {{ sec_id }} .pc-counter-heading {
+    text-align: {{ section.settings.cell_align }};
+    margin-bottom: {{ section.settings.heading_spacing }}px;
+  }
+
+  {{ sec_id }} .pc-counter-title {
+    font-size: {{ section.settings.title_font_size }}px;
+    font-weight: {{ section.settings.title_font_weight }};
+    color: {{ section.settings.title_color }};
+    margin: 0 0 {{ section.settings.title_margin_bottom }}px;
+    line-height: 1.2;
+  }
+
+  {{ sec_id }} .pc-counter-subtitle {
+    font-size: {{ section.settings.subtitle_font_size }}px;
+    font-weight: {{ section.settings.subtitle_font_weight }};
+    color: {{ section.settings.subtitle_color }};
+    max-width: {{ section.settings.subtitle_max_width }}px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  {{ sec_id }} .pc-counter-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax({{ section.settings.min_column_width }}px, 1fr));
+    gap: {{ section.settings.grid_gap }}px;
+    padding: {{ section.settings.grid_padding }}px;
+  }
+
+  {{ sec_id }} .pc-counter-item {
+    border-radius: {{ section.settings.item_border_radius }}px;
+    padding: {{ section.settings.item_padding }}px;
     text-align: center;
-    border-radius: 10px;
+    background-color: {{ section.settings.item_bg_color }};
+    box-shadow: {% if section.settings.enable_shadow %}0px 4px 8px rgba(0, 0, 0, 0.1){% else %}none{% endif %};
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: {{ section.settings.item_min_height }}px;
   }
 
-  {{ sec_id }} .pc-counter-content-{{ last_part }}:hover {
-    transform: translateY(-5px);
+  {{ sec_id }} .pc-counter-item:hover {
+    transform: translateY(-{{ section.settings.hover_lift }}px);
   }
 
-  {{ sec_id }} .pc-flex-counter-{{ last_part }} {
+  {{ sec_id }} .pc-flex-counter {
     display: flex;
     justify-content: center;
-    gap: 5px;
+    gap: {{ section.settings.counter_gap }}px;
     align-items: baseline;
+    margin-bottom: {{ section.settings.counter_margin_bottom }}px;
   }
 
-  {{ sec_id }} .pc-counter-value-{{ last_part }} {
-    font-size: 60px;
-    font-weight: bold;
-    color: #3498db;
+  {{ sec_id }} .pc-counter-number {
+    font-size: {{ section.settings.number_font_size }}px;
+    font-weight: {{ section.settings.number_font_weight }};
+    color: {{ section.settings.number_color }};
   }
 
-  {{ sec_id }} .pc-counter-label-{{ last_part }} {
-    font-size: 24px;
-    font-weight: bold;
-    color: #3498db;
+  {{ sec_id }} .pc-counter-label {
+    font-size: {{ section.settings.label_font_size }}px;
+    font-weight: {{ section.settings.label_font_weight }};
+    color: {{ section.settings.label_color }};
   }
 
-  {{ sec_id }} .pc-counter-description-{{ last_part }} {
-    font-size: 14px;
-    color: #666;
+  {{ sec_id }} .pc-counter-description {
+    font-size: {{ section.settings.desc_font_size }}px;
+    font-weight: {{ section.settings.desc_font_weight }};
+    color: {{ section.settings.desc_color }};
+    line-height: 1.4;
   }
 
   @media screen and (max-width: 768px) {
@@ -81,167 +98,329 @@
       padding-left: {{ section.settings.padding_left_mobile }}px;
       padding-right: {{ section.settings.padding_right_mobile }}px;
     }
-
-    {{ sec_id }} .pc-counter-title-{{ last_part }} {
-      font-size: {{ section.settings.title_font_size_mobile }}px;
+    
+    {{ sec_id }} .pc-counter-title {
+      font-size: {{ section.settings.mobile_title_font_size }}px;
+      margin-bottom: {{ section.settings.mobile_title_margin_bottom }}px;
     }
-
-    {{ sec_id }} .pc-counter-subtitle-{{ last_part }} {
-      font-size: {{ section.settings.subtitle_font_size_mobile }}px;
+    
+    {{ sec_id }} .pc-counter-subtitle {
+      font-size: {{ section.settings.mobile_subtitle_font_size }}px;
     }
-
-    {{ sec_id }} .pc-counter-value-{{ last_part }} {
-      font-size: 36px;
+    
+    {{ sec_id }} .pc-counter-container {
+      grid-template-columns: repeat(auto-fit, minmax({{ section.settings.mobile_min_column_width }}px, 1fr));
+      gap: {{ section.settings.mobile_grid_gap }}px;
+      padding: {{ section.settings.mobile_grid_padding }}px;
     }
-
-    {{ sec_id }} .pc-counter-label-{{ last_part }} {
-      font-size: 16px;
+    
+    {{ sec_id }} .pc-counter-number {
+      font-size: {{ section.settings.mobile_number_font_size }}px;
     }
-
-    {{ sec_id }} .pc-counter-description-{{ last_part }} {
-      font-size: 12px;
+    
+    {{ sec_id }} .pc-counter-label {
+      font-size: {{ section.settings.mobile_label_font_size }}px;
+    }
+    
+    {{ sec_id }} .pc-counter-description {
+      font-size: {{ section.settings.mobile_desc_font_size }}px;
+    }
+    
+    {{ sec_id }} .pc-counter-item {
+      min-height: {{ section.settings.mobile_item_min_height }}px;
     }
   }
-{% endstyle %}
+</style>
 
-<pc-scrollup-counter-{{ last_part }}>
-  <div class="{{ section.settings.cell_align }}">
-    <h2 class="pc-counter-title-{{ last_part }}">{{ section.settings.title }}</h2>
-    <h3 class="pc-counter-subtitle-{{ last_part }}">{{ section.settings.subtitle }}</h3>
+<div class="pc-counter-section">
+  <div class="pc-counter-heading">
+    {% if section.settings.title != blank %}
+      <h2 class="pc-counter-title">{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.subtitle != blank %}
+      <h3 class="pc-counter-subtitle">{{ section.settings.subtitle }}</h3>
+    {% endif %}
   </div>
-
-  <div class="pc-counter-container-{{ last_part }} gradient color-{{ section.settings.section_color_scheme }}">
+  
+  <div class="pc-counter-container">
     {% for block in section.blocks %}
-      <div class="pc-counter-content-{{ last_part }}" data-count="{{ block.settings.number }}">
-        <div class="pc-flex-counter-{{ last_part }}">
-          <div class="pc-counter-value-{{ last_part }}">0</div>
-          <div class="pc-counter-label-{{ last_part }}">{{ block.settings.label }}</div>
+      <div class="pc-counter-item" data-count="{{ block.settings.number }}">
+        <div class="pc-flex-counter">
+          <div class="pc-counter-number">0</div>
+          {% if block.settings.label != blank %}
+            <div class="pc-counter-label">{{ block.settings.label }}</div>
+          {% endif %}
         </div>
-        <div class="pc-counter-description-{{ last_part }}">{{ block.settings.description }}</div>
+        {% if block.settings.description != blank %}
+          <div class="pc-counter-description">{{ block.settings.description }}</div>
+        {% endif %}
       </div>
     {% endfor %}
   </div>
-</pc-scrollup-counter-{{ last_part }}>
+</div>
 
 <script>
-  customElements.define('pc-scrollup-counter-{{ last_part }}', class extends HTMLElement {
-    connectedCallback() {
-      const elements = this.querySelectorAll('.pc-counter-content-{{ last_part }}');
-      const counted = new Set();
+  document.addEventListener("DOMContentLoaded", function() {
+    const counterItems = document.querySelectorAll('.pc-counter-item');
+    const countedItems = new Set();
+    let isCounting = false;
+    let animationDuration = {{ section.settings.animation_duration }};
 
-      function isInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return rect.top >= 0 && rect.bottom <= window.innerHeight;
-      }
+    function startCounting(element, countValue) {
+      const increment = Math.ceil(countValue / (animationDuration / 10));
+      let count = 0;
+      const interval = setInterval(function() {
+        count += increment;
+        if (count >= countValue) {
+          clearInterval(interval);
+          count = countValue;
+          isCounting = false;
+        }
+        element.querySelector('.pc-counter-number').textContent = count;
+      }, 10);
+    }
 
-      function startCount(el, target, duration = 2000) {
-        const counter = el.querySelector('.pc-counter-value-{{ last_part }}');
-        let current = 0;
-        const increment = Math.ceil(target / (duration / 10));
-        const interval = setInterval(() => {
-          current += increment;
-          if (current >= target) {
-            current = target;
-            clearInterval(interval);
-          }
-          counter.textContent = current;
-        }, 10);
-      }
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top <= (window.innerHeight * 0.8) && 
+        rect.bottom >= (window.innerHeight * 0.2)
+      );
+    }
 
-      function handleScroll() {
-        elements.forEach(el => {
-          if (!counted.has(el) && isInViewport(el)) {
-            const target = parseInt(el.dataset.count);
-            startCount(el, target);
-            counted.add(el);
+    function handleScroll() {
+      if (!isCounting) {
+        counterItems.forEach(function(item) {
+          if (!countedItems.has(item) && isElementInViewport(item)) {
+            const countValue = parseInt(item.getAttribute('data-count'));
+            isCounting = true;
+            startCounting(item, countValue);
+            countedItems.add(item);
           }
         });
       }
-
-      window.addEventListener('scroll', handleScroll);
-      handleScroll();
     }
+
+    // Initialize on load
+    handleScroll();
+    
+    // Listen to scroll events
+    window.addEventListener('scroll', handleScroll);
+    
+    // Reset counters when section settings change
+    document.addEventListener('shopify:section:select', function() {
+      counterItems.forEach(item => {
+        item.querySelector('.pc-counter-number').textContent = '0';
+        countedItems.delete(item);
+      });
+      isCounting = false;
+      handleScroll();
+    });
   });
 </script>
 
 {% schema %}
 {
-  "name": "PWC - Scrollup Counter #2",
+  "name": "PWC - Counter #3",
   "settings": [
     {
       "type": "text",
       "id": "title",
-      "default": "Top Title",
-      "label": "Title"
+      "label": "Title",
+      "default": "Our Achievements"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "subtitle",
-      "default": "Subtitle goes here",
-      "label": "Subtitle"
+      "label": "Subtitle",
+      "default": "<p>See what we've accomplished so far</p>"
     },
     {
       "type": "select",
-      "id": "text_align",
+      "id": "cell_align",
       "label": "Text Alignment",
       "options": [
-        { "value": "left", "label": "Left" },
-        { "value": "center", "label": "Center" },
-        { "value": "right", "label": "Right" }
+        {"value": "left", "label": "Left"},
+        {"value": "center", "label": "Center"},
+        {"value": "right", "label": "Right"}
       ],
       "default": "center"
     },
     {
-      "type": "color",
-      "id": "title_color",
-      "label": "Title Color",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "subtitle_color",
-      "label": "Subtitle Color",
-      "default": "#333333"
+      "type": "header",
+      "content": "Section Layout"
     },
     {
       "type": "range",
-      "id": "title_font_size_desktop",
-      "label": "Title Font Size (Desktop)",
-      "min": 10,
-      "max": 72,
-      "step": 1,
+      "id": "max_width",
+      "label": "Max Width",
+      "min": 800,
+      "max": 2000,
+      "step": 50,
       "unit": "px",
-      "default": 36
+      "default": 1200
     },
     {
       "type": "range",
-      "id": "subtitle_font_size_desktop",
-      "label": "Subtitle Font Size (Desktop)",
-      "min": 10,
-      "max": 48,
-      "step": 1,
+      "id": "min_column_width",
+      "label": "Min Column Width (Desktop)",
+      "min": 100,
+      "max": 500,
+      "step": 10,
       "unit": "px",
-      "default": 18
+      "default": 200
     },
     {
       "type": "range",
-      "id": "title_font_size_mobile",
-      "label": "Title Font Size (Mobile)",
-      "min": 10,
-      "max": 72,
-      "step": 1,
+      "id": "grid_gap",
+      "label": "Grid Gap (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
       "unit": "px",
-      "default": 28
+      "default": 20
     },
     {
       "type": "range",
-      "id": "subtitle_font_size_mobile",
-      "label": "Subtitle Font Size (Mobile)",
+      "id": "grid_padding",
+      "label": "Grid Padding (Desktop)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "item_min_height",
+      "label": "Item Min Height (Desktop)",
+      "min": 50,
+      "max": 500,
+      "step": 10,
+      "unit": "px",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "item_padding",
+      "label": "Item Padding",
       "min": 10,
-      "max": 48,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "item_border_radius",
+      "label": "Item Border Radius",
+      "min": 0,
+      "max": 50,
       "step": 1,
       "unit": "px",
-      "default": 16
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "hover_lift",
+      "label": "Hover Lift Amount",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Counter Elements"
+    },
+    {
+      "type": "range",
+      "id": "counter_gap",
+      "label": "Number-Label Gap",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "counter_margin_bottom",
+      "label": "Counter Bottom Margin",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "animation_duration",
+      "label": "Counter Animation Duration",
+      "min": 500,
+      "max": 5000,
+      "step": 100,
+      "unit": "ms",
+      "default": 2000
+    },
+    {
+      "type": "header",
+      "content": "Mobile Layout"
+    },
+    {
+      "type": "range",
+      "id": "mobile_min_column_width",
+      "label": "Min Column Width (Mobile)",
+      "min": 70,
+      "max": 300,
+      "step": 5,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "mobile_grid_gap",
+      "label": "Grid Gap (Mobile)",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "mobile_grid_padding",
+      "label": "Grid Padding (Mobile)",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "mobile_item_min_height",
+      "label": "Item Min Height (Mobile)",
+      "min": 50,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "default": 150
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "label": "Heading Bottom Spacing",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 30
     },
     {
       "type": "range",
@@ -251,7 +430,7 @@
       "max": 200,
       "step": 5,
       "unit": "px",
-      "default": 60
+      "default": 80
     },
     {
       "type": "range",
@@ -261,7 +440,7 @@
       "max": 200,
       "step": 5,
       "unit": "px",
-      "default": 60
+      "default": 80
     },
     {
       "type": "range",
@@ -271,7 +450,7 @@
       "max": 200,
       "step": 5,
       "unit": "px",
-      "default": 30
+      "default": 20
     },
     {
       "type": "range",
@@ -281,14 +460,14 @@
       "max": 200,
       "step": 5,
       "unit": "px",
-      "default": 30
+      "default": 20
     },
     {
       "type": "range",
       "id": "padding_top_mobile",
       "label": "Top Padding (Mobile)",
       "min": 0,
-      "max": 200,
+      "max": 100,
       "step": 5,
       "unit": "px",
       "default": 40
@@ -298,7 +477,7 @@
       "id": "padding_bottom_mobile",
       "label": "Bottom Padding (Mobile)",
       "min": 0,
-      "max": 200,
+      "max": 100,
       "step": 5,
       "unit": "px",
       "default": 40
@@ -308,67 +487,274 @@
       "id": "padding_left_mobile",
       "label": "Left Padding (Mobile)",
       "min": 0,
-      "max": 200,
+      "max": 100,
       "step": 5,
       "unit": "px",
-      "default": 20
+      "default": 15
     },
     {
       "type": "range",
       "id": "padding_right_mobile",
       "label": "Right Padding (Mobile)",
       "min": 0,
-      "max": 200,
+      "max": 100,
       "step": 5,
       "unit": "px",
-      "default": 20
+      "default": 15
     },
     {
-      "type": "checkbox",
-      "id": "enable_shadow",
-      "label": "Enable Shadow",
-      "default": true
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Title Font Size (Desktop)",
+      "min": 16,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "title_font_weight",
+      "label": "Title Font Weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 700
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "title_margin_bottom",
+      "label": "Title Bottom Margin",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size",
+      "label": "Subtitle Font Size (Desktop)",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_weight",
+      "label": "Subtitle Font Weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 400
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_max_width",
+      "label": "Subtitle Max Width",
+      "min": 300,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "default": 700
+    },
+    {
+      "type": "range",
+      "id": "number_font_size",
+      "label": "Number Font Size (Desktop)",
+      "min": 24,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "number_font_weight",
+      "label": "Number Font Weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 700
+    },
+    {
+      "type": "color",
+      "id": "number_color",
+      "label": "Number Color",
+      "default": "#3498db"
+    },
+    {
+      "type": "range",
+      "id": "label_font_size",
+      "label": "Label Font Size (Desktop)",
+      "min": 12,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "label_font_weight",
+      "label": "Label Font Weight",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "default": 600
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label Color",
+      "default": "#3498db"
+    },
+    {
+      "type": "range",
+      "id": "desc_font_size",
+      "label": "Description Font Size (Desktop)",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "desc_font_weight",
+      "label": "Description Font Weight",
+      "min": 300,
+      "max": 700,
+      "step": 100,
+      "default": 400
+    },
+    {
+      "type": "color",
+      "id": "desc_color",
+      "label": "Description Color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Typography"
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_font_size",
+      "label": "Title Font Size (Mobile)",
+      "min": 14,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "mobile_title_margin_bottom",
+      "label": "Title Bottom Margin (Mobile)",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "mobile_subtitle_font_size",
+      "label": "Subtitle Font Size (Mobile)",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_number_font_size",
+      "label": "Number Font Size (Mobile)",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "mobile_label_font_size",
+      "label": "Label Font Size (Mobile)",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "mobile_desc_font_size",
+      "label": "Description Font Size (Mobile)",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Colors"
     },
     {
       "type": "color",
       "id": "bg_color",
-      "label": "Background Color",
+      "label": "Section Background",
       "default": "#ffffff"
     },
     {
-      "type": "color_scheme",
-      "id": "section_color_scheme",
-      "label": "Section Color Scheme",
-      "default": "scheme-1"
+      "type": "color",
+      "id": "item_bg_color",
+      "label": "Item Background",
+      "default": "#ffffff"
     },
     {
-      "type": "select",
-      "id": "cell_align",
-      "label": "Content Alignment",
-      "options": [
-        { "value": "left", "label": "Left" },
-        { "value": "center", "label": "Center" },
-        { "value": "right", "label": "Right" }
-      ],
-      "default": "center"
+      "type": "checkbox",
+      "id": "enable_shadow",
+      "label": "Enable Item Shadow",
+      "default": true
     }
   ],
   "blocks": [
     {
-      "type": "counter_item",
+      "type": "counter",
       "name": "Counter Item",
       "settings": [
         {
           "type": "number",
           "id": "number",
           "label": "Counter Value",
-          "default": 1000
+          "default": 100
         },
         {
           "type": "text",
           "id": "label",
           "label": "Counter Label",
-          "default": "K+"
+          "default": "+",
+          "info": "e.g., K, M, +, %"
         },
         {
           "type": "text",
@@ -381,7 +767,42 @@
   ],
   "presets": [
     {
-      "name": "PWC: Scrollup Counter #2"
+      "name": "PWC - Counter #3",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "counter",
+          "settings": {
+            "number": 100,
+            "label": "+",
+            "description": "Happy Customers"
+          }
+        },
+        {
+          "type": "counter",
+          "settings": {
+            "number": 24,
+            "label": "/7",
+            "description": "Support Availability"
+          }
+        },
+        {
+          "type": "counter",
+          "settings": {
+            "number": 99,
+            "label": "%",
+            "description": "Satisfaction Rate"
+          }
+        },
+        {
+          "type": "counter",
+          "settings": {
+            "number": 15,
+            "label": "k",
+            "description": "Products Sold"
+          }
+        }
+      ]
     }
   ]
 }
