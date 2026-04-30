@@ -1,1 +1,43 @@
-{"sections":{"main":{"type":"main-order","settings":{"padding_top":36,"padding_bottom":36}}},"order":["main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-order",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "177754217058f90374": {
+      "type": "apps",
+      "blocks": {
+        "pwc_order_editor_order_edit_button_QLqHFe": {
+          "type": "shopify://apps/pwc-order-editor/blocks/order_edit_button/019dddc2-d715-7f95-92e4-9a94ebd1a86c",
+          "settings": {
+            "heading": "Need to update your order?",
+            "button_label": "Edit order",
+            "app_base_url": "https://order-editor.vercel.app"
+          }
+        }
+      },
+      "block_order": [
+        "pwc_order_editor_order_edit_button_QLqHFe"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "177754217058f90374"
+  ]
+}
